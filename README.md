@@ -12,8 +12,9 @@ put down. Enough going on to keep a restless mind busy the whole match,
 never so much that it turns into homework. Mediocre is not an acceptable
 outcome.
 
-**Status:** planning. No game code exists yet. The full plan is in
-[PLAN.md](PLAN.md).
+**Status:** project scaffold only. The Godot project opens, tests run, and
+an Android build installs and shows a title card. No game code exists yet.
+The full plan is in [PLAN.md](PLAN.md).
 
 ## The idea
 
@@ -73,12 +74,45 @@ rules:
 | Path | What it is |
 |---|---|
 | [PLAN.md](PLAN.md) | The build plan, in small pieces, each tied to a learnings note |
+| [game/](game/) | The Godot project. Open `game/project.godot` in Godot 4.7.2. |
+| [game/sim/](game/sim/README.md) | The rules. No nodes, no drawing. Empty for now. |
+| [game/view/](game/view/README.md) | The 3D world: camera, terrain, models, effects, sound. Empty for now. |
+| [game/ui/](game/ui/README.md) | Touch input and the HUD. Empty for now. |
+| [game/data/](game/data/README.md) | Shared tables and maps. Empty for now. |
+| [game/parties/](game/parties/README.md) | One content pack per party. Empty for now. |
+| [game/tests/](game/tests/README.md) | Headless tests and their runner |
+| [tools/](tools/) | Scripts to set up, test, screenshot and build |
 | [target/learnings/](target/learnings/README.md) | Study notes on how a 2010 phone strategy game works: economy, combat, movement, missions, animation |
 | `target/92aace22-artofwea_S8000.jar` | The file those notes were made from |
 
 The JAR and everything decoded from it belong to HeroCraft and Gear Games.
 They are study material only. Sinews of War reuses the lessons about how
 such a game works and none of that game's code, art, maps, names or story.
+
+## Working on the project
+
+All commands run from the repo root on Linux. Downloads go to `.tools/`,
+which git ignores.
+
+| Task | Command | Needs |
+|---|---|---|
+| Get the pinned Godot | `tools/setup_godot.sh` | curl, unzip |
+| Run the tests | `tools/test.sh` | Godot |
+| Save a picture of the game with no GPU | `tools/screenshot.sh` | Godot, Xvfb, a software Vulkan driver |
+| Get the Android toolchain | `tools/setup_godot.sh --templates` then `tools/setup_android.sh` | JDK 17 or newer, about 2.5 GB of disk |
+| Build a debug APK | `tools/build_android.sh` | The Android toolchain |
+
+The APK lands in `build/sinews-of-war-debug.apk`. To put it on a phone,
+copy it over and open it, allowing installs from unknown sources when
+Android asks.
+
+Debug builds are signed with `tools/debug.keystore`, which is committed on
+purpose. It uses the standard public Android debug credentials, so every
+debug build installs over the previous one. It protects nothing. Release
+builds will use a private key that never enters the repo.
+
+Tests also run on GitHub for every push to `main` that touches `game/` or
+`tools/`.
 
 ## Roadmap
 

@@ -3,7 +3,8 @@
 An original 3D real-time strategy game in Godot 4, built on the
 [learnings](target/learnings/README.md).
 
-Status: plan only. Nothing is built yet.
+Status: the project scaffold exists (piece 0.2). No game code is written
+yet.
 
 ## The bar
 
@@ -284,22 +285,21 @@ good enough.
   - Compatibility: OpenGL ES 3 for older phones, fewer effects.
   - Forward+: desktop-grade, the full feature set.
 - **Verification:** three layers.
-  - Rules: headless tests. Godot 4.7.2 was downloaded and run headless in
-    the cloud environment, so this layer is confirmed to work there.
-  - Pictures: screenshots from a software-rendered run. A software Vulkan
-    driver is present in that environment; rendering through it is not yet
-    tried.
-  - Feel: APK builds on the owner's Android phone. The export templates
-    and the Android SDK are both downloadable from that environment;
-    producing an APK there is not yet tried and is the first job of
-    piece 0.2.
+  - Rules: headless tests, run by `tools/test.sh` and on GitHub for every
+    push. Working.
+  - Pictures: `tools/screenshot.sh` renders through the Mobile renderer on
+    a software Vulkan driver. Working in the cloud environment. It shows
+    what is drawn, not how fast a phone draws it.
+  - Feel: `tools/build_android.sh` produces a signed debug APK for the
+    owner's Android phone. Building works in the cloud environment; the
+    first install on the phone is still to be confirmed.
 
 ## Phase 0: Foundations
 
 | # | Piece | Built on |
 |---|---|---|
 | 0.1 | Fill the gaps in the learnings: weapons and special modes, vision and fog, the seven missions one by one, building and effect animation, draw order and timing, the combat recipe. These notes are linked but missing (`gameplay/06`, `gameplay/07`, `gameplay/13`, `animations/04`, `animations/05`, `build/06`). Derive them from [`p.java`](target/learnings/source/decompiled/p.java) and [`a.json`](target/learnings/source/data/a.json). | [`weapons_table.py`](target/learnings/source/tools/weapons_table.py) |
-| 0.2 | Project skeleton: `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `parties/`, `tests/`; landscape lock; headless test runner; software-rendered screenshot run; Android export producing a first APK that opens on the owner's phone. | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
+| 0.2 | **Built, awaiting the phone check.** Project skeleton under [`game/`](game/): `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `parties/`, `tests/`; landscape lock; headless test runner; software-rendered screenshot run; Android export producing a first APK that opens on the owner's phone. Scripts are in [`tools/`](tools/). | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
 | 0.3 | Class roster one-pager for approval: the shared classes by role, buildings, research list, and the trait budget per party. | Role coverage in [reference/01](target/learnings/06-reference/01-units.md) |
 | 0.4 | Story bible for approval: premise, cast for both campaigns, mission outline, content guidelines. | [Story](#story) |
 | 0.5 | Art direction sheet for approval: diorama look, lighting targets, design cues per party, quality tiers checked against the pinned engine. | [Visual targets](#visual-and-animation-targets) |

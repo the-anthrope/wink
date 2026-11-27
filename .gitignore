@@ -1,0 +1,19 @@
+# Godot
+game/.godot/
+game/android/
+*.translation
+
+# Build outputs
+build/
+*.apk
+*.aab
+*.idsig
+
+# Local tooling downloaded by tools/setup_*.sh
+.tools/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

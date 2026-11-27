@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.jar binary
+*.png binary
+*.gd text
+*.tscn text
+*.tres text
+*.godot text
+*.cfg text
