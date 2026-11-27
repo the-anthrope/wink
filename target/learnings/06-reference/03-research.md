@@ -43,7 +43,8 @@
 Total to buy everything: 10,650.
 
 Names are strings `T1_61`..`T1_84`, descriptions `T1_101`..`T1_124`. The
-price table has a 25th entry (350) with no name.
+price table continues past index 23: entries 24..47 belong to the enemy's
+own, unnamed research list.
 
 ## How we know
 - [`g.java:4984`](../source/decompiled/g.java#L4984) : the research panel prints `tables[7][index]` (Observed)
@@ -53,6 +54,7 @@ price table has a 25th entry (350) with no name.
 - Help text `T1_89` : "Can carry out just one research at a time" (Observed)
 
 ## Still unknown
-- What index 24 (cost 350) is. See the gameplay note.
+- Nothing significant. Every research takes the same 40 seconds; see the
+  gameplay note for effects.
 
 **Next:** [The seven missions](04-missions.md)

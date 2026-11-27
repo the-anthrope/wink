@@ -41,7 +41,7 @@ What that means for units:
 | Mission | Infantry center | Machine factory |
 |---|---|---|
 | 1 | Assault, Heavy Assault | no factory |
-| 2 | + Flame Assault after research 5 | AV-40, Hammer, Zeus (no vehicle upgrades allowed) |
+| 2 | + Flame Assault after research 5 | AV-40, Hammer, Zeus (vehicle researches 7-14 hidden) |
 | 3 | + Flame Assault after research 5 | no factory; Locator after research 18 |
 | 4, 5 | Flame Assault from the start | AV-40, Hammer, Zeus; Torrent after research 13 |
 | 6 | Flame Assault from the start | AV-40 is the flame variant from the start; Torrent after 13 |
@@ -63,7 +63,7 @@ Each production building reads a list `seg[95+2c]`, cut by offsets `seg[96+2c]`,
 | vehicles | 2 / 3 | AV-40, Hammer / plus Torrent |
 | vehicles | 4 / 5 | AV-40 / plus Torrent |
 
-`seg[129]` = [0, 1, 2, 4, 4, 4, 4, 4]. Research 18 turns level 2 into 3 and level 4 into 5, which is why it is hidden in mission 2 (level 1 + 1 would remove the Machine factory).
+`seg[129]` = [0, 1, 2, 4, 4, 4, 4, 4]. Research 18 turns level 2 into 3 and level 4 into 5, In mission 2 it is hidden; level 1 + 1 would remove the Machine factory, which is the likely reason (Inferred).
 
 Vehicle levels 2-5 are reachable only through a mission-script command (opcode 33 with value 21, 22 or 23). It sets a "tech level" and hides the matching researches:
 
@@ -78,17 +78,13 @@ None of the seven campaign scripts uses these values, so they matter only for do
 
 ### What `f415b = 281138895495613` means
 
-It is the "prerequisite met" mask at mission start. Set bits: 0, 2-5, 7, 8, 13, 15-29, 31, 32, 36, 37, 39-47. Clear bits and what sets them later:
+It is the "prerequisite met" mask at mission start. Set bits: 0, 2-5, 7, 8, 13, 15-29, 31, 32, 36, 37, 39-47. The twelve clear bits are the researches with a prerequisite:
 
 | clear bit(s) | set when this is researched |
 |---|---|
-| 1 Bio suit | 0 Energy suit |
-| 6 Volcano flame gun | 5 Lava flame fuel |
+| 1 Bio suit / 6 Volcano flame gun / 14 Torrent-10 | 0 Energy suit / 5 Lava flame fuel / 13 Torrent-5 |
 | 9, 10, 11, 12 | 8 Reinforced engine |
-| 14 Torrent-10 | 13 Torrent-5 |
-| 30 (enemy) | 29 |
-| 33, 34, 35 (enemy) | 32 |
-| 38 (enemy) | 37 |
+| enemy 30 / 33, 34, 35 / 38 | enemy 29 / 32 / 37 |
 
 A prerequisite never unlocks a research that the mission hides.
 
@@ -127,7 +123,6 @@ Scripted reinforcements for the player follow your research: a Torrent in the wa
 ## Still unknown
 
 - Which downloadable custom maps use script tech levels 21-23. No custom map file is in the JAR.
-- Why mission 3 swaps the Machine factory for the Rocket launcher (design intent).
 - Whether placing a building needs another building first (not seen in the menu code; not traced further).
 
 **Next:** [How do ranks, score and difficulty work?](10-ranks-score-difficulty.md)
