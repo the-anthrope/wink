@@ -61,7 +61,7 @@ rules:
 
 | Part | Choice |
 |---|---|
-| Engine | Godot 4 |
+| Engine | Godot 4.7.2 |
 | Language | Typed GDScript |
 | Simulation | Fixed 100 ms step, deterministic, separate from drawing |
 | Renderers | Mobile on phones, Forward+ on desktop |

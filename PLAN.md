@@ -57,7 +57,8 @@ Any one of these, found in play, reopens the piece that caused it.
 | Decision | Choice |
 |---|---|
 | Working name | **Sinews of War** (see [Name](#name)) |
-| Engine | Godot 4, native builds, Android first |
+| Engine | Godot 4.7.2, native builds, Android first |
+| Test device | The owner's Android phone. Every milestone ends with an APK to install. |
 | Priority | Fun first. A killer game the owner cannot put down, before any extra content. See [The bar](#the-bar). |
 | Play style | You manage the commerce and logistics of a war: money, power, production, research. Units fight on their own judgment. |
 | Depth | The original's level of complexity, which got it right. No more, no less. See [Complexity budget](#complexity-budget). |
@@ -270,7 +271,7 @@ good enough.
 
 ## Stack
 
-- **Engine:** latest stable Godot 4, version pinned in piece 0.2.
+- **Engine:** Godot 4.7.2, the current stable release.
 - **Language:** typed GDScript, with the simulation as plain classes over
   packed integer arrays.
   - GDScript: built in, exports everywhere, fast enough for a few hundred
@@ -282,23 +283,30 @@ good enough.
   - Mobile: Vulkan/Metal, good lighting at phone cost.
   - Compatibility: OpenGL ES 3 for older phones, fewer effects.
   - Forward+: desktop-grade, the full feature set.
-- **Verification:** Godot is not installed in the cloud environment used so
-  far. Its download hosts responded, so installing it is piece 0.2 and
-  untested until then. Touch feel can only be judged on a real phone, so
-  each control piece ends with a build to try.
+- **Verification:** three layers.
+  - Rules: headless tests. Godot 4.7.2 was downloaded and run headless in
+    the cloud environment, so this layer is confirmed to work there.
+  - Pictures: screenshots from a software-rendered run. A software Vulkan
+    driver is present in that environment; rendering through it is not yet
+    tried.
+  - Feel: APK builds on the owner's Android phone. The export templates
+    and the Android SDK are both downloadable from that environment;
+    producing an APK there is not yet tried and is the first job of
+    piece 0.2.
 
 ## Phase 0: Foundations
 
 | # | Piece | Built on |
 |---|---|---|
 | 0.1 | Fill the gaps in the learnings: weapons and special modes, vision and fog, the seven missions one by one, building and effect animation, draw order and timing, the combat recipe. These notes are linked but missing (`gameplay/06`, `gameplay/07`, `gameplay/13`, `animations/04`, `animations/05`, `build/06`). Derive them from [`p.java`](target/learnings/source/decompiled/p.java) and [`a.json`](target/learnings/source/data/a.json). | [`weapons_table.py`](target/learnings/source/tools/weapons_table.py) |
-| 0.2 | Project skeleton: `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `parties/`, `tests/`; landscape lock; headless test runner; screenshot run under a virtual display. | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
+| 0.2 | Project skeleton: `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `parties/`, `tests/`; landscape lock; headless test runner; software-rendered screenshot run; Android export producing a first APK that opens on the owner's phone. | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
 | 0.3 | Class roster one-pager for approval: the shared classes by role, buildings, research list, and the trait budget per party. | Role coverage in [reference/01](target/learnings/06-reference/01-units.md) |
 | 0.4 | Story bible for approval: premise, cast for both campaigns, mission outline, content guidelines. | [Story](#story) |
 | 0.5 | Art direction sheet for approval: diorama look, lighting targets, design cues per party, quality tiers checked against the pinned engine. | [Visual targets](#visual-and-animation-targets) |
 
 **Done when:** the missing notes exist, `godot --headless` runs an empty test
-suite green, and the three approval documents are signed off.
+suite green, a first APK installs and opens on the owner's phone, and the
+three approval documents are signed off.
 
 ## Phase 1: Simulation (no graphics, tested headless)
 
@@ -387,7 +395,7 @@ largest mission and passes the content review.
 | Name clash | A quick web search found no game called Sinews of War. That is not a trademark clearance. | Proper search before any store listing |
 | Code-built models fall short of the bar | They give a stylised look only | Turntable review per model; any that fall short are replaced with authored glTF models through the same interface |
 | The game works but is not gripping | The most likely way this project ends up mediocre | Milestone B blocks everything after it; the symptom table in [The bar](#the-bar) reopens pieces |
-| No on-device testing from the cloud environment | Touch feel and frame rate need a real phone | A build to try at the end of every control and visual piece |
+| Touch feel and frame rate cannot be judged in the cloud environment | They need a real phone | An APK for the owner's Android phone at the end of every milestone and every control or visual piece |
 
 ## Name
 
@@ -408,6 +416,5 @@ theatres can be added under the same game name.
 | 3 | Real town and city names, or a real region with fictional towns? | Fictional towns |
 | 4 | How different may parties be? | Traits within 10%, same classes for all |
 | 5 | Is the name Sinews of War approved? | Yes, as a working name |
-| 6 | Is there an Android phone to test builds on? iOS export needs a Mac and a developer account. | Android first |
-| 7 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
-| 8 | What is the oldest phone to support? | A 2021 mid-range Android |
+| 6 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
+| 7 | What is the oldest phone to support, and which phone is the test device? | A 2021 mid-range Android |
