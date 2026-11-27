@@ -6,7 +6,7 @@ const FOLDERS: PackedStringArray = ["boot", "sim", "view", "ui", "data", "partie
 
 
 func test_project_name() -> void:
-	check_eq(ProjectSettings.get_setting("application/config/name"), "Sinews of War", "project name")
+	check_eq(ProjectSettings.get_setting("application/config/name"), "War Within Us", "project name")
 
 
 func test_landscape_orientation() -> void:

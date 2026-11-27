@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Exports a debug APK to build/sinews-of-war-debug.apk.
+# Exports a debug APK to build/war-within-us-debug.apk.
 # Run tools/setup_godot.sh --templates and tools/setup_android.sh first.
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
@@ -32,7 +32,7 @@ export GODOT_ANDROID_KEYSTORE_DEBUG_USER="androiddebugkey"
 export GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD="android"
 
 mkdir -p "$BUILD_DIR"
-apk="$BUILD_DIR/sinews-of-war-debug.apk"
+apk="$BUILD_DIR/war-within-us-debug.apk"
 rm -f "$apk"
 "$GODOT" --headless --path "$GAME_DIR" --export-debug "Android" "$apk"
 [ -f "$apk" ] || { echo "Export finished without producing an APK." >&2; exit 1; }

@@ -1,4 +1,4 @@
-# Sinews of War
+# War Within Us
 
 > Money, power, supply. The battle is decided before the first shot.
 
@@ -86,7 +86,7 @@ rules:
 | `target/92aace22-artofwea_S8000.jar` | The file those notes were made from |
 
 The JAR and everything decoded from it belong to HeroCraft and Gear Games.
-They are study material only. Sinews of War reuses the lessons about how
+They are study material only. War Within Us reuses the lessons about how
 such a game works and none of that game's code, art, maps, names or story.
 
 ## Working on the project
@@ -102,7 +102,7 @@ which git ignores.
 | Get the Android toolchain | `tools/setup_godot.sh --templates` then `tools/setup_android.sh` | JDK 17 or newer, about 2.5 GB of disk |
 | Build a debug APK | `tools/build_android.sh` | The Android toolchain |
 
-The APK lands in `build/sinews-of-war-debug.apk`. To put it on a phone,
+The APK lands in `build/war-within-us-debug.apk`. To put it on a phone,
 copy it over and open it, allowing installs from unknown sources when
 Android asks.
 

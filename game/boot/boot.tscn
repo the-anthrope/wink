@@ -33,7 +33,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_colors/font_color = Color(0.93, 0.9, 0.82, 1)
 theme_override_font_sizes/font_size = 84
-text = "SINEWS OF WAR"
+text = "WAR WITHIN US"
 horizontal_alignment = 1
 
 [node name="Tagline" type="Label" parent="Center/Lines"]

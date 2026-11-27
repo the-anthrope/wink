@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Sinews of War"
+config/name="War Within Us"
 config/description="A 3D real-time strategy game about the commerce and logistics of war."
 config/version="0.0.1"
 run/main_scene="res://boot/boot.tscn"

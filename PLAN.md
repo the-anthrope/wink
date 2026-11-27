@@ -1,4 +1,4 @@
-# Plan: Sinews of War
+# Plan: War Within Us
 
 An original 3D real-time strategy game in Godot 4, built on the
 [learnings](target/learnings/README.md).
@@ -57,7 +57,7 @@ Any one of these, found in play, reopens the piece that caused it.
 
 | Decision | Choice |
 |---|---|
-| Working name | **Sinews of War** (see [Name](#name)) |
+| Name | **War Within Us**, chosen by the owner (see [Name](#name)) |
 | Engine | Godot 4.7.2, native builds, Android first |
 | Test device | The owner's Android phone. Every milestone ends with an APK to install. |
 | Priority | Fun first. A killer game the owner cannot put down, before any extra content. See [The bar](#the-bar). |
@@ -392,20 +392,18 @@ largest mission and passes the content review.
 |---|---|---|
 | App store review of a game about a current conflict | Google Play's sensitive events policy names conflicts and bars apps that exploit or are insensitive to them, with an exception for content of educational, documentary, scientific or artistic value. Apple's guideline on real entities as game enemies still has to be read against this design. | Content guidelines above; party names and markings live in data packs, so presentation can be adjusted without touching rules |
 | Public reception | The setting is a war that is still being fought | Fictional premise and characters; no real events staged |
-| Name clash | A quick web search found no game called Sinews of War. That is not a trademark clearance. | Proper search before any store listing |
+| Name clash | A quick web search found no game called exactly War Within Us. Close titles exist: *The War Within* (a World of Warcraft expansion and a small indie game) and *This War of Mine*. That search is not a trademark clearance. | Proper search before any store listing |
 | Code-built models fall short of the bar | They give a stylised look only | Turntable review per model; any that fall short are replaced with authored glTF models through the same interface |
 | The game works but is not gripping | The most likely way this project ends up mediocre | Milestone B blocks everything after it; the symptom table in [The bar](#the-bar) reopens pieces |
 | Touch feel and frame rate cannot be judged in the cloud environment | They need a real phone | An APK for the owner's Android phone at the end of every milestone and every control or visual piece |
 
 ## Name
 
-**Sinews of War.** "The sinews of war" is the old phrase, from Cicero, for
-the money and supply that make fighting possible. It names exactly what the
-player manages.
+**War Within Us**, chosen by the owner.
 
-Alternates if it does not land: *Frontline Ledger*, *Quartermaster's War*.
 The first theatre carries its own title, working name *Black Soil*, so later
-theatres can be added under the same game name.
+theatres can be added under the same game name. An earlier working name,
+Sinews of War, is retired.
 
 ## Open questions
 
@@ -415,6 +413,5 @@ theatres can be added under the same game name.
 | 2 | Real equipment designations, or invented designations on looks inspired by each nation's design school? | Invented designations |
 | 3 | Real town and city names, or a real region with fictional towns? | Fictional towns |
 | 4 | How different may parties be? | Traits within 10%, same classes for all |
-| 5 | Is the name Sinews of War approved? | Yes, as a working name |
-| 6 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
-| 7 | What is the oldest phone to support, and which phone is the test device? | A 2021 mid-range Android |
+| 5 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
+| 6 | What is the oldest phone to support, and which phone is the test device? | A 2021 mid-range Android |
