@@ -45,7 +45,7 @@ for mi in range(7):
     bl=[e for e in ents if e[0]<15];un=[e for e in ents if e[0]>=15]
     zones=[[ [tuple(r.u() for _ in range(4)) for _ in range(r.u())] for _ in range(3)] for _ in range(2)]
     info=dict(mission=mi+1,name=MN[mi],map_file=('m%d'%mapid if mapid>=0 else 'inline'),w=t['w'],h=t['h'],tileset=t['ts'],decor=len(t['objs']),
-        bld_conf=[BN[e[0]] for e in bl if e[0]<8],bld_reb=[BN[e[0]] for e in bl if e[0]>=8],units=len(un),mi_bytes=len(b),parsed_to=r.p)
+        bld_conf=[BN[e[0]] for e in bl if e[0]<8],bld_reb=[BN[e[0]] for e in bl if e[0]>=8],wall_tiles=len(un),mi_bytes=len(b),parsed_to=r.p)
     summary.append(info)
     print(info)
     # schematic render
@@ -66,7 +66,7 @@ for mi in range(7):
             c=(60,140,255) if ty<8 else (255,70,60)
             dr.rectangle([ex*S-S,ey*S-S,ex*S+S,ey*S+S],fill=c,outline=(255,255,255))
         else:
-            c=(150,210,255) if (ty-15)//10==0 else (255,170,150)
+            c=(150,210,255) if (ty-15)//10==0 else (255,170,150)  # types 15 / 25 are wall tiles of side 0 / 1
             dr.ellipse([ex*S,ey*S,ex*S+S-1,ey*S+S-1],fill=c)
     im.save(os.path.join(out,'map_m%d.png'%(mi+1)))
 json.dump(summary,open(os.path.join(out,'missions.json'),'w'),indent=1)

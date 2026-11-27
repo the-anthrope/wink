@@ -12,7 +12,7 @@
   mission script (inferred).
 - The pictures below are schematics drawn from the mission files: blue
   squares are your starting buildings, red squares are rebel buildings,
-  small dots are placed objects. Ground colours are a rough bucketing of
+  small dots are pre-placed wall tiles. Ground colours are a rough bucketing of
   tile numbers, not the game's art.
 
 ## How it works

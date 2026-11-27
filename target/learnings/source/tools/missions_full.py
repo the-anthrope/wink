@@ -206,7 +206,7 @@ def describe(cmd, base, st, dlg):
             return 'technology limit preset %d' % uv
         if uv < 30:
             return 'waves wait at their gathering waypoint (flag f461o)'
-        return 'group %d: lay %d mines at random inside its mine fields' % (grp, uv)
+        return 'group %d: %d attempts to lay a mine at a random cell of its mine fields' % (grp, uv)
     if op == 34:
         d = base + v
         return 'victory dialogue = %d (T2_%d..T2_%d)' % (d, dlg['offs'][d], dlg['offs'][d + 1] - 1)
@@ -287,6 +287,8 @@ def show(m, dlg):
         delay = cmd[4] & 255
         clock += delay
         text = describe(cmd, DIALOGUE_BASE[i], st, dlg)
+        if cmd[0] == 33 and (cmd[3] & 255) >= 30 and not m['mine_fields'][cmd[5]]:
+            text += '  -- NO EFFECT: this group has no mine field'
         if len(text) > 150:
             text = text[:147] + '...'
         print('   %2d t=%5ds%s +%3ds  op %2d %-18s %s' % (

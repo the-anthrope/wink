@@ -7,8 +7,8 @@
 ## The short answer
 - First byte: which terrain file to load (`m{n}`). A negative value would
   mean "terrain follows inline".
-- Then a list of 4-byte records: every starting building and placed object.
-- Then several counted sections of rectangles and records: the script.
+- Then a list of 4-byte records: every starting building and wall tile.
+- Then zones, routes and a list of 6-byte script commands.
 - Missions 0-6 are in the JAR. Higher numbers are downloaded maps kept in
   phone storage and carry extra text.
 
@@ -26,28 +26,28 @@ u8     entity count
 |---|---|
 | 0..7 | Confederation building (0 Command center ... 7 Rocket launcher) |
 | 8..14 | Rebel building (8 Headquarters ... 14 Tower) |
-| 15 and up | A placed object, not a building. It is written into the map grid as code `1001 + 100 * ((type-15)/10) + 20 * ((type-15)%5)`: the first term picks the owning side, the second a variant. |
+| 15, 25 | A **wall tile** of side 0 or side 1. It is written into the map grid as `1001 + 100 * side`, plus a damage offset. No mission file places a unit; units come from script commands. |
 
-For buildings, side = `type / 8`. The `flag` byte ties an entity to one of
-three script groups used later in the file.
+For buildings, side = `type / 8`. The `flag` byte is the enemy group (base)
+the building belongs to.
 
-**Part 2: script sections** (layout known, meaning in the gameplay notes)
+**Part 2: zones, routes and the script**
 
-| Order | Shape | Count stored at |
+| Order | Section | Shape |
 |---|---|---|
-| 1 | 2 sides x 3 groups of rectangles (x, y, w, h) | first byte of each group |
-| 2 | 3 groups of 4-byte records | first byte |
-| 3 | 3 more groups of 4-byte records | first byte |
-| 4 | 3 groups: a length, a list, then length+1 more bytes | |
-| 5 | 3 groups of 2-byte records | first byte |
-| 6 | 3 groups of 4-byte records | first byte |
-| 7 | n records of 6 bytes | one count byte |
-| 8 | Downloaded maps only: title and briefing text | two u16 lengths |
+| 1 | Build zones: where the enemy may place buildings | 2 classes x 3 groups of rectangles (x, y, w, h), count first |
+| 2 | Mine fields | 3 groups of rectangles |
+| 3 | Wall lines | 3 groups of rectangles |
+| 4 | Attack routes | per group: route count, byte count, x,y pairs, count+1 offsets |
+| 5 | Rally points | 3 groups of (x, y) |
+| 6 | Alarm areas | 3 groups of 4 bytes |
+| 7 | Script | count, then 6 bytes per command: opcode, p1, p2, value, delay, group |
+| 8 | Downloaded maps only: title and briefing text | two u16 lengths, then bytes |
 
-What each section means, and a parser that reads every byte, are in
+A "group" is one enemy base, 0..2. What each section means, and a parser that reads every byte, are in
 [gameplay/12-mission-scripting](../gameplay/12-mission-scripting.md).
 
-| File | Bytes | Terrain | Player buildings | Rebel buildings | Placed objects (type 15+) |
+| File | Bytes | Terrain | Player buildings | Rebel buildings | Wall tiles |
 |---|---|---|---|---|---|
 | `mi0` | 392 | `m0` | 5 | 0 | 0 |
 | `mi1` | 363 | `m1` | 2 | 22 | 0 |
@@ -67,8 +67,7 @@ What each section means, and a parser that reads every byte, are in
 - `../source/tools/maps.py` : the counts in the last table (Observed)
 
 ## Still unknown
-- What the placed objects of type 15 and up are in game terms. The story
-  talks about minefields, so mines are the likely answer; the gameplay
-  notes settle it.
+- Nothing significant. `../source/tools/missions_full.py` reads all seven
+  files to their last byte.
 
 **Next:** [Can the game send text messages?](../05-online-and-payments/01-sms.md)

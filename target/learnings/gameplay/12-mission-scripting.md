@@ -45,7 +45,7 @@ State: a command pointer, the time of the last command, one loop counter. Once p
 | 29 | Objective | value | Set the text of the Objectives screen and show it. |
 | 30, 31 | Cancel | group | Cancel train orders / waves. Unused in the campaign. |
 | 32 | Build list | value, group | Replace the group's rebuild list by list `value`. |
-| 33 | Setup | value, group | 0/1 = wall repair on (1 also builds all walls now). 2..9 = Hard multiplier for player spawns, in tenths. 10..19 = Hard multiplier for enemy sizes, `(value+1)/10`. 20..28 = technology limit preset. 29 = wave flag. 30+ = lay that many mines. |
+| 33 | Setup | value, group | 0/1 = wall repair on (1 also builds all walls now). 2..9 = Hard multiplier for player spawns, in tenths. 10..19 = Hard multiplier for enemy sizes, `(value+1)/10`. 20..28 = technology limit preset. 29 = wave flag. 30+ = that many attempts to lay a mine (needs a mine field). |
 | 34 | Victory dialogue | value | Dialogue shown when the mission is won. |
 | 35 | Move order | p1, p2, group | Every unit tagged `group` walks to (p1, p2). |
 | 36 | Camera | p1, p2 | Jump the view there and clear the selection. |
@@ -55,13 +55,13 @@ State: a command pointer, the time of the last command, one loop counter. Once p
 
 **Spawn sizes.** Size index 0/1/2 gives 3/6/10 infantry or 2/4/6 vehicles. On Hard the count is multiplied by the factor from command 33. Player spawns with no "need room" stop at the rank cap (20 / 35 / 50 units). A Torrent rolled for the player becomes a Zeus unless research 13 is done.
 
-**The retry idiom.** `38 n; 22; 27 X; 23 k; 27 X` means: try to deliver reinforcement X when there is room for n. On success skip the loop end, so X arrives twice. With no room, retry k times one second apart, then deliver whatever fits under the rank cap.
+**The retry idiom.** `38 n; 22; 27 X; 23 k; 27 X` means: deliver reinforcement X if there is room for n. On success the loop end is skipped and the second 27 runs too, so X arrives twice (the second copy only up to the rank cap). With no room, retry k times one second apart, then run the second 27 alone.
 
 **Dialogue and objectives.** File `d` holds 32 dialogues as offsets into the T2 string table. Each mission has a base index (1, 11, 15, 18, 20, 26, 28 for missions 1..7). `28 value` shows all lines of dialogue `base + value`. `29 value` uses the first line of dialogue `base + value` as the objective text. Every trigger is time: the tutorial pages of mission 1 are commands 39 at 3 s, 43 s, 73 s, 138 s and 158 s.
 
 **Winning and losing.** When a building finishes dying or a unit dies, the game tests the current rule for that side. A result starts a 50-tick (5 s) countdown, then the win or lose screen. Before the first command 24 the win rule is "none", so the two defence missions cannot be won until their script reaches its last line.
 
-**Score inputs.** Command 24 stores `e = p1`, `f = p2`. Time bonus = `max(e x 500 - ticks/20, 0)`, times 0.9 per reload. Kill points = clamp(points, 0, `f x 100`). Score = `(bonus + kills x (bonus/2) / (f x 100)) / (2 - difficulty)`. With `e = 0` the score is kill points only.
+**Score inputs.** Command 24 also stores `e = p1` (time bonus budget, x500 points) and `f = p2` (kill point cap, x100). The formula is in [How do ranks, score and difficulty work?](10-ranks-score-difficulty.md).
 
 ### Worked example: mission 1, commands 25 to 33
 `38 3` (need room for 3), `22`, `27 (58,36) value 32 group 3` gives the player 10 Assault at the east edge, `35 (14,25) group 3` walks them to the base, `37` and `36` reveal and show the spot, `28 2` plays "Captain is calling" (T2_14..16), `29 3` sets objective T2_17.
@@ -79,7 +79,8 @@ State: a command pointer, the time of the last command, one loop counter. Once p
 - [`g.java:1054`](../source/decompiled/g.java#L1054), [`g.java:6262`](../source/decompiled/g.java#L6262) : extra text tables for maps above 6, with `dmt` appended; `dmt` is 39 bytes = 4 + 10 + 9 + 16 (Observed)
 - [`g.java:2997`](../source/decompiled/g.java#L2997) : tutorial flag set from screen 28, text T1_21 (Observed)
 - [`p.java:1695`](../source/decompiled/p.java#L1695)-[`1740`](../source/decompiled/p.java#L1740), [`p.java:2141`](../source/decompiled/p.java#L2141) : win and lose tests; `a.json seg[94]` marks Command center and Headquarters as class 0 and 3, the `% 3 == 0` test (Observed)
-- [`g.java:1225`](../source/decompiled/g.java#L1225) : 50-tick countdown; [`g.java:1446`](../source/decompiled/g.java#L1446)-[`1458`](../source/decompiled/g.java#L1458) : score formula (Observed)
+- [`p.java:721`](../source/decompiled/p.java#L721) : both rules start at -1, "none"; [`g.java:1225`](../source/decompiled/g.java#L1225) : 50-tick countdown (Observed)
+- [`p.java:2822`](../source/decompiled/p.java#L2822) : command 24 writes `g.e` and `g.f`; [`g.java:1447`](../source/decompiled/g.java#L1447) : the score code reads them (Observed)
 
 ## Still unknown
 - `seg[140]` (one byte per dialogue) and the exact meaning of `seg[141]` (one byte per line, looks like the speaker). Neither affects triggers.

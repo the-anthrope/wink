@@ -39,8 +39,8 @@ codes is reset to 0, open ground. Where the bit is 1, the code stays.
 
 So the mask, not the picture, decides where units can go. A wide tree can be
 drawn over four cells while the mask leaves three of them open. During play
-the same grid also carries unit numbers, building numbers and codes from
-1001 upward for placed objects.
+the same grid also carries unit numbers, building numbers, mines (121-123)
+and walls (1001 upward).
 
 | File | Size | Tileset | Decor objects | Mission |
 |---|---|---|---|---|

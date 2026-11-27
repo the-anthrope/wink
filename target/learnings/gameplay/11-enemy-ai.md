@@ -43,7 +43,7 @@ One simulation tick is 100 ms. Every 10 ticks (1 second) the game runs the enemy
 | Unit cap | 50, not tied to rank. |
 | Free armies | Yes. Script command 27 creates units at a map edge. |
 
-**Easy versus Hard** (`g.d`: 0 = Easy, 1 = Hard)
+**Easy versus Hard** (`g.d`: 0 = Easy, 1 = Hard; see also [ranks, score and difficulty](10-ranks-score-difficulty.md))
 
 | Effect | Easy | Hard |
 |---|---|---|
@@ -56,7 +56,7 @@ One simulation tick is 100 ms. Every 10 ticks (1 second) the game runs the enemy
 | Mission score | divided by 2 | full |
 
 **Unit behaviour, both sides.** A unit thinks only when it stands on a cell centre.
-- *Acquire:* if it has no forced move order and no target in weapon range, it scans a square of `max(sight, range)` cells. Enemy units are checked first, buildings only if it has no target at all. Among candidates it prefers the unit type with the highest maximum hit points, then the nearest. For buildings, armed ones first.
+- *Acquire:* if it has no forced move order and no target in weapon range, it looks for enemies within `max(sight, range)` cells. Enemy units are checked first, buildings only if it has no target at all. Among candidates it prefers the unit type with the highest maximum hit points, then the nearest. For buildings, armed ones first.
 - *Chase:* the target's cell becomes the destination. The unit stops when the distance is within its attack range. The target is dropped when it leaves sight range (Inferred, that function decompiled badly).
 - *Retaliate:* a unit that is hit, has no order and no target, targets the attacker. Splash damage does not trigger this.
 - *Weapons:* each of up to three weapon slots can pick its own target inside its own range and arc, so turreted vehicles fire while moving.
@@ -73,7 +73,7 @@ One simulation tick is 100 ms. Every 10 ticks (1 second) the game runs the enemy
 - [`p.java:3033`](../source/decompiled/p.java#L3033), [`p.java:3042`](../source/decompiled/p.java#L3042) : wall timer and the alarm test with `<=` on bytes 3 and 4; mission data such as `(50,6,30,24)` only makes sense as width and height (Observed data, Inferred bug)
 - [`p.java:3072`](../source/decompiled/p.java#L3072), [`p.java:3093`](../source/decompiled/p.java#L3093) : mine timer and the "fewer than 5 neighbours" rule (Observed)
 - [`p.java:3099`](../source/decompiled/p.java#L3099), [`p.java:3108`](../source/decompiled/p.java#L3108), [`p.java:3113`](../source/decompiled/p.java#L3113) : research check, chance `nextInt() % 10 < 4 x (1 + d)`, first allowed item, no cost (Observed). 70% / 90% assumes Java's signed remainder (Inferred)
-- [`p.java:2030`](../source/decompiled/p.java#L2030) : money test and deduction skipped for the enemy side; [`p.java:1773`](../source/decompiled/p.java#L1773) : income only for the non-enemy side; [`p.java:3481`](../source/decompiled/p.java#L3481) : power check for either side (Observed)
+- [`p.java:2030`](../source/decompiled/p.java#L2030) : money test and deduction skipped for the enemy side; [`g.java:6082`](../source/decompiled/g.java#L6082) : the building creator called by the rebuild pass has no price in it; [`p.java:1773`](../source/decompiled/p.java#L1773) : income only for the non-enemy side; [`p.java:3481`](../source/decompiled/p.java#L3481) : power check for either side (Observed)
 - [`p.java:1930`](../source/decompiled/p.java#L1930) : build time factor `(4 - (side + d)/2) / 4`; [`p.java:1935`](../source/decompiled/p.java#L1935) : cap is rank-based for the player, 50 for the enemy (Observed)
 - [`p.java:4074`](../source/decompiled/p.java#L4074) : target cell must be set in `f301a[1]`; [`p.java:4174`](../source/decompiled/p.java#L4174) : that bitmap is built from the player's units and buildings (Observed)
 - [`p.java:3990`](../source/decompiled/p.java#L3990), [`p.java:4000`](../source/decompiled/p.java#L4000), [`p.java:4007`](../source/decompiled/p.java#L4007) : when a unit scans, the radius, units before buildings; [`p.java:4098`](../source/decompiled/p.java#L4098), [`p.java:4103`](../source/decompiled/p.java#L4103) : priority = max hit points of the type (`seg[42]`), then distance (Observed)

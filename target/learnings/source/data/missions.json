@@ -15,7 +15,7 @@
    "Bunker"
   ],
   "bld_reb": [],
-  "units": 0,
+  "wall_tiles": 0,
   "mi_bytes": 392,
   "parsed_to": 28
  },
@@ -55,7 +55,7 @@
    "Bunker(R)",
    "Tower"
   ],
-  "units": 0,
+  "wall_tiles": 0,
   "mi_bytes": 363,
   "parsed_to": 124
  },
@@ -86,7 +86,7 @@
    "Bunker(R)",
    "Bunker(R)"
   ],
-  "units": 23,
+  "wall_tiles": 23,
   "mi_bytes": 456,
   "parsed_to": 184
  },
@@ -125,7 +125,7 @@
    "Powerplant",
    "Powerplant"
   ],
-  "units": 0,
+  "wall_tiles": 0,
   "mi_bytes": 309,
   "parsed_to": 116
  },
@@ -143,7 +143,7 @@
    "Generator"
   ],
   "bld_reb": [],
-  "units": 0,
+  "wall_tiles": 0,
   "mi_bytes": 690,
   "parsed_to": 20
  },
@@ -210,7 +210,7 @@
    "Bunker(R)",
    "Tower"
   ],
-  "units": 11,
+  "wall_tiles": 11,
   "mi_bytes": 643,
   "parsed_to": 292
  },
@@ -275,7 +275,7 @@
    "Tower",
    "Bunker(R)"
   ],
-  "units": 0,
+  "wall_tiles": 0,
   "mi_bytes": 683,
   "parsed_to": 236
  }

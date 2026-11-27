@@ -8,7 +8,7 @@
 - Mission 1 has no Technology center and no Machine factory. Mission 3 has no Machine factory. From mission 4 on everything except the Locator is in the menu.
 - Vehicles in the menu are always AV-40, Hammer and Zeus. The Torrent needs research 13, the Flame Assault needs research 5, the Locator needs research 18.
 - Later missions hand you researches for free at the start (2 in mission 4, 16 in mission 7).
-- Custom games use the same row as "mission 8": full building list, nothing pre-researched, nothing hidden.
+- Downloaded maps use an eighth row: full building list, nothing pre-researched, nothing hidden. A campaign mission replayed as a custom game keeps its own row (see [file 14](14-custom-games-and-saves.md)).
 - The enemy's masks mirror yours, shifted by 24 bits, with a few extras.
 
 ## How it works
