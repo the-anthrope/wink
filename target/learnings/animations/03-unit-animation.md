@@ -99,7 +99,7 @@ Vehicles: state 2 lasts one tick. At the moment of death the game spawns one exp
 - [`g.java:7019`](../source/decompiled/g.java#L7019) : layer mask from fire bits via `seg[54]`/`seg[55]`; [`g.java:7024`](../source/decompiled/g.java#L7024) : `seg[53][layer]` picks which direction field applies (Observed)
 - [`g.java:7032`](../source/decompiled/g.java#L7032) : flash drawn while counter is within the animation; [`g.java:7033`](../source/decompiled/g.java#L7033) : it hides the static layer (Observed)
 - [`g.java:7036`](../source/decompiled/g.java#L7036) : type 17 skips turret-slot parts (Observed)
-- [`p.java:1381`](../source/decompiled/p.java#L1381) : fire counter modulo reload; [`p.java:1384`](../source/decompiled/p.java#L1384) : burst restart, mask 1011 (Observed)
+- [`p.java:1383`](../source/decompiled/p.java#L1383) : fire counter modulo reload; [`p.java:1384`](../source/decompiled/p.java#L1384) : burst restart, mask 1011 (Observed)
 - [`p.java:2552`](../source/decompiled/p.java#L2552) with [`p.java:424`](../source/decompiled/p.java#L424) and [`p.java:417`](../source/decompiled/p.java#L417) : death sequence = `{231,249,249,259,247}[kind] + random % {16,10,10,3,2}[kind]` (Observed)
 - [`p.java:2190`](../source/decompiled/p.java#L2190) : damage kind 4 when a vehicle enters a soldier's cell (Observed)
 - [`p.java:2555`](../source/decompiled/p.java#L2555) : vehicle death effects 11..14, 27..31 and decal kind 6 (Observed)
