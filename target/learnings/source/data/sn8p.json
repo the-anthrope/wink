@@ -1,0 +1,1710 @@
+[
+[
+"LSK1",
+"-6"
+],
+[
+"LSK2",
+"0"
+],
+[
+"RSK1",
+"-7"
+],
+[
+"RSK2",
+"0"
+],
+[
+"SMTYPE",
+"0"
+],
+[
+"VP",
+"TRUE"
+],
+[
+"SMPRIOR",
+"NORM_PRIORITY"
+],
+[
+"CMDLR",
+"FALSE"
+],
+[
+"INV_CMDLR",
+"0"
+],
+[
+"WAP_JAVA",
+"0"
+],
+[
+"SMS_JAVA",
+"1"
+],
+[
+"GAME_ID",
+"180"
+],
+[
+"PROV_ID",
+"1102"
+],
+[
+"LANG_ID",
+"en"
+],
+[
+"PROD_ID",
+"108952"
+],
+[
+"PORT_ID",
+"13277"
+],
+[
+"UMG",
+"0"
+],
+[
+"UMGD",
+"http://m.herocraft.com/f/s/180"
+],
+[
+"SPRT",
+"0"
+],
+[
+"HCOC",
+"1"
+],
+[
+"HCOCL",
+"1"
+],
+[
+"SSAD",
+"0"
+],
+[
+"PRODY",
+"1"
+],
+[
+"_eop_",
+"1"
+],
+[
+"T0_0",
+"Continue"
+],
+[
+"T0_1",
+"New game"
+],
+[
+"T0_10",
+"Custom Game"
+],
+[
+"T0_100",
+"Assistant"
+],
+[
+"T0_101",
+"William"
+],
+[
+"T0_102",
+"Heinrich"
+],
+[
+"T0_103",
+"Steve"
+],
+[
+"T0_104",
+"Natalie"
+],
+[
+"T0_105",
+"Norman"
+],
+[
+"T0_106",
+"Seiler"
+],
+[
+"T0_107",
+"Rogers"
+],
+[
+"T0_108",
+"Jeannette"
+],
+[
+"T0_109",
+"Time"
+],
+[
+"T0_11",
+"Continue"
+],
+[
+"T0_110",
+"Destroyed"
+],
+[
+"T0_111",
+"Lost"
+],
+[
+"T0_112",
+"Score"
+],
+[
+"T0_113",
+"Total score"
+],
+[
+"T0_12",
+"New Game"
+],
+[
+"T0_13",
+"Load Map"
+],
+[
+"T0_14",
+"Select Map"
+],
+[
+"T0_15",
+"Continue"
+],
+[
+"T0_16",
+"Restart"
+],
+[
+"T0_17",
+"Objectives"
+],
+[
+"T0_18",
+"Easy"
+],
+[
+"T0_19",
+"Hard"
+],
+[
+"T0_2",
+"Help"
+],
+[
+"T0_20",
+"Sound OFF"
+],
+[
+"T0_21",
+"Sound ON"
+],
+[
+"T0_22",
+"Graphics MIN"
+],
+[
+"T0_23",
+"Graphics MED"
+],
+[
+"T0_24",
+"Graphics MAX"
+],
+[
+"T0_25",
+"Options"
+],
+[
+"T0_26",
+"Navigation"
+],
+[
+"T0_27",
+"Resources"
+],
+[
+"T0_28",
+"Buildings"
+],
+[
+"T0_29",
+"Units"
+],
+[
+"T0_3",
+"About"
+],
+[
+"T0_30",
+"Controls"
+],
+[
+"T0_31",
+"Groups"
+],
+[
+"T0_32",
+"Context Menu"
+],
+[
+"T0_33",
+"Mini-map"
+],
+[
+"T0_34",
+"Rank"
+],
+[
+"T0_35",
+"Custom Game"
+],
+[
+"T0_36",
+"Score"
+],
+[
+"T0_37",
+"Rank"
+],
+[
+"T0_38",
+"Internet"
+],
+[
+"T0_39",
+"SMS"
+],
+[
+"T0_4",
+"More games"
+],
+[
+"T0_40",
+"Delete Map"
+],
+[
+"T0_41",
+"Attention!"
+],
+[
+"T0_42",
+"Statistics"
+],
+[
+"T0_43",
+"Difficulty"
+],
+[
+"T0_44",
+""
+],
+[
+"T0_45",
+"Demo!"
+],
+[
+"T0_46",
+"Submit via"
+],
+[
+"T0_47",
+"Enter your name"
+],
+[
+"T0_48",
+"Select your country"
+],
+[
+"T0_49",
+"Assault"
+],
+[
+"T0_5",
+"Exit"
+],
+[
+"T0_50",
+"Heavy Assault"
+],
+[
+"T0_51",
+"Flame Assault"
+],
+[
+"T0_52",
+"AV-40 Fortress"
+],
+[
+"T0_53",
+"T-21 Hammer"
+],
+[
+"T0_54",
+"T-22 Zeus"
+],
+[
+"T0_55",
+"MLRS Torrent"
+],
+[
+"T0_56",
+"Infantry"
+],
+[
+"T0_57",
+"Grenadier"
+],
+[
+"T0_58",
+"Sniper"
+],
+[
+"T0_59",
+"Coyote"
+],
+[
+"T0_6",
+"Save"
+],
+[
+"T0_60",
+"Armadillo"
+],
+[
+"T0_61",
+"Rhino"
+],
+[
+"T0_62",
+"Porcupine"
+],
+[
+"T0_63",
+"Command center"
+],
+[
+"T0_64",
+"Generator"
+],
+[
+"T0_65",
+"Infantry center"
+],
+[
+"T0_66",
+"Machine factory"
+],
+[
+"T0_67",
+"Technology center"
+],
+[
+"T0_68",
+"Bunker"
+],
+[
+"T0_69",
+"Locator"
+],
+[
+"T0_7",
+"Load"
+],
+[
+"T0_70",
+"Rocket launcher"
+],
+[
+"T0_71",
+"Headquarters"
+],
+[
+"T0_72",
+"Powerplant"
+],
+[
+"T0_73",
+"Barracks"
+],
+[
+"T0_74",
+"Factory"
+],
+[
+"T0_75",
+"Laboratory"
+],
+[
+"T0_76",
+"Bunker"
+],
+[
+"T0_77",
+"Tower"
+],
+[
+"T0_78",
+"Wall"
+],
+[
+"T0_79",
+"Mission 1"
+],
+[
+"T0_8",
+"Main Menu"
+],
+[
+"T0_80",
+"Mission 2"
+],
+[
+"T0_81",
+"Mission 3"
+],
+[
+"T0_82",
+"Mission 4"
+],
+[
+"T0_83",
+"Mission 5"
+],
+[
+"T0_84",
+"Mission 6"
+],
+[
+"T0_85",
+"Mission 7"
+],
+[
+"T0_86",
+"Mission"
+],
+[
+"T0_87",
+"Pucallpa"
+],
+[
+"T0_88",
+"Ucayali Bank"
+],
+[
+"T0_89",
+"Miguel Capture"
+],
+[
+"T0_9",
+"Campaign"
+],
+[
+"T0_90",
+"Outpost"
+],
+[
+"T0_91",
+"Slaughter"
+],
+[
+"T0_92",
+"Storm In Gorge"
+],
+[
+"T0_93",
+"The Last Battle"
+],
+[
+"T0_94",
+"Major-General"
+],
+[
+"T0_95",
+"Lieutenant-General"
+],
+[
+"T0_96",
+"General of Army"
+],
+[
+"T0_97",
+"General"
+],
+[
+"T0_98",
+"Senator"
+],
+[
+"T0_99",
+"Captain"
+],
+[
+"T1_0",
+"ART OF WAR 2:&GLOBAL CONFEDERATION&&Version: [VER]&&Development:&© Gear Games 2009&&Publishing and porting:&© Herocraft 2010&&support@herocraft.com&&wap.herocraft.com&&www.herocraft.com"
+],
+[
+"T1_1",
+"Click any free part of the map and drag the screen wherever you need to move on the map. Click the radar to show the mini-map. Click the icon in the bottom-left corner of the screen to open the menu. If there are units selected, click the icon in the bottom-right corner to free the cursor. If there's at least one unit selected, the board in the bottom-left corner will display the number of selected units."
+],
+[
+"T1_10",
+"In the 'Select Map' section you can access all missions and maps that you played through."
+],
+[
+"T1_100",
+"Multiple launch rocket system is armed with heavy rockets of ultra-long sight range. One discharge covers a vast territory but requires time for recharging. To begin salvo fire the system should be turned to siege mode."
+],
+[
+"T1_101",
+"Enhances armour for the whole infantry by 2."
+],
+[
+"T1_102",
+"For the whole infantry health regeneration increases by 3 times.&&Requires:&Energy suit."
+],
+[
+"T1_103",
+"Firing rate of the Assault increases by 50 percent."
+],
+[
+"T1_104",
+"Assault's damage capability increases by 40 percent."
+],
+[
+"T1_105",
+"Heavy Assault's damage capability increases by 40 percent."
+],
+[
+"T1_106",
+"Allows creation of Flame Assaults. The flame gun does not hurt the infantry and machinery of the Confederation due to fire-resistant armour."
+],
+[
+"T1_107",
+"Heavy Flame Assault is installed on AV-40 Fortress.&&Requires:&Lava flame fuel."
+],
+[
+"T1_108",
+"Enhances damage capability of tanks T-22 Zeus and T-21 Hammer by 25 percent."
+],
+[
+"T1_109",
+"Increases speed of all machinery by 1."
+],
+[
+"T1_11",
+"The scores are calculated by mission time and quantity of destroyed and lost units and facilities. The faster you accomplish the mission, the higher your score is. In the missions where the time does not depend on the player, it does not affect the score."
+],
+[
+"T1_110",
+"Increases armour of all machinery by 2.&&Requires:&Reinforced engine."
+],
+[
+"T1_111",
+"Reduces time of machinery repair 3 times.&&Requires:&Reinforced engine."
+],
+[
+"T1_112",
+"Reduces time of T-22 Zeus and T-21 Hammer recharging.&&Requires:&Reinforced engine."
+],
+[
+"T1_113",
+"Slewable RLS with heavy rockets. Mounted on T-22 Zeus.&&Requires:&Reinforced engine."
+],
+[
+"T1_114",
+"Allows production of MRLS Torrent-5."
+],
+[
+"T1_115",
+"MRLS Torrent-5 upgrade. Increases missile range by 15 percent and damage capability by 30 percent.&&Requires:&MRLS Torrent-5."
+],
+[
+"T1_116",
+"Increases production of energy by 30 percent."
+],
+[
+"T1_117",
+"Enhances armour of all facilities by 50 percent."
+],
+[
+"T1_118",
+"Increases wall endurance twice."
+],
+[
+"T1_119",
+"Allows production of radars."
+],
+[
+"T1_12",
+"Exit to the main menu?"
+],
+[
+"T1_120",
+"Decreases time of infantry training by 30 percent."
+],
+[
+"T1_121",
+"Decreases time of machinery production by 30 percent."
+],
+[
+"T1_122",
+"Increases financing by 20 percent."
+],
+[
+"T1_123",
+"A reward for each destroyed unit of the enemy increases by 50 percent."
+],
+[
+"T1_124",
+"Increases range of base construction by 25 percent."
+],
+[
+"T1_125",
+"Destroy this building?"
+],
+[
+"T1_13",
+"Exit game?"
+],
+[
+"T1_14",
+"Save the game? Previous game will be lost."
+],
+[
+"T1_15",
+"Load a saved game? Current game will be lost."
+],
+[
+"T1_16",
+"Start new game? The saved game will be lost."
+],
+[
+"T1_17",
+"Restart the mission?"
+],
+[
+"T1_18",
+"Mission complete!"
+],
+[
+"T1_19",
+"Mission failed!"
+],
+[
+"T1_2",
+"To build the base and train infantry and machines you will need money and energy.&&You will get finance through Command centers. Each additional Command center will yield 30 percent less than the previous one. You will also be rewarded for each destroyed hostile unit at 20 percent of its value.&&The Generators produce energy for the operation of other constructions. The amount of produced and consumed energy is indicated on the upper panel."
+],
+[
+"T1_20",
+"Sound on?"
+],
+[
+"T1_21",
+"Turn on tutorial?"
+],
+[
+"T1_22",
+"Your rank:&[RANK]"
+],
+[
+"T1_23",
+"Your rank:&[RANK]"
+],
+[
+"T1_24",
+""
+],
+[
+"T1_25",
+""
+],
+[
+"T1_26",
+""
+],
+[
+"T1_27",
+""
+],
+[
+"T1_28",
+""
+],
+[
+"T1_29",
+""
+],
+[
+"T1_3",
+"Tap Command Center (CC). Select a building to construct from the list. You can scroll the list by dragging left or right on any part of the screen or with arrows. The building's price is shown on the lower board. Tap on the selected building, move it to the required place on the map within the borders of a green zone. Tap on the outline to begin construction. Construction is allowed only within a certain radius from the CC. You can build several CC's to enhance the square of your base. A progress bar is shown above the building during construction. Click \"x\" on the building's menu to destroy it."
+],
+[
+"T1_30",
+"Not available with the current rank."
+],
+[
+"T1_31",
+"Your rank is not high enough to carry out the following missions."
+],
+[
+"T1_32",
+""
+],
+[
+"T1_33",
+""
+],
+[
+"T1_34",
+""
+],
+[
+"T1_35",
+""
+],
+[
+"T1_36",
+""
+],
+[
+"T1_37",
+"Maximum buildings constructed."
+],
+[
+"T1_38",
+""
+],
+[
+"T1_39",
+"To be continued..."
+],
+[
+"T1_4",
+"Select infantry center or vehicles facility by tapping on it. Select a unit by dragging left or right on any part of the screen, specify the amount by dragging up or down. The lower board shows price and unit's major parameters: attack, defense and speed. Click on the unit to confirm creation. You can order several unit types at once. The orders will be fulfilled step by step. A progress bar will be shown above the building during unit creation."
+],
+[
+"T1_40",
+"No maps."
+],
+[
+"T1_41",
+"This section is temporarily unavailable."
+],
+[
+"T1_42",
+"Check for updates?"
+],
+[
+"T1_43",
+""
+],
+[
+"T1_44",
+"Transferring data. Please wait..."
+],
+[
+"T1_45",
+"Download this map?"
+],
+[
+"T1_46",
+"The map is downloaded successfully."
+],
+[
+"T1_47",
+"There is not enough space to save map. Delete several maps and repeat downloading. You will not be charged twice."
+],
+[
+"T1_48",
+"Delete this map?"
+],
+[
+"T1_49",
+""
+],
+[
+"T1_5",
+"Touch the unit. Select the free cell and touch it to send the unit there.Target the hostile object and touch it to order the selected unit to attack it."
+],
+[
+"T1_50",
+"Failed to connect to the server."
+],
+[
+"T1_51",
+""
+],
+[
+"T1_52",
+"Your rank is not high enough to continue the game."
+],
+[
+"T1_53",
+""
+],
+[
+"T1_54",
+""
+],
+[
+"T1_55",
+""
+],
+[
+"T1_56",
+""
+],
+[
+"T1_57",
+""
+],
+[
+"T1_58",
+""
+],
+[
+"T1_59",
+""
+],
+[
+"T1_6",
+"Click twice on any part of the screen, wait a second and stretch the borders of selection. Tap and hold one of the cells in upper-right corner until group indicator glows brightly within. Tap on the cell to activate the according group. Quick double tap will center the screen on the group. Each cell displays the number of units in the group. The number of selected units is shown under the cursor."
+],
+[
+"T1_60",
+""
+],
+[
+"T1_61",
+"Energy suit"
+],
+[
+"T1_62",
+"Bio suit"
+],
+[
+"T1_63",
+"Enhanced firing rate"
+],
+[
+"T1_64",
+"Armour-piercing bullet"
+],
+[
+"T1_65",
+"Forced light missiles"
+],
+[
+"T1_66",
+"\"Lava\" flame fuel"
+],
+[
+"T1_67",
+"\"Volcano\" flame gun"
+],
+[
+"T1_68",
+"Heavy shells"
+],
+[
+"T1_69",
+"Reinforced engine"
+],
+[
+"T1_7",
+"If one or several units in siege mode are selected, there appears a siege mode activation button in the lower right screen corner. During the siege mode the units are immobile so you need to cancel the mode to switch back to the march mode."
+],
+[
+"T1_70",
+"Energy armour"
+],
+[
+"T1_71",
+"Damage diagnostics"
+],
+[
+"T1_72",
+"Fast recharging"
+],
+[
+"T1_73",
+"T-22 rocket launcher"
+],
+[
+"T1_74",
+"Torrent-5 MRLS"
+],
+[
+"T1_75",
+"Torrent-10 MRLS"
+],
+[
+"T1_76",
+"Reinforced generator"
+],
+[
+"T1_77",
+"Titanium cover"
+],
+[
+"T1_78",
+"Walls Active armour"
+],
+[
+"T1_79",
+"Alarm System"
+],
+[
+"T1_8",
+"The map allows you to move around quickly and stay informed. The cross marks current screen location."
+],
+[
+"T1_80",
+"Infantry express-training"
+],
+[
+"T1_81",
+"Upgraded assembly line"
+],
+[
+"T1_82",
+"Finance department"
+],
+[
+"T1_83",
+"Incentive system"
+],
+[
+"T1_84",
+"Communications system"
+],
+[
+"T1_85",
+"The commandment directs the army and base construction from here. All the buildings should be placed within a defined radius from the command center. The command center is also the source of finance. Each additional command center yields 30 per cent less than the previous one."
+],
+[
+"T1_86",
+"Each generator produces a certain amount of energy and supplies it to a number of facilities. If a facility is short of energy, it no longer in operation."
+],
+[
+"T1_87",
+"Trains infantry. It is possible to order a number of different types of infantry for training at the same time. The order is to be carried out step by step."
+],
+[
+"T1_88",
+"Produces machinery. You can order a number of different types of machinery at the same time. The order is to be carried out step by step."
+],
+[
+"T1_89",
+"Serves for research and development of new technologies. Can carry out just one research at a time."
+],
+[
+"T1_9",
+"There are the following limitations on the maximum quantity of units and facilities.&&Major-General:&units - 20;&facilities - 10.&&Lieutenant-General:&units - 35;&facilities - 25.&&General of Army:&units - 50;&facilities - 50.&&With game progress your rank increases."
+],
+[
+"T1_90",
+"Defensive fortification with heavy armour. Equipped with heavy machine gun with high firing rate. Has a medium sight and attack range."
+],
+[
+"T1_91",
+"Used to reveal map. Has a long-range sight."
+],
+[
+"T1_92",
+"The rocket launching system is equipped with heavy extra-long-range rockets. Has a long-range sight but less missile range."
+],
+[
+"T1_93",
+"Forced entry-resistant barrier designed to slow down enemy armies."
+],
+[
+"T1_94",
+"Armed with an automatic rifle. Light equipment allows to move rather fast. Effective against infantry."
+],
+[
+"T1_95",
+"Armed with hand-carried missile system. Effective against light and medium machinery."
+],
+[
+"T1_96",
+"Armed with a flame gun. Highly effective against infantry. Heavy equipment slows down."
+],
+[
+"T1_97",
+"Heavy assault vehicle has heavy armour and is equipped with a heavy machine-gun. It moves at a slow speed. Sight and attack ranges are average. Modernisation allows mounting of a heavy flame gun which makes it very effective against infantry."
+],
+[
+"T1_98",
+"A light tank with a slewing tower has high speed. The slewing tower allows firing in motion, in any direction. Sight and attack ranges are medium."
+],
+[
+"T1_99",
+"Heavy assault tank. Due to thick armour moves at a slow speed. Has a very high damage capability and a long sight range. Modernisation allows the mounting of a missile launching system."
+],
+[
+"T2_0",
+"2038 AD. For 20 years, the Earth has been under the rule of the Global Confederation that united and brought under its control all the countries and continents. Mankind entered a new era. Global territory wars that had been waged for a century subsided. The world economy no longer supported the military machine to be ready for action and turned towards progress. The new scientific horizons on the Earth and in outer space were open."
+],
+[
+"T2_1",
+"But peace and quiet in the Confederation is being increasingly disturbed by the outbreaks of rebellions of those who oppose the Senate's policies. The resistance movement is gaining momentum all over the world. The Senate throws the whole reserve of the Confederation's scarce peace-keeping forces to suppress the rebellion."
+],
+[
+"T2_10",
+"Natalie, put me through to captain Rogers."
+],
+[
+"T2_100",
+"Put me through now."
+],
+[
+"T2_101",
+"General, our base is under attack! We are gripped in a vice! We can't resist! Your help is needed as soon as possible!"
+],
+[
+"T2_102",
+"Stand your ground until the end! We'll get you out of there!"
+],
+[
+"T2_103",
+"The attacks are growing! We can't stand against such power! It seems to be our last fight."
+],
+[
+"T2_104",
+"Stand firm, captain! We'll get you out of there!"
+],
+[
+"T2_105",
+"You've saved us, General! We owe you our lives!"
+],
+[
+"T2_106",
+"Don't mention it! The Confederation owes you it's future! Many times you risked your lives for it! You are heroes!"
+],
+[
+"T2_107",
+"Senator, our division went to the marked target, but the vanguard has reported the ambush! Our division is surrounded by enemies! They are coming from all directions! We have to break down and defend. We need reinforcements! We cannot protect it ourselves."
+],
+[
+"T2_108",
+"The reinforcements are on their way! Stand firm, General!"
+],
+[
+"T2_109",
+"General, the reinforcements have arrived! But the pressure is growing."
+],
+[
+"T2_11",
+"Captain Rogers speaking!"
+],
+[
+"T2_110",
+"Don't worry! We'll hold out now!"
+],
+[
+"T2_12",
+"Captain, the situation is appalling. The Supreme Headquarters refused to provide us with satellite support. So we must make a lodgement at the territory and gather maximum information about the situation in the region. You'll be heading the reconnaissance group. Get to Pucallpa and question the civilians. Most probably, they support the rebels, so you should approach them with utmost caution and keep in touch. In the meantime we will deploy the base and will be waiting for your report."
+],
+[
+"T2_13",
+"- Build the base, be ready for the rebels' assaults;&- Wait for the report of the reconnaissance group."
+],
+[
+"T2_14",
+"Captain is calling. An urgent message!"
+],
+[
+"T2_15",
+"Put me through now."
+],
+[
+"T2_16",
+"General, we were unable to get into the city. Patrols of the rebels are everywhere, all entrances to the city are being guarded. We're under fire! Retreat to the base! We're being followed. Be ready to meet us! Over."
+],
+[
+"T2_17",
+"- Support the reconnaissance group;&- Repel the attack of rebels."
+],
+[
+"T2_18",
+"The city defence is impenetrable. But we managed to get some information in the nearby village. Twenty kilometres North of Pucallpa, on the bank of River Ucayali, we found a large camp of rebels. Along the river, the city supplies the rebels with everything necessary: foodstuffs, new fighters, raw materials for hardware manufacture. Local population is hostile to the Confederation army. We cannot rely on them for cooperation in fighting the rebels."
+],
+[
+"T2_19",
+"Can we cut the camp off from the city and the source of supply?"
+],
+[
+"T2_2",
+"In the east of Peru, near the city of Pucallpa, some signs of rebellious activity have been observed. Prior to that moment, South America was the calmest of regions. Your mission is to crush the revolt in Peru and to capture the leader of the rebellion."
+],
+[
+"T2_20",
+"No, its impossible because this bank of the river is covered with impenetrable jungle. After the rainy season it has turned into a swamp."
+],
+[
+"T2_21",
+"The rebels now know about our presence. We must not allow them time to mobilise forces. We should strike a blow right away. After the base has been wiped out we will be able to set the city free."
+],
+[
+"T2_22",
+"I will help you to use the controls in this game. On the upper panel you can see the number of units in your army, your energy consumption and energy output, as well as available financial resources. The right panel shows groups of units. The left soft key (LSK) opens the system menu. The right soft key (RSK) releases the cursor if there are some units selected."
+],
+[
+"T2_23",
+"If there's at least one unit selected, there appears a panel indicating the quantity of selected units in lower left corner. Touch the blue area near screen edge to move the screen on the map. Touch radar to call the mini-map."
+],
+[
+"T2_24",
+"You'll need money and energy to construct the base. You will get finance through Command centers. Each additional Command center will yield 30 percent less than the previous one. You will also be rewarded for each destroyed hostile unit at 20 percent of its value."
+],
+[
+"T2_25",
+"The energy is produced by Generators. Each construction requires energy for its performance. If you are short of energy, the facility is deactivated. We have one Generator but this might prove to be insufficient, so you might want to build another one."
+],
+[
+"T2_26",
+"To do so you should touch the Command center. On the appearing panel select Generator. The selection is done by moving left-right at any place of the screen or pressing arrows. At the bottom of the panel you can see the value of the construction and energy consumption. Touch Generator icon or LSK to select construction. Set the construction contour at a blank space on the map and touch it or LSK. A construction process indicator will appear over the site. By the same token you will build one more barracks in order to speed up the preparation process."
+],
+[
+"T2_27",
+"On the panel of construction selection you can touch the \"i\" icon in order to get information about the selected construction. Touch \"x\" to destroy the building."
+],
+[
+"T2_28",
+"Now lets order infantry. Touch the barracks. The panel for the current type of unit shows its value and main performance data: attack, armor, speed. Move the screen left/right to select a type of unit, then up/down to select the number."
+],
+[
+"T2_29",
+"You can order more than one unit of each type at once. The order will be executed unit by unit. To launch production, touch the unit icon."
+],
+[
+"T2_3",
+"General, senator Seiler is on the line."
+],
+[
+"T2_30",
+"You can indicate a gathering point of trained units. To do so you will have to press the flag on the unit order panel and then indicate the point on the map."
+],
+[
+"T2_31",
+"Touch the unit to select it. Touch any free spot to send it there. Touch the enemy to order your unit to attack."
+],
+[
+"T2_32",
+"Now lets select a group of units. Touch the upper left corner of the selection area, wait for one second and then stretch it, gathering the needed units within. The lower left screen corner shall show a number of selected units."
+],
+[
+"T2_33",
+"If there are no selected units, a quick double-touch at any free spot will select all the units at screen."
+],
+[
+"T2_34",
+"To save a group press one of the cell icons in upper right corner for 2 seconds.The group indicator will brighten and the number of units will appear in it. In order to activate the saved group, press on the relevant number key. A fast double-touch on this cell will move the screen to the center of the group."
+],
+[
+"T2_35",
+"It was the vanguard of the rebel forces. Now that they know our position they will be mounting more powerful attacks. You will need to strengthen the base defence."
+],
+[
+"T2_36",
+"Bunkers and walls serve this purpose as they are heavily armoured. We have already built two bunkers but it may be not enough. You might want to build several bunkers to withstand the enemy attacks."
+],
+[
+"T2_37",
+"Some unit types are able to switch to siege mode."
+],
+[
+"T2_38",
+"If one or more units with available siege mode are selected, there will be a button to activate siege mode in the lower right screen corner."
+],
+[
+"T2_39",
+"During siege mode the units are immobile, so turn them back to march mode to move them."
+],
+[
+"T2_4",
+"Ok. Put him through."
+],
+[
+"T2_40",
+"Our base is situated too close to the adversary's base. One cannot be a chooser among the Amazonian Selva."
+],
+[
+"T2_41",
+"We have to build all the necessary facilities as soon as possible and be ready to meet the challenge. My guess is the enemy won't take long to show up. Now we have a machine factory."
+],
+[
+"T2_42",
+"The rebels are aware of our appearance and are sure to have prepared to meet us. Approaches to their base may be littered with mines. We should take great care."
+],
+[
+"T2_43",
+"- Build a base;&- Destroy enemy base."
+],
+[
+"T2_44",
+"General, Senator is on the line, sir."
+],
+[
+"T2_45",
+"General, I succeeded to talk the Supreme Headquarters into conducting flash spotting of the territory. We've got just one shot so far, but it is enough to realize how serious the threat is. I'm sending you a file."
+],
+[
+"T2_46",
+"Received. Opened already. Goodness! I have warned you that without intelligence we are putting our head in the lion's mouth!"
+],
+[
+"T2_47",
+"I've done everything I can, General..."
+],
+[
+"T2_48",
+"Ok, we have no time to waste on idle talks. Judging on the shot, there are seven more bases of resistance, and much more serious than the one we've destroyed so far. And from all of them forces started advancement to the mountains a few hours ago. The rebels have deliberately allowed us to go down their territory in order to go over the Andes unchecked."
+],
+[
+"T2_49",
+"I'm afraid you're damn right. We believe that their main objective is Lima, the capital of Peru, and the neighbouring major port Callao. We cannot allow the rebels to get to the sea. Supposedly, their columns will go through Uanuco. This is the shortest way to Lima. You must get there earlier than the rebels."
+],
+[
+"T2_5",
+"Greetings, General. The Senate appointed me in charge of the Peru operation and you're expected to concert all your actions with me."
+],
+[
+"T2_50",
+"We will do everything possible, Senator."
+],
+[
+"T2_51",
+"Don't waste your time, General. The Space Control center has already allocated several satellites. Soon we will have the most clear picture of what is going on. The Supreme Headquarters have realised how serious the situation is. We are going to get reinforcements, but no one would bet it will arrive before you get into action. That is why you'll have to play it off the cuff and fight to the last ditch. Good luck to you, General!"
+],
+[
+"T2_52",
+"Captain Rogers's asking to put him through at once."
+],
+[
+"T2_53",
+"We are marching out, Senator. Clear. Put me through to Rogers."
+],
+[
+"T2_54",
+"General, the officers captured in the operation gave away that the rebellion leader Miguel Monteros is on the Northern base of the rebels, near Tiruntan village. The Base is situated on a river bank, on marshy lands, and is well guarded. We're much more likely to draw Miguel out into our hands than to restrain this huge army."
+],
+[
+"T2_55",
+"It is not wise to rely on this untrustworthy information. It could be another trap, in order to lure us deeper. We should split up. The main force will advance to the West, to the mountains, and you, captain, with a group of infantry, will carry out the capture operation."
+],
+[
+"T2_56",
+"Now the machine factory and technology center are available to you. Ordering machines and research is similar to ordering infantry. Description of the research is available through clicking 0 on the research panel."
+],
+[
+"T2_57",
+"We have reached the destination. We deploy the base. The terrain is forbidding our heavy equipment. We shall manage with infantry alone."
+],
+[
+"T2_58",
+"Act with discretion, but without delay. We will be expecting your report. Clear, captain!"
+],
+[
+"T2_59",
+"- Destroy the rebels' headquarters."
+],
+[
+"T2_6",
+"You should have contacted me an hour ago. What's the delay? Report the situation!"
+],
+[
+"T2_60",
+"General, the base headquarters has been destroyed, sir, but Miguel was not spotted. He must have managed to escape along the river while we were storming the base."
+],
+[
+"T2_61",
+"We should have foreseen it. It was a put-up-job, to side-track our attention. Move to Uanuco. Every man counts. We are waiting for your! Clear."
+],
+[
+"T2_62",
+"Natalie, get in touch with the vanguard and report the situation. We are approaching the point of destination. We are within a few kilometres of the city."
+],
+[
+"T2_63",
+"Cannot establish communication, no response..."
+],
+[
+"T2_64",
+"...just succeeded in establishing a connection! I could hear shots and then the connection failed... We could only overhear something about a mine field and a picket."
+],
+[
+"T2_65",
+"Which means we are being expected here. All units! Get ready for action!"
+],
+[
+"T2_66",
+"- Destroy the rebels outpost!"
+],
+[
+"T2_67",
+"Natalie, put me through to Senator."
+],
+[
+"T2_68",
+"Senator's on the line."
+],
+[
+"T2_69",
+"Senator, we reached the position on schedule. The rebels' outpost has been destroyed, we are undertaking the defence and getting ready to confront the main forces of the enemy. Got any news?"
+],
+[
+"T2_7",
+"Getting to the designated place was difficult due to adverse weather conditions. It's the end of rainy season - all roads have been washed out. We've started to deploy the base. We are getting prepared for the offensive and expecting the intelligence summary with the satellite images of the region and further directions from the Supreme Headquarters."
+],
+[
+"T2_70",
+"...Only bad news. We've just got some new satellite shots. Resistance forces have arrived at Uanuco from the South. We didn't expect them. You're closed on both sides and the army of rebels is rushing at you. Our reinforcement has started marching from Lima. Stand on the defensive and fight to the last ditch."
+],
+[
+"T2_71",
+"- Take up the defensive dispositions;&- Hold on till the arrival of reinforcements."
+],
+[
+"T2_72",
+"General, have you ordered reinforcements? Meet the highlanders!"
+],
+[
+"T2_73",
+"How did you manage to get here?"
+],
+[
+"T2_74",
+"We've made a tour of the mountains. There is a good view of the Gorge from above. The rebels are swarming. If the reinforcement fails to get here in time, we won't be able to hold out."
+],
+[
+"T2_75",
+"We will fight to the last ditch and hope for the best!"
+],
+[
+"T2_76",
+"General, reinforcements are on the line. They report that the forces of rebels in Uanuco have been smashed. The first reinforcement units will soon arrive."
+],
+[
+"T2_77",
+"Good job! They didn't fail us! Now we will last!"
+],
+[
+"T2_78",
+"General, the rebels have stopped their offensive.We've broken their plans by defeating their forces at Uanuco."
+],
+[
+"T2_79",
+"General, congratulations! Only a great military leader could have held out in a battle like this. You proved your superiority!"
+],
+[
+"T2_8",
+"General, you know that the current situation is serious. All Confederation forces have been marshalled to put down the mass revolt in the Middle East. All flash spotting satellites are employed in that conflict. The Supreme Headquarters can't supply you with the information you need. You'll have to act and do reconnaissance on your own."
+],
+[
+"T2_80",
+"The time has not come yet to celebrate the victory. Rebels won't surrender. We found out the location of the main base. The latest satellite shots show that the rebels are in retreat and they have blocked the Gorge that leads to it. Here they will be standing to the last drop of blood. You're to breach their defensives, whatever it takes. This is the only way."
+],
+[
+"T2_81",
+"We can look into the Torrent multiple rocket launcher system. In the siege mode, it is effective against long-range enemy units. This will considerably reinforce our defence."
+],
+[
+"T2_82",
+"In order to put the selected Torrent MRLS into siege mode, hold down the context menu button at lower right screen corner and select 'Siege mode' on the appearing context menu. Repeat the procedure to revert to marching mode. Siege mode enables attack on territory."
+],
+[
+"T2_83",
+"The reconnaissance team reports that the adversary base is located northwards. It is well fortified. Routes of approach are mine studded. It will be difficult to make our way through such a defensive. The enemy keeps on receiving reinforcements from the main base."
+],
+[
+"T2_84",
+"It is essential to organise a solid defence as fast as one can and launch the offensive. We can use Torrent MRLS to clear the minefields."
+],
+[
+"T2_85",
+"- Build a base;&- Destroy the enemy base."
+],
+[
+"T2_86",
+"The time of the decisive battle has come, General! The rebels seem to have summoned all the remaining forces they have to protect their main base. Reinforcements are being pulled up to you but you've got to take immediate action."
+],
+[
+"T2_87",
+"Absolutely, Senator! We are ready to fight and put an end to this mutiny."
+],
+[
+"T2_88",
+"- Build a base;&- Destroy the enemy base."
+],
+[
+"T2_89",
+"The reinforcement has arrived and is waiting for your orders."
+],
+[
+"T2_9",
+"Senator, will you explain to the military command that Peru is sprawled over hundreds of kilometres of impenetrable jungle and mountains! Conducting operations here without any support of the Space Control center is suicidal! We're waiting for the intelligence summary. Out!"
+],
+[
+"T2_90",
+"Natalie, put me through to Senator."
+],
+[
+"T2_91",
+"Yes, sir! Senator is on the line."
+],
+[
+"T2_92",
+"Mr. Senator, mission accomplished. The enemy base has been destroyed. We captured several rebel leaders, and Miguel Monteros is among them. The rest were able to escape and hide in the mountainous jungle. Squads were dispatched to intercept them but failed to capture them."
+],
+[
+"T2_93",
+"Good job, General! Your mission's been accomplished. The main Peacekeeping forces of the Confederation will carry on. The spirit and valour you displayed in this operation will be rewarded by the Senate of Confederation and all your people will be nominated for awards."
+],
+[
+"T2_94",
+"Hail tor the Confederation!"
+],
+[
+"T2_95",
+"- Destroy the enemy base."
+],
+[
+"T2_96",
+"- Destroy enemy base;&- All command centers must survive."
+],
+[
+"T2_97",
+"- Set up defence;&- Stand your ground until reinforcement arrives."
+],
+[
+"T2_98",
+"- Don't let enemy to destroy Rogers' base;&- Destroy enemy base."
+],
+[
+"T2_99",
+"Captain is calling. An urgent message!"
+],
+[
+"T3_0",
+"Tell a friend"
+],
+[
+"T3_1",
+"Do you want to tell a friend about this game?"
+],
+[
+"T3_10",
+"Do you want to send SMS and unlock level?&The cost of sending SMS [SMS_COST]."
+],
+[
+"T3_11",
+"Language"
+],
+[
+"T3_12",
+"Your rank raised to:&&[RANK]"
+],
+[
+"T3_13",
+"If You have registered a Herocraft game before you may use that account to authorise this game. If you haven't registered yet, do it now and you'll be able to use the login and password chosen for this game in other games by Herocraft."
+],
+[
+"T3_14",
+"Login"
+],
+[
+"T3_15",
+"Register"
+],
+[
+"T3_16",
+"Login"
+],
+[
+"T3_17",
+"Password"
+],
+[
+"T3_18",
+"Error"
+],
+[
+"T3_19",
+"This map already opened"
+],
+[
+"T3_2",
+"OK"
+],
+[
+"T3_20",
+"Open maps"
+],
+[
+"T3_21",
+"Online"
+],
+[
+"T3_22",
+"You account: [B].&Transaction is to be written off [S]. Continue?"
+],
+[
+"T3_23",
+"Operation error."
+],
+[
+"T3_24",
+"Wrong login."
+],
+[
+"T3_25",
+"Wrong password."
+],
+[
+"T3_26",
+"Insufficient funds in the account."
+],
+[
+"T3_27",
+"Downloading from the wrong device."
+],
+[
+"T3_28",
+"Map locked."
+],
+[
+"T3_29",
+"No content."
+],
+[
+"T3_3",
+"Cancel"
+],
+[
+"T3_30",
+"Payment"
+],
+[
+"T3_31",
+"Price"
+],
+[
+"T3_32",
+"Increase balance."
+],
+[
+"T3_33",
+"Profile"
+],
+[
+"T3_34",
+"Do you want to send SMS and increase balance by [CRD] credits? &SMS price [SMS_COST]."
+],
+[
+"T3_35",
+"Achievements"
+],
+[
+"T3_36",
+"Achievement unlocked!"
+],
+[
+"T3_37",
+"Strategist"
+],
+[
+"T3_38",
+"God of war"
+],
+[
+"T3_39",
+"Repeat password"
+],
+[
+"T3_4",
+"Enter the number"
+],
+[
+"T3_40",
+"E-Mail"
+],
+[
+"T3_41",
+"Rating"
+],
+[
+"T3_42",
+"Synchronize with the server?"
+],
+[
+"T3_43",
+"Operation performed successfully!"
+],
+[
+"T3_44",
+"User already exists."
+],
+[
+"T3_45",
+"Show password"
+],
+[
+"T3_46",
+"Pass recovery"
+],
+[
+"T3_47",
+"Recover?"
+],
+[
+"T3_48",
+"Phone"
+],
+[
+"T3_49",
+"No E-Mail."
+],
+[
+"T3_5",
+"Sending SMS..."
+],
+[
+"T3_50",
+"Password have been sent to your E-Mail"
+],
+[
+"T3_51",
+"Pause"
+],
+[
+"T3_6",
+"SMS sent successfully!"
+],
+[
+"T3_7",
+"SMS sending failed!"
+],
+[
+"T3_8",
+"Try again?"
+],
+[
+"T3_9",
+"Online..."
+]
+]
