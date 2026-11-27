@@ -15,6 +15,8 @@ forces where they are needed. Your units handle the shooting.
 - **The manager's war.** Income arrives on a timer from command posts you
   must protect. Every building draws from a power budget you must not
   overdraw. Winning is a matter of spending better than the other side.
+- **Just enough to think about.** Two budgets, seven unit classes, a short
+  research list. Always a decision waiting, never a spreadsheet.
 - **Real nations, added as packs.** Parties are real nations and
   coalitions. The game starts with two and is built so more can be added
   as data, with no change to the rules.
@@ -44,6 +46,7 @@ The first theatre is a fictional near-future escalation, not a retelling of
 real events. This is a real and ongoing war, so the project follows these
 rules:
 
+- Real countries and coalitions appear as parties.
 - All characters are fictional. No real leaders or commanders appear.
 - No real atrocities and no re-enacted real battles.
 - Civilians are never targets and never score.

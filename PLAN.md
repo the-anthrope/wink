@@ -11,9 +11,12 @@ Status: plan only. Nothing is built yet.
 |---|---|
 | Working name | **Sinews of War** (see [Name](#name)) |
 | Engine | Godot 4, native builds, Android first |
+| Priority | Fun first. A game its own owner wants to keep playing, before any extra content. |
 | Play style | You manage the commerce and logistics of a war: money, power, production, research. Units fight on their own judgment. |
+| Depth | The original's level of complexity, which got it right. No more, no less. See [Complexity budget](#complexity-budget). |
+| Logistics | The economy of the learnings (money, power, production) plus roads and terrain. No supply-line system. |
 | Parties | Real nations and coalitions. Two at launch, built so more can be added as data. |
-| First theatre | NATO vs Russia, located in Ukraine |
+| First theatre | NATO vs Russia, located in Ukraine. Real countries and coalitions; no real battles and no real leaders. |
 | Balance | Every party fields the same classes at near-equal power. Each party has its own signature look. |
 | Story | One campaign per party, each with its own story |
 | Terrain | Gives quiet advantages inside the existing rules |
@@ -43,7 +46,7 @@ works.
 1. **The manager's war.** The player wins by funding, powering and supplying
    the fight. This is the economy of the learnings
    ([build/05](target/learnings/build/05-economy-recipe.md)) kept as the
-   centre of play.
+   centre of play, at the original's depth.
 2. **Parties are data.** A party is a content pack. Adding one never touches
    the rules code.
 3. **Same classes, signature looks.** One shared class table sets power. A
@@ -54,6 +57,57 @@ works.
    by fictional characters.
 6. **Looks like 2026 on a phone.** Modern lighting and materials, and a
    small set of animations polished until they feel good.
+
+## Complexity budget
+
+The aim is a game that keeps a busy mind occupied the whole time without
+ever feeling like homework. The original hit that balance, so its size is
+the ceiling here.
+
+| What the player juggles | The original | Budget here |
+|---|---|---|
+| Resources | 2: money and energy | 2 |
+| Unit classes per party | 7: three infantry, four vehicles | 7 |
+| Buildings | 8 plus walls | 8 plus walls |
+| Research items | 24, in five short chains | About 24 |
+| Special unit modes | Deploy / siege on a few units | The same few |
+| Workers, gathering, unit abilities to trigger by hand | None | None |
+
+Sources: [reference/01](target/learnings/06-reference/01-units.md),
+[reference/02](target/learnings/06-reference/02-buildings.md),
+[reference/03](target/learnings/06-reference/03-research.md).
+
+Why the original holds attention, and what to protect:
+
+- **A decision is always a few seconds away.** Income lands every 12.8 s,
+  a queue finishes, a research completes, a wave is on its timer
+  ([gameplay/01](target/learnings/gameplay/01-money.md),
+  [gameplay/11](target/learnings/gameplay/11-enemy-ai.md)).
+- **The sums fit in your head.** Energy needs are 0 to 3 per building
+  ([gameplay/02](target/learnings/gameplay/02-energy.md)).
+- **Units look after themselves.** They pick targets, hit back and call
+  for help, so attention goes to the plan
+  ([gameplay/11](target/learnings/gameplay/11-enemy-ai.md)).
+
+The rule for anything new: it must hide inside a rule that already exists,
+or replace something. Terrain passes this test because it only nudges
+existing numbers. Supply lines fail it, so they are out.
+
+## Build order: fun first
+
+The phases below are grouped by subject. The order of work is set by these
+milestones, so there is a game to play as early as possible.
+
+| Milestone | Contents | Judged by |
+|---|---|---|
+| A. First playable | One skirmish map, one skin kit used by both sides, the whole core loop: economy, building, training, combat, terrain, a simple opponent, touch controls. Pieces 0.2, 0.3, 1.1 to 1.8, a first cut of 1.13, 2.1, a first cut of 2.3, 3.1 to 3.4. | You play it on your phone |
+| B. Fun pass | Tune the tables and the feel until you play it by choice. Nothing else starts before this passes. | You ask for one more match |
+| C. Looks and sound | The rest of phase 2 and 3, second skin kit | Screenshots and feel |
+| D. Story and content | Story bible, both campaigns, skirmish maps, the "add a party" proof | Campaigns playable end to end |
+| E. Ship | Phase 5 | Signed build |
+
+Party extensibility stays in the architecture from the start because it is
+cheap there. Content for further parties waits until after milestone D.
 
 ## Parties, sides and classes
 
@@ -299,13 +353,11 @@ theatres can be added under the same game name.
 
 | # | Question | Assumed until answered |
 |---|---|---|
-| 1 | How deep should logistics go? Either the economy of the learnings (money, power, production) plus roads and terrain, or that plus supply lines where units far from a depot fight worse. | The first; supply lines can be a later piece |
-| 2 | What is Ukraine's role: the location only, an allied force in the story, or a playable party later? | Location, with Ukrainian forces present in the story |
-| 3 | Real equipment designations, or invented designations on looks inspired by each nation's design school? | Invented designations |
-| 4 | Real town and city names, or a real region with fictional towns? | Fictional towns |
-| 5 | How different may parties be? | Traits within 10%, same classes for all |
-| 6 | Is the name Sinews of War approved? | Yes, as a working name |
-| 7 | Is there an Android phone to test builds on? iOS export needs a Mac and a developer account. | Android first |
-| 8 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
-| 9 | What is the oldest phone to support? | A 2021 mid-range Android |
-| 10 | Simulation first, or something visible early? | Simulation first; pieces 2.1 to 2.3 can move up after 1.5 |
+| 1 | What is Ukraine's role: the location only, an allied force in the story, or a playable party later? | Location, with Ukrainian forces present in the story |
+| 2 | Real equipment designations, or invented designations on looks inspired by each nation's design school? | Invented designations |
+| 3 | Real town and city names, or a real region with fictional towns? | Fictional towns |
+| 4 | How different may parties be? | Traits within 10%, same classes for all |
+| 5 | Is the name Sinews of War approved? | Yes, as a working name |
+| 6 | Is there an Android phone to test builds on? iOS export needs a Mac and a developer account. | Android first |
+| 7 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
+| 8 | What is the oldest phone to support? | A 2021 mid-range Android |
