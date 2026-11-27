@@ -5,13 +5,60 @@ An original 3D real-time strategy game in Godot 4, built on the
 
 Status: plan only. Nothing is built yet.
 
+## The bar
+
+This section is the owner's intent in the owner's words. It outranks every
+table below. Where a piece of the plan and this section disagree, this
+section wins.
+
+> "make this game the best game played with interest"
+>
+> "a killer and extremely fun to play game, a game which I would play myself"
+>
+> "keep minds like mine occupied throughout, not too much complications I
+> give up, not too simple that it's boring, just the right amount"
+>
+> "good visuals, super quality"
+>
+> "2026 picture quality, cool but simple animation of high quality"
+>
+> "if you pacify it in plan we will get something which is mediocre"
+
+What that means for the work:
+
+- **Mediocre is a failure, not a stage.** "It works" never closes a piece.
+  A piece closes when it is something to be proud of.
+- **The owner's verdict is the test.** Not a checklist, not a frame
+  counter. Does the owner pick up the phone to play it again without being
+  asked?
+- **Nothing gets softened to make it easier to build.** If a piece cannot
+  reach the bar the way it was planned, the approach changes. The bar
+  stays.
+- **Bad news is said out loud.** When something falls short it is reported
+  as short, with what it would take to fix.
+
+What counts as mediocre, so it can be caught early:
+
+| Symptom | Where it shows |
+|---|---|
+| More than about 15 seconds with nothing worth deciding | Economy pacing, wave timers |
+| A moment where the player feels lost or buried in options | Menus, research list, tutorial |
+| A unit or building that looks like a placeholder | Models, materials, lighting |
+| An animation that pops, slides or floats | Movement, turrets, deaths |
+| A shot or explosion you see but do not feel | Effects, sound, camera shake, haptics |
+| A tap that needs a second try | Touch targets, gesture handling |
+| A win that felt handed over, or a loss that felt unfair | Opponent behaviour, balance |
+| A mission you would skip on a replay | Mission design, story |
+
+Any one of these, found in play, reopens the piece that caused it.
+
 ## Decisions so far
 
 | Decision | Choice |
 |---|---|
 | Working name | **Sinews of War** (see [Name](#name)) |
 | Engine | Godot 4, native builds, Android first |
-| Priority | Fun first. A game its own owner wants to keep playing, before any extra content. |
+| Priority | Fun first. A killer game the owner cannot put down, before any extra content. See [The bar](#the-bar). |
 | Play style | You manage the commerce and logistics of a war: money, power, production, research. Units fight on their own judgment. |
 | Depth | The original's level of complexity, which got it right. No more, no less. See [Complexity budget](#complexity-budget). |
 | Logistics | The economy of the learnings (money, power, production) plus roads and terrain. No supply-line system. |
@@ -101,7 +148,7 @@ milestones, so there is a game to play as early as possible.
 | Milestone | Contents | Judged by |
 |---|---|---|
 | A. First playable | One skirmish map, one skin kit used by both sides, the whole core loop: economy, building, training, combat, terrain, a simple opponent, touch controls. Pieces 0.2, 0.3, 1.1 to 1.8, a first cut of 1.13, 2.1, a first cut of 2.3, 3.1 to 3.4. | You play it on your phone |
-| B. Fun pass | Tune the tables and the feel until you play it by choice. Nothing else starts before this passes. | You ask for one more match |
+| B. Fun pass | Tune the tables and the feel until the game is hard to put down. As many rounds as it takes. Nothing else starts before this passes. | You keep playing after the test is over |
 | C. Looks and sound | The rest of phase 2 and 3, second skin kit | Screenshots and feel |
 | D. Story and content | Story bible, both campaigns, skirmish maps, the "add a party" proof | Campaigns playable end to end |
 | E. Ship | Phase 5 | Signed build |
@@ -216,8 +263,10 @@ Animation rule: few motions, each polished.
 - No motion capture and no long cinematic clips.
 
 Limit to state plainly: code-built models give a stylised look. They will
-not look hand-sculpted. Models load through one interface, so an artist's
-glTF files can replace any of them later.
+not look hand-sculpted. Every model faces a turntable review against
+[the bar](#the-bar). A model that falls short is reworked or replaced with
+an authored glTF model through the same interface. It is never accepted as
+good enough.
 
 ## Stack
 
@@ -336,7 +385,8 @@ largest mission and passes the content review.
 | App store review of a game about a current conflict | Google Play's sensitive events policy names conflicts and bars apps that exploit or are insensitive to them, with an exception for content of educational, documentary, scientific or artistic value. Apple's guideline on real entities as game enemies still has to be read against this design. | Content guidelines above; party names and markings live in data packs, so presentation can be adjusted without touching rules |
 | Public reception | The setting is a war that is still being fought | Fictional premise and characters; no real events staged |
 | Name clash | A quick web search found no game called Sinews of War. That is not a trademark clearance. | Proper search before any store listing |
-| Visual ceiling of code-built models | Stylised only | One model interface, so authored glTF models can replace them |
+| Code-built models fall short of the bar | They give a stylised look only | Turntable review per model; any that fall short are replaced with authored glTF models through the same interface |
+| The game works but is not gripping | The most likely way this project ends up mediocre | Milestone B blocks everything after it; the symptom table in [The bar](#the-bar) reopens pieces |
 | No on-device testing from the cloud environment | Touch feel and frame rate need a real phone | A build to try at the end of every control and visual piece |
 
 ## Name

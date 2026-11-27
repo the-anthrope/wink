@@ -7,6 +7,11 @@ desktop, where you run the commerce and logistics of a war. You fund the
 front, keep it powered, decide what gets built and researched, and send
 forces where they are needed. Your units handle the shooting.
 
+Built to one standard: a killer, extremely fun game that its maker cannot
+put down. Enough going on to keep a restless mind busy the whole match,
+never so much that it turns into homework. Mediocre is not an acceptable
+outcome.
+
 **Status:** planning. No game code exists yet. The full plan is in
 [PLAN.md](PLAN.md).
 
