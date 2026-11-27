@@ -1,56 +1,184 @@
-# Plan: an original 3D RTS in Godot 4, built on the learnings
+# Plan: Sinews of War
+
+An original 3D real-time strategy game in Godot 4, built on the
+[learnings](target/learnings/README.md).
 
 Status: plan only. Nothing is built yet.
 
-Decisions already made:
+## Decisions so far
 
 | Decision | Choice |
 |---|---|
-| Engine | Godot 4 (native builds, Android first) |
-| 3D models | Built in code, stylised low-poly, high visual quality bar |
-| Scope | Campaign plus skirmish against an AI |
-| Setting | Near-future military |
-
-Learnings live in [`target/learnings/`](target/learnings/README.md). Each
-piece below names the note it is built on.
+| Working name | **Sinews of War** (see [Name](#name)) |
+| Engine | Godot 4, native builds, Android first |
+| Play style | You manage the commerce and logistics of a war: money, power, production, research. Units fight on their own judgment. |
+| Parties | Real nations and coalitions. Two at launch, built so more can be added as data. |
+| First theatre | NATO vs Russia, located in Ukraine |
+| Balance | Every party fields the same classes at near-equal power. Each party has its own signature look. |
+| Story | One campaign per party, each with its own story |
+| Terrain | Gives quiet advantages inside the existing rules |
+| Visuals | 2026 picture quality; few animations, each done well |
+| 3D models | Built in code |
+| Scope | Campaigns plus skirmish against an AI |
 
 ## What this is, and what it is not
 
 The learnings describe Art Of War 2 - Global Confederation, whose code, art,
 text and maps belong to HeroCraft and Gear Games
 ([README limits](target/learnings/README.md)). This project is **not a port**
-of that game. It is an original game that applies what the learnings teach
-about how such a game works.
-
-**Using the original as reference**
+of that game. It applies what the learnings teach about how such a game
+works.
 
 | Taken from the original (how things work and read) | Made new (what things are) |
 |---|---|
 | The rules: timer economy, energy budget, armour formula, scripted missions | Every model, building and HUD element |
 | Scale relations: soldier vs tank vs building footprint | Every map layout |
-| Top-down readability: silhouettes, team colour areas | Unit, building and faction names |
+| Top-down readability: silhouettes, team colour areas | Parties, classes and their names |
 | Hull / turret / muzzle layering for animation | Story, characters, dialogue |
 | Effects vocabulary: tracers, smoke, craters, wrecks | Music and sound |
-| The balance formula shapes | The roster and its tuned numbers |
+| The balance formula shapes | The class table and its tuned numbers |
 
-**On visual quality.** Code-built models give a clean, stylised low-poly
-look. Quality comes from lighting, animation, effects and consistency; the
-models will not look hand-sculpted. Models load through one interface, so an
-artist's glTF files can replace any of them later.
+## Pillars
+
+1. **The manager's war.** The player wins by funding, powering and supplying
+   the fight. This is the economy of the learnings
+   ([build/05](target/learnings/build/05-economy-recipe.md)) kept as the
+   centre of play.
+2. **Parties are data.** A party is a content pack. Adding one never touches
+   the rules code.
+3. **Same classes, signature looks.** One shared class table sets power. A
+   party changes how a class looks, sounds and is named.
+4. **Terrain matters quietly.** Ground gives small integer nudges to rules
+   that already exist. No extra panels, no pop-ups.
+5. **Every party has a story.** Each campaign is told from that party's side
+   by fictional characters.
+6. **Looks like 2026 on a phone.** Modern lighting and materials, and a
+   small set of animations polished until they feel good.
+
+## Parties, sides and classes
+
+The words used in this plan:
+
+| Term | Meaning |
+|---|---|
+| **Nation** | A real country |
+| **Coalition** | A real alliance of nations, such as NATO |
+| **Party** | What the player picks: a nation or a coalition, shipped as one content pack |
+| **Side** | One seat in a battle (1 to 8). Each side plays one party. |
+| **Team** | Sides that are allied in a battle and share vision |
+| **Class** | A role with fixed stats, such as rifle squad or main battle tank |
+| **Skin kit** | A party's models, colours, sounds and names for every class |
+| **Trait** | A small stat nudge that gives a party flavour, capped at 10% |
+| **Theatre** | A location with its maps and campaigns. The first is Ukraine. |
+
+How a party pack is put together:
+
+| Layer | Shared by all parties | Per party |
+|---|---|---|
+| Rules | Class table: price, health, armour, speed, sight, weapons | Up to a few traits, each within 10% |
+| Look | Footprint, muzzle points, selection size | Skin kit: silhouettes, details, palette, markings |
+| Sound | Mix levels, event hooks | Weapon sounds, voice lines, music theme |
+| Text | String keys | Class names, briefings, dialogue |
+| Story | Mission script format | Its own campaign |
+
+The original fixes two sides in its indexing and gives the computer side
+special cases ([build/03](target/learnings/build/03-architecture-you-can-copy.md),
+[gameplay/01](target/learnings/gameplay/01-money.md)). Here the number of
+sides is a parameter from the first line of simulation code, and a
+three-side battle is part of the tests even though launch content has two
+parties.
+
+Launch parties: **NATO** (a coalition) and **Russia**. Parties planned for
+later are added as packs; a written "add a party" guide and a proof pack are
+piece 4.6.
+
+## Story
+
+Direction for approval in piece 0.4:
+
+- **Premise.** A fictional near-future escalation: a direct NATO-Russia
+  conflict on Ukrainian territory that has not happened. It is not a
+  retelling of real battles.
+- **The player's role.** In each campaign the player is a theatre logistics
+  commander. The story is about keeping an army paid, powered and supplied,
+  which is exactly what the player does with their hands.
+- **Two campaigns.** The NATO campaign follows a multinational supply
+  command: many capitals, promises that arrive late, coordination as the
+  struggle. The Russian campaign follows a rail-and-depot command: distance,
+  attrition, keeping lines running under strain.
+- **Shared ground.** Some maps are played from both sides. The learnings
+  show one map serving an attack mission and a defence mission
+  ([reference/04](target/learnings/06-reference/04-missions.md)).
+
+Content guidelines, recommended because this is a real and ongoing war with
+real victims, and because app stores review such content:
+
+| Guideline | Reason |
+|---|---|
+| All characters are fictional. No real leaders or commanders appear. | Respect, and store rules on real entities |
+| No real atrocities and no re-enacted real battles | The game is a hypothetical, not a commentary on events |
+| Civilians are never targets and never score | Tone |
+| Soldiers on every side are written as professionals | Each party gets a campaign worth playing |
+| Real region, fictional town names (assumed, see open questions) | Avoids staging the destruction of real cities |
+
+## Terrain
+
+Terrain type is one more table indexed by cell. Each effect is a nudge of
+one point to a number the rules already use, so the armour formula, move
+periods and sight ranges do the work.
+
+| Terrain | Effect | Rule it plugs into |
+|---|---|---|
+| High ground | +1 sight, and +1 range when firing downhill | Sight and range tables |
+| Woods | Infantry inside get +1 armour and are spotted from 2 cells closer | [Armour formula](target/learnings/gameplay/05-damage.md) |
+| Ruins and rubble | Infantry inside get +1 armour; vehicles move 1 tick per cell slower | Armour formula, [move period](target/learnings/gameplay/04-movement.md) |
+| Road | Vehicles move 1 tick per cell faster | Move period |
+| Mud and soft ground | Vehicles move 1 tick per cell slower; can be seasonal per mission | Move period |
+| River | Blocked except at bridges and fords; fords are slow | [Walkability mask](target/learnings/04-data-formats/05-terrain-m-files.md) |
+
+Why this stays subtle: one armour point removes 1 damage from a small-arms
+hit and 10% from a heavy hit, so cover helps without deciding the fight.
+Modifiers never stack past 2 points. The only display is a small marker on
+the selection ring and on the unit card. Routing and target choice weigh
+terrain, so the AI uses it too.
+
+## Visual and animation targets
+
+Art direction: a miniature battlefield diorama. Clean, readable models on
+richly lit terrain. This direction makes code-built models look intended.
+
+| Tier | Renderer | Picture features |
+|---|---|---|
+| Phone | Mobile | Physically based materials, soft sun shadows, baked ambient shading, bloom with filmic tone mapping, GPU particles, decals, animated water, wind-swayed vegetation, weather |
+| Desktop | Forward+ | Adds screen-space ambient occlusion, volumetric fog and smoke lighting, depth of field. To be confirmed against the pinned Godot version in piece 0.5. |
+
+Animation rule: few motions, each polished.
+
+- Six motions per unit: move, aim, fire, take a hit, die, deploy.
+- Driven by simulation state, so pictures never drift from the 10-step rules
+  ([animations/03](target/learnings/animations/03-unit-animation.md)).
+- Quality comes from easing, recoil springs, suspension rock on stopping and
+  firing, scrolling tracks, dust and settling turrets.
+- No motion capture and no long cinematic clips.
+
+Limit to state plainly: code-built models give a stylised look. They will
+not look hand-sculpted. Models load through one interface, so an artist's
+glTF files can replace any of them later.
 
 ## Stack
 
 - **Engine:** latest stable Godot 4, version pinned in piece 0.2.
 - **Language:** typed GDScript, with the simulation as plain classes over
   packed integer arrays.
-  - GDScript: built in, exports everywhere, fast enough for 100 + 100
+  - GDScript: built in, exports everywhere, fast enough for a few hundred
     entities at 10 steps per second.
   - C#: faster, but weaker mobile and web export.
   - GDExtension: native C++ speed, only worth it if profiling demands it.
-- **Renderer:** Mobile, with Compatibility as a fallback.
+- **Renderer:** Mobile on phones, Compatibility as a fallback, Forward+ on
+  desktop.
   - Mobile: Vulkan/Metal, good lighting at phone cost.
   - Compatibility: OpenGL ES 3 for older phones, fewer effects.
-  - Forward+: desktop-grade, too heavy here.
+  - Forward+: desktop-grade, the full feature set.
 - **Verification:** Godot is not installed in the cloud environment used so
   far. Its download hosts responded, so installing it is piece 0.2 and
   untested until then. Touch feel can only be judged on a real phone, so
@@ -61,55 +189,60 @@ artist's glTF files can replace any of them later.
 | # | Piece | Built on |
 |---|---|---|
 | 0.1 | Fill the gaps in the learnings: weapons and special modes, vision and fog, the seven missions one by one, building and effect animation, draw order and timing, the combat recipe. These notes are linked but missing (`gameplay/06`, `gameplay/07`, `gameplay/13`, `animations/04`, `animations/05`, `build/06`). Derive them from [`p.java`](target/learnings/source/decompiled/p.java) and [`a.json`](target/learnings/source/data/a.json). | [`weapons_table.py`](target/learnings/source/tools/weapons_table.py) |
-| 0.2 | Project skeleton: `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `tests/`; landscape lock; headless test runner; screenshot run under a virtual display. | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
-| 0.3 | Identity one-pager for approval: name, two factions, conflict, roster by role. | new |
+| 0.2 | Project skeleton: `sim/` (rules, no nodes), `view/`, `ui/`, `data/`, `parties/`, `tests/`; landscape lock; headless test runner; screenshot run under a virtual display. | [build/03](target/learnings/build/03-architecture-you-can-copy.md) |
+| 0.3 | Class roster one-pager for approval: the shared classes by role, buildings, research list, and the trait budget per party. | Role coverage in [reference/01](target/learnings/06-reference/01-units.md) |
+| 0.4 | Story bible for approval: premise, cast for both campaigns, mission outline, content guidelines. | [Story](#story) |
+| 0.5 | Art direction sheet for approval: diorama look, lighting targets, design cues per party, quality tiers checked against the pinned engine. | [Visual targets](#visual-and-animation-targets) |
 
 **Done when:** the missing notes exist, `godot --headless` runs an empty test
-suite green, and the one-pager is approved.
+suite green, and the three approval documents are signed off.
 
 ## Phase 1: Simulation (no graphics, tested headless)
 
 | # | Piece | Built on | Improvement over the original |
 |---|---|---|---|
 | 1.1 | Fixed 100 ms step, with smooth drawing between steps | [build/03](target/learnings/build/03-architecture-you-can-copy.md) | Catches up after a slow frame; the original just ran slower |
-| 1.2 | World state in flat arrays; save is an array dump; replay is an order log | [build/03](target/learnings/build/03-architecture-you-can-copy.md) | Separate arrays for units and buildings, wider integers |
-| 1.3 | All numbers in named tables, plus a validator and a balance-sheet printer | [build/04](target/learnings/build/04-put-your-numbers-in-tables.md) | Named columns; build time gets its own column |
+| 1.2 | World state in flat arrays for any number of sides; teams and a hostility table; save is an array dump; replay is an order log | [build/03](target/learnings/build/03-architecture-you-can-copy.md) | Side count is a parameter; separate arrays for units and buildings |
+| 1.3 | Tables: shared class table, party packs with capped traits, terrain table; a validator and a balance-sheet printer | [build/04](target/learnings/build/04-put-your-numbers-in-tables.md) | Named columns; build time gets its own column |
 | 1.4 | Grid movement: 8 directions, one unit per cell, turn rates, cell reservation | [gameplay/04](target/learnings/gameplay/04-movement.md) | A* routing; group orders spread over nearby cells |
-| 1.5 | Money on a timer with falling returns, kill bounty, energy budget | [build/05](target/learnings/build/05-economy-recipe.md), [gameplay/01](target/learnings/gameplay/01-money.md), [gameplay/02](target/learnings/gameplay/02-energy.md) | Power-off order is visible and newest-first; short undo refund |
-| 1.6 | Construction radius, round-robin queue, pay when work starts, rally point | [gameplay/03](target/learnings/gameplay/03-building-and-training.md) | Queue shown; no silent failures |
-| 1.7 | Combat: armour formula, locked bullets, area shells, flame, target choice, retaliation | [gameplay/05](target/learnings/gameplay/05-damage.md), [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) | Unit cards show the real damage |
-| 1.8 | Deploy / siege forms as a type swap; vehicles crushing infantry | [build/04](target/learnings/build/04-put-your-numbers-in-tables.md), [animations/03](target/learnings/animations/03-unit-animation.md) | - |
-| 1.9 | Fog of war and sight | note written in 0.1 | The opponent obeys fog too |
-| 1.10 | Research as table edits with prerequisite chains | [gameplay/08](target/learnings/gameplay/08-research-effects.md) | Descriptions generated from the numbers, so text cannot drift |
-| 1.11 | Mission script: timeline commands for spawns, waves, dialogue, objectives, win / lose | [gameplay/12](target/learnings/gameplay/12-mission-scripting.md) | Adds event triggers (zone entered, building lost, kill count) |
-| 1.12 | Opponents: scripted bases for the campaign; a skirmish AI with a real economy | [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) | Fixes the dead alarm zones; three difficulty levels |
+| 1.5 | Terrain effects as one-point nudges to sight, range, armour and move period; routing weighs terrain | [Terrain](#terrain), [gameplay/05](target/learnings/gameplay/05-damage.md) | The original has blocked or open ground only |
+| 1.6 | Money on a timer with falling returns, kill bounty, energy budget | [build/05](target/learnings/build/05-economy-recipe.md), [gameplay/01](target/learnings/gameplay/01-money.md), [gameplay/02](target/learnings/gameplay/02-energy.md) | Every side runs the same economy; power-off order is visible; short undo refund |
+| 1.7 | Construction radius, round-robin queue, pay when work starts, rally point | [gameplay/03](target/learnings/gameplay/03-building-and-training.md) | Queue shown; no silent failures |
+| 1.8 | Combat: armour formula, locked bullets, area shells, flame, target choice, retaliation | [gameplay/05](target/learnings/gameplay/05-damage.md), [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) | Unit cards show the real damage |
+| 1.9 | Deploy / siege forms as a type swap; vehicles crushing infantry | [build/04](target/learnings/build/04-put-your-numbers-in-tables.md), [animations/03](target/learnings/animations/03-unit-animation.md) | - |
+| 1.10 | Fog of war and sight, shared per team | note written in 0.1 | Every side obeys fog |
+| 1.11 | Research as table edits with prerequisite chains | [gameplay/08](target/learnings/gameplay/08-research-effects.md) | Descriptions generated from the numbers, so text cannot drift |
+| 1.12 | Mission script: timeline commands for spawns, waves, dialogue, objectives, win / lose | [gameplay/12](target/learnings/gameplay/12-mission-scripting.md) | Adds event triggers (zone entered, building lost, kill count) and story beats |
+| 1.13 | Opponents: scripted bases for campaigns; a skirmish AI with a real economy that works for any party and any number of sides | [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) | Fixes the dead alarm zones; three difficulty levels |
 
-**Done when:** a full battle runs headless from an orders file and gives the
-same final state hash twice.
+**Done when:** a two-side battle and a three-side battle each run headless
+from an orders file and give the same final state hash twice.
 
 ## Phase 2: 3D presentation
 
 | # | Piece | Built on |
 |---|---|---|
-| 2.1 | Camera rig (tilted, narrow field of view, pan and zoom limits); terrain mesh from the grid; water and cliffs | [data-formats/05](target/learnings/04-data-formats/05-terrain-m-files.md) |
-| 2.2 | Model kit in code: bevelled hulls, turrets, tracks, barrels; team-colour shader; baked shading; instanced props. Each asset is reviewed on a turntable screenshot. | scale and readability from [animations/01](target/learnings/animations/01-sprite-sheets.md) |
-| 2.3 | Unit animation: hull, turret and muzzle turn independently; infantry walk and aim; death reactions keyed to bullet, blast, flame or crush; moving tracks and wheels | [animations/03](target/learnings/animations/03-unit-animation.md) |
-| 2.4 | Buildings: rise during construction, visible powered-off state, damage stages, collapse to rubble | [gameplay/02](target/learnings/gameplay/02-energy.md), [gameplay/03](target/learnings/gameplay/03-building-and-training.md) |
-| 2.5 | Effects: tracers, arcing shells, rocket trails, explosions, smoke, scorch decals, craters, wrecks, camera shake | sheet list in [animations/01](target/learnings/animations/01-sprite-sheets.md) |
-| 2.6 | Audio: weapon and impact sounds, unit acknowledgements, layered music. The original shipped one tune and no sound effects. | [assets/03](target/learnings/03-assets/03-fonts-and-sound.md) |
+| 2.1 | Camera rig (tilted, narrow field of view, pan and zoom limits); terrain mesh with height, roads, woods, mud, water and bridges read from the terrain table | [data-formats/05](target/learnings/04-data-formats/05-terrain-m-files.md) |
+| 2.2 | Lighting and picture pipeline for both tiers: sun, shadows, baked shading, bloom, tone mapping, weather | [Visual targets](#visual-and-animation-targets) |
+| 2.3 | Model kit in code: shared chassis parts with fixed footprints and muzzle points, then one skin kit per launch party. Each asset is reviewed on a turntable screenshot. | Scale and readability from [animations/01](target/learnings/animations/01-sprite-sheets.md) |
+| 2.4 | Unit animation: the six polished motions; hull, turret and muzzle turn independently; death reactions keyed to bullet, blast, flame or crush | [animations/03](target/learnings/animations/03-unit-animation.md) |
+| 2.5 | Buildings: rise during construction, visible powered-off state, damage stages, collapse to rubble | [gameplay/02](target/learnings/gameplay/02-energy.md), [gameplay/03](target/learnings/gameplay/03-building-and-training.md) |
+| 2.6 | Effects: tracers, arcing shells, rocket trails, explosions, smoke, scorch decals, craters, wrecks, dust, camera shake | Sheet list in [animations/01](target/learnings/animations/01-sprite-sheets.md) |
+| 2.7 | Audio: weapon and impact sounds per party, unit acknowledgements, layered music. The original shipped one tune and no sound effects. | [assets/03](target/learnings/03-assets/03-fonts-and-sound.md) |
 
 **Done when:** the phase 1 replay plays back in 3D at 60 frames per second in
-the software-rendered test run.
+the software-rendered test run, with both launch skin kits on screen.
 
 ## Phase 3: Touch controls and HUD (landscape)
 
 | # | Piece | Built on |
 |---|---|---|
-| 3.1 | Gestures: one-finger pan, pinch zoom, tap select, tap ground to move, tap enemy to attack, double-tap for same type, long-press drag for box select; mouse and keyboard mapping | new |
+| 3.1 | Gestures: one-finger pan, pinch zoom, tap select, tap ground to move, tap enemy to attack, double-tap for same class, long-press drag for box select; mouse and keyboard mapping | new |
 | 3.2 | Layout inside safe areas: command card under the right thumb, control groups under the left, money and energy always on top, tappable minimap | [build/05](target/learnings/build/05-economy-recipe.md) recipe step 6 |
 | 3.3 | Build flow: ghost with green / red cells, radius ring, confirm and cancel; walls drawn as a dragged line | [gameplay/03](target/learnings/gameplay/03-building-and-training.md) |
 | 3.4 | Production steppers with visible queue and rally flag; research tree panel | [gameplay/03](target/learnings/gameplay/03-building-and-training.md), [gameplay/08](target/learnings/gameplay/08-research-effects.md) |
-| 3.5 | Feel: haptics, attack-move toggle, idle-unit button, under-attack alert with jump, pause, autosave checkpoints | [gameplay/10](target/learnings/gameplay/10-ranks-score-difficulty.md) |
+| 3.5 | Feel: haptics, attack-move toggle, idle-unit button, under-attack alert with jump, terrain marker on the selection ring, pause, autosave checkpoints | [gameplay/10](target/learnings/gameplay/10-ranks-score-difficulty.md) |
+| 3.6 | Story presentation: briefing screen, in-mission dialogue with portraits, objectives panel | [gameplay/12](target/learnings/gameplay/12-mission-scripting.md) |
 
 **Done when:** a full mission can be finished on a phone using only thumbs,
 with every touch target at least 48 dp.
@@ -118,14 +251,16 @@ with every touch target at least 48 dp.
 
 | # | Piece | Built on |
 |---|---|---|
-| 4.1 | Two asymmetric factions tuned in tables, checked by a headless duel matrix | method from [gameplay/05](target/learnings/gameplay/05-damage.md), principle from [reference/01](target/learnings/06-reference/01-units.md) |
-| 4.2 | Map pipeline: ground, walkability mask and decor as separate data; an in-engine editor scene | [data-formats/05](target/learnings/04-data-formats/05-terrain-m-files.md) |
-| 4.3 | Campaign of about 8 new missions on new maps, mixing defence, base assault, no-base raid and hold-out; tech unlocked per mission; score and ranks | [gameplay/09](target/learnings/gameplay/09-tech-availability.md), [gameplay/10](target/learnings/gameplay/10-ranks-score-difficulty.md) |
-| 4.4 | Skirmish: 4 to 6 symmetric maps, AI levels, start settings | [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) |
-| 4.5 | New briefings, portraits and dialogue | new |
+| 4.1 | Class table tuned and checked by a headless duel matrix; party traits kept inside the 10% cap by the validator | Method from [gameplay/05](target/learnings/gameplay/05-damage.md) |
+| 4.2 | Map pipeline: ground, walkability mask, terrain types and decor as separate data; an in-engine editor scene | [data-formats/05](target/learnings/04-data-formats/05-terrain-m-files.md) |
+| 4.3 | Theatre one, Ukraine: a NATO campaign and a Russian campaign of about six missions each, sharing maps where the story allows; tech unlocked per mission; score and ranks | [gameplay/09](target/learnings/gameplay/09-tech-availability.md), [gameplay/10](target/learnings/gameplay/10-ranks-score-difficulty.md) |
+| 4.4 | Skirmish: 4 to 6 symmetric maps for two to four sides, AI levels, start settings | [gameplay/11](target/learnings/gameplay/11-enemy-ai.md) |
+| 4.5 | Story production: briefings, dialogue, portraits and voice lines for both campaigns | Story bible from 0.4 |
+| 4.6 | "Add a party" guide, proven by adding a third test party with no change to rules code | [build/04](target/learnings/build/04-put-your-numbers-in-tables.md) |
 
-**Done when:** the campaign can be played start to finish and a skirmish can
-be won and lost against each AI level.
+**Done when:** both campaigns can be played start to finish, a skirmish can
+be won and lost against each AI level, and the third test party loads and
+plays.
 
 ## Phase 5: Polish and ship
 
@@ -134,16 +269,43 @@ be won and lost against each AI level.
 | 5.1 | Performance budget on a mid-range Android phone, with quality tiers |
 | 5.2 | Save / load, settings, string tables for languages ([build/04](target/learnings/build/04-put-your-numbers-in-tables.md)), colour-blind team colours |
 | 5.3 | Playtest loop: mission length and loss stats feed table tuning |
-| 5.4 | Android export first, then desktop and iOS |
+| 5.4 | Store readiness: content review against the guidelines, age rating, store policy check |
+| 5.5 | Android export first, then desktop and iOS |
 
 **Done when:** a signed Android build holds the frame budget through the
-largest mission.
+largest mission and passes the content review.
+
+## Risks
+
+| Risk | What is known | Mitigation |
+|---|---|---|
+| App store review of a game about a current conflict | Google Play's sensitive events policy names conflicts and bars apps that exploit or are insensitive to them, with an exception for content of educational, documentary, scientific or artistic value. Apple's guideline on real entities as game enemies still has to be read against this design. | Content guidelines above; party names and markings live in data packs, so presentation can be adjusted without touching rules |
+| Public reception | The setting is a war that is still being fought | Fictional premise and characters; no real events staged |
+| Name clash | A quick web search found no game called Sinews of War. That is not a trademark clearance. | Proper search before any store listing |
+| Visual ceiling of code-built models | Stylised only | One model interface, so authored glTF models can replace them |
+| No on-device testing from the cloud environment | Touch feel and frame rate need a real phone | A build to try at the end of every control and visual piece |
+
+## Name
+
+**Sinews of War.** "The sinews of war" is the old phrase, from Cicero, for
+the money and supply that make fighting possible. It names exactly what the
+player manages.
+
+Alternates if it does not land: *Frontline Ledger*, *Quartermaster's War*.
+The first theatre carries its own title, working name *Black Soil*, so later
+theatres can be added under the same game name.
 
 ## Open questions
 
 | # | Question | Assumed until answered |
 |---|---|---|
-| 1 | Is there an Android phone to test builds on? iOS export needs a Mac and a developer account. | Android first |
-| 2 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
-| 3 | What is the oldest phone to support? | A 2021 mid-range Android |
-| 4 | Simulation first, or something visible early? | Simulation first; pieces 2.1 and 2.2 can move up after 1.4 |
+| 1 | How deep should logistics go? Either the economy of the learnings (money, power, production) plus roads and terrain, or that plus supply lines where units far from a depot fight worse. | The first; supply lines can be a later piece |
+| 2 | What is Ukraine's role: the location only, an allied force in the story, or a playable party later? | Location, with Ukrainian forces present in the story |
+| 3 | Real equipment designations, or invented designations on looks inspired by each nation's design school? | Invented designations |
+| 4 | Real town and city names, or a real region with fictional towns? | Fictional towns |
+| 5 | How different may parties be? | Traits within 10%, same classes for all |
+| 6 | Is the name Sinews of War approved? | Yes, as a working name |
+| 7 | Is there an Android phone to test builds on? iOS export needs a Mac and a developer account. | Android first |
+| 8 | Where does music come from? Sound effects can be synthesised in code. | CC0 tracks |
+| 9 | What is the oldest phone to support? | A 2021 mid-range Android |
+| 10 | Simulation first, or something visible early? | Simulation first; pieces 2.1 to 2.3 can move up after 1.5 |
