@@ -104,10 +104,10 @@ shoot back when hit; alert idle friends.
 - **Friendly fire from splash but not from flame.** Pick one rule.
 
 ## Evidence
-- Formula and hit rules: [gameplay/05-damage](../gameplay/05-damage.md); [`p.java:2478`](../source/decompiled/p.java#L2478) (Observed)
-- Weapon records and modes: [gameplay/06-weapons-and-special-modes](../gameplay/06-weapons-and-special-modes.md); `../source/tools/weapons_table.py` prints them (Observed)
+- Formula and hit rules: [gameplay/05-damage](../gameplay/05-damage.md); [`p.java:2478`](../evidence/decompiled/p.java#L2478) (Observed)
+- Weapon records and modes: [gameplay/06-weapons-and-special-modes](../gameplay/06-weapons-and-special-modes.md); `../evidence/tools/weapons_table.py` prints them (Observed)
 - Grid and routes: [gameplay/04-movement](../gameplay/04-movement.md)
 - Sight and fog: [gameplay/07-vision](../gameplay/07-vision.md)
-- The 72 s and 12 s figures: `../source/tools/balance_sheet.py`, single target, no research (Inferred from the tables)
+- The 72 s and 12 s figures: `../evidence/tools/balance_sheet.py`, single target, no research (Inferred from the tables)
 
 **Next:** [An opponent without an AI](07-enemy-and-mission-recipe.md)

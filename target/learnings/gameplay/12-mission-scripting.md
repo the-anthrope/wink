@@ -7,7 +7,7 @@
 - Commands spawn units for either side, set what enemy bases train, start attack waves, show dialogue, and set the win and lose rules.
 - Nothing reacts to the player. No command tests a position, a kill count or a building. The only test is "does the player have room for N more units".
 - Winning and losing are checked when a unit or a building dies, against the rule the script set last.
-- All seven files parse to their exact length with `source/tools/missions_full.py`.
+- All seven files parse to their exact length with `../evidence/tools/missions_full.py`.
 
 ## How it works
 
@@ -67,20 +67,20 @@ State: a command pointer, the time of the last command, one loop counter. Once p
 `38 3` (need room for 3), `22`, `27 (58,36) value 32 group 3` gives the player 10 Assault at the east edge, `35 (14,25) group 3` walks them to the base, `37` and `36` reveal and show the spot, `28 2` plays "Captain is calling" (T2_14..16), `29 3` sets objective T2_17.
 
 ## How we know
-- [`g.java:975`](../source/decompiled/g.java#L975)-[`1053`](../source/decompiled/g.java#L1053) : section order and sizes (Observed). `source/tools/missions_full.py` consumes 392, 363, 456, 309, 690, 643, 683 bytes = full length of `mi0`..`mi6` (Observed)
-- [`g.java:960`](../source/decompiled/g.java#L960) : entity type 15 and up writes a wall value `1001 + 100 x side` into the cell grid (Observed)
-- [`g.java:994`](../source/decompiled/g.java#L994), [`g.java:1003`](../source/decompiled/g.java#L1003) : load-time rebuild list and group 3 (Observed)
-- [`p.java:1291`](../source/decompiled/p.java#L1291) build zones, [`p.java:3079`](../source/decompiled/p.java#L3079) mine fields, [`p.java:3052`](../source/decompiled/p.java#L3052) wall lines, [`p.java:3197`](../source/decompiled/p.java#L3197) routes, [`p.java:3150`](../source/decompiled/p.java#L3150) rally points, [`p.java:3042`](../source/decompiled/p.java#L3042) alarm areas (Observed)
-- [`p.java:1324`](../source/decompiled/p.java#L1324) : the delay test and the dispatch on opcode 20..39 (Observed)
-- [`p.java:2791`](../source/decompiled/p.java#L2791) op 20, [`2805`](../source/decompiled/p.java#L2805) op 21, [`2809`](../source/decompiled/p.java#L2809) op 23, [`2820`](../source/decompiled/p.java#L2820) op 24, [`2833`](../source/decompiled/p.java#L2833) op 25, [`2842`](../source/decompiled/p.java#L2842) op 27, [`2877`](../source/decompiled/p.java#L2877) ops 28/29, [`2901`](../source/decompiled/p.java#L2901) op 32, [`2913`](../source/decompiled/p.java#L2913) op 35, [`2938`](../source/decompiled/p.java#L2938) op 33, [`2978`](../source/decompiled/p.java#L2978) ops 36/37, [`2996`](../source/decompiled/p.java#L2996) ops 38/39 (Observed)
-- [`p.java:2847`](../source/decompiled/p.java#L2847), [`p.java:2853`](../source/decompiled/p.java#L2853), [`p.java:2857`](../source/decompiled/p.java#L2857), [`p.java:2866`](../source/decompiled/p.java#L2866) : room test, count and caps, Torrent swap, skip of the next command (Observed). JADX broke this loop's shape; the count rule is read from its exit condition (Inferred)
+- [`g.java:975`](../evidence/decompiled/g.java#L975)-[`1053`](../evidence/decompiled/g.java#L1053) : section order and sizes (Observed). `source/tools/missions_full.py` consumes 392, 363, 456, 309, 690, 643, 683 bytes = full length of `mi0`..`mi6` (Observed)
+- [`g.java:960`](../evidence/decompiled/g.java#L960) : entity type 15 and up writes a wall value `1001 + 100 x side` into the cell grid (Observed)
+- [`g.java:994`](../evidence/decompiled/g.java#L994), [`g.java:1003`](../evidence/decompiled/g.java#L1003) : load-time rebuild list and group 3 (Observed)
+- [`p.java:1291`](../evidence/decompiled/p.java#L1291) build zones, [`p.java:3079`](../evidence/decompiled/p.java#L3079) mine fields, [`p.java:3052`](../evidence/decompiled/p.java#L3052) wall lines, [`p.java:3197`](../evidence/decompiled/p.java#L3197) routes, [`p.java:3150`](../evidence/decompiled/p.java#L3150) rally points, [`p.java:3042`](../evidence/decompiled/p.java#L3042) alarm areas (Observed)
+- [`p.java:1324`](../evidence/decompiled/p.java#L1324) : the delay test and the dispatch on opcode 20..39 (Observed)
+- [`p.java:2791`](../evidence/decompiled/p.java#L2791) op 20, [`2805`](../evidence/decompiled/p.java#L2805) op 21, [`2809`](../evidence/decompiled/p.java#L2809) op 23, [`2820`](../evidence/decompiled/p.java#L2820) op 24, [`2833`](../evidence/decompiled/p.java#L2833) op 25, [`2842`](../evidence/decompiled/p.java#L2842) op 27, [`2877`](../evidence/decompiled/p.java#L2877) ops 28/29, [`2901`](../evidence/decompiled/p.java#L2901) op 32, [`2913`](../evidence/decompiled/p.java#L2913) op 35, [`2938`](../evidence/decompiled/p.java#L2938) op 33, [`2978`](../evidence/decompiled/p.java#L2978) ops 36/37, [`2996`](../evidence/decompiled/p.java#L2996) ops 38/39 (Observed)
+- [`p.java:2847`](../evidence/decompiled/p.java#L2847), [`p.java:2853`](../evidence/decompiled/p.java#L2853), [`p.java:2857`](../evidence/decompiled/p.java#L2857), [`p.java:2866`](../evidence/decompiled/p.java#L2866) : room test, count and caps, Torrent swap, skip of the next command (Observed). JADX broke this loop's shape; the count rule is read from its exit condition (Inferred)
 - `a.json seg[114]`, `seg[115]` sizes; `seg[116..123]` compositions per side (Observed)
-- [`k.java:521`](../source/decompiled/k.java#L521) : file `d` fills `seg[139..141]`; [`g.java:880`](../source/decompiled/g.java#L880) : base index per mission; [`g.java:1414`](../source/decompiled/g.java#L1414), [`g.java:3756`](../source/decompiled/g.java#L3756) : dialogue and Objectives screen read `seg[139]` (Observed)
-- [`g.java:1054`](../source/decompiled/g.java#L1054), [`g.java:6262`](../source/decompiled/g.java#L6262) : extra text tables for maps above 6, with `dmt` appended; `dmt` is 39 bytes = 4 + 10 + 9 + 16 (Observed)
-- [`g.java:2997`](../source/decompiled/g.java#L2997) : tutorial flag set from screen 28, text T1_21 (Observed)
-- [`p.java:1695`](../source/decompiled/p.java#L1695)-[`1740`](../source/decompiled/p.java#L1740), [`p.java:2141`](../source/decompiled/p.java#L2141) : win and lose tests; `a.json seg[94]` marks Command center and Headquarters as class 0 and 3, the `% 3 == 0` test (Observed)
-- [`p.java:721`](../source/decompiled/p.java#L721) : both rules start at -1, "none"; [`g.java:1225`](../source/decompiled/g.java#L1225) : 50-tick countdown (Observed)
-- [`p.java:2822`](../source/decompiled/p.java#L2822) : command 24 writes `g.e` and `g.f`; [`g.java:1447`](../source/decompiled/g.java#L1447) : the score code reads them (Observed)
+- [`k.java:521`](../evidence/decompiled/k.java#L521) : file `d` fills `seg[139..141]`; [`g.java:880`](../evidence/decompiled/g.java#L880) : base index per mission; [`g.java:1414`](../evidence/decompiled/g.java#L1414), [`g.java:3756`](../evidence/decompiled/g.java#L3756) : dialogue and Objectives screen read `seg[139]` (Observed)
+- [`g.java:1054`](../evidence/decompiled/g.java#L1054), [`g.java:6262`](../evidence/decompiled/g.java#L6262) : extra text tables for maps above 6, with `dmt` appended; `dmt` is 39 bytes = 4 + 10 + 9 + 16 (Observed)
+- [`g.java:2997`](../evidence/decompiled/g.java#L2997) : tutorial flag set from screen 28, text T1_21 (Observed)
+- [`p.java:1695`](../evidence/decompiled/p.java#L1695)-[`1740`](../evidence/decompiled/p.java#L1740), [`p.java:2141`](../evidence/decompiled/p.java#L2141) : win and lose tests; `a.json seg[94]` marks Command center and Headquarters as class 0 and 3, the `% 3 == 0` test (Observed)
+- [`p.java:721`](../evidence/decompiled/p.java#L721) : both rules start at -1, "none"; [`g.java:1225`](../evidence/decompiled/g.java#L1225) : 50-tick countdown (Observed)
+- [`p.java:2822`](../evidence/decompiled/p.java#L2822) : command 24 writes `g.e` and `g.f`; [`g.java:1447`](../evidence/decompiled/g.java#L1447) : the score code reads them (Observed)
 
 ## Still unknown
 - `seg[140]` (one byte per dialogue) and the exact meaning of `seg[141]` (one byte per line, looks like the speaker). Neither affects triggers.

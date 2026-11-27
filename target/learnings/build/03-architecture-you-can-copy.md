@@ -83,10 +83,10 @@ even ticks, building progress every third tick. No timer objects.
   easy to confuse. Give each kind its own array set.
 
 ## Evidence
-- [`k.java:747`](../source/decompiled/k.java#L747) : the loop; [`k.java:792`](../source/decompiled/k.java#L792) : sleep `100 - used`; [`k.java:785`](../source/decompiled/k.java#L785) to [`k.java:790`](../source/decompiled/k.java#L790) : the two-draw smooth mode (Observed)
-- [`k.java:331`](../source/decompiled/k.java#L331) : the single `byte[7272]` state array; [`p.java:509`](../source/decompiled/p.java#L509) and [`g.java:795`](../source/decompiled/g.java#L795) : both halves alias it (Observed)
-- [`p.java:1773`](../source/decompiled/p.java#L1773) : `tick & 127` income test (Observed)
+- [`k.java:747`](../evidence/decompiled/k.java#L747) : the loop; [`k.java:792`](../evidence/decompiled/k.java#L792) : sleep `100 - used`; [`k.java:785`](../evidence/decompiled/k.java#L785) to [`k.java:790`](../evidence/decompiled/k.java#L790) : the two-draw smooth mode (Observed)
+- [`k.java:331`](../evidence/decompiled/k.java#L331) : the single `byte[7272]` state array; [`p.java:509`](../evidence/decompiled/p.java#L509) and [`g.java:795`](../evidence/decompiled/g.java#L795) : both halves alias it (Observed)
+- [`p.java:1773`](../evidence/decompiled/p.java#L1773) : `tick & 127` income test (Observed)
 - Rules of the periodic effects: [gameplay/01-money](../gameplay/01-money.md), [gameplay/03-building-and-training](../gameplay/03-building-and-training.md)
-- "No allocation during play" (Inferred from the fixed arrays created once in [`k.java:331`](../source/decompiled/k.java#L331))
+- "No allocation during play" (Inferred from the fixed arrays created once in [`k.java:331`](../evidence/decompiled/k.java#L331))
 
 **Next:** [Put your numbers in tables](04-put-your-numbers-in-tables.md)

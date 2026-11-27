@@ -89,9 +89,9 @@ construction 0.27 s per point. Tougher always means slower to make.
   two-player.
 
 ## Evidence
-- `../source/tools/balance_sheet.py` on `../source/data/a.json` : every number in the table, plus duel and equal-money trade matrices (Observed data; the damage-per-second model is Inferred from the weapon rules and ignores splash and movement)
-- [`g.java:4826`](../source/decompiled/g.java#L4826) : prices; [`p.java:3240`](../source/decompiled/p.java#L3240) : health (Observed)
-- Unit cap by rank: `../source/data/a.json` `seg[130]` = 20, 35, 50 (Observed)
+- `../evidence/tools/balance_sheet.py` on `../evidence/data/a.json` : every number in the table, plus duel and equal-money trade matrices (Observed data; the damage-per-second model is Inferred from the weapon rules and ignores splash and movement)
+- [`g.java:4826`](../evidence/decompiled/g.java#L4826) : prices; [`p.java:3240`](../evidence/decompiled/p.java#L3240) : health (Observed)
+- Unit cap by rank: `../evidence/data/a.json` `seg[130]` = 20, 35, 50 (Observed)
 - "9 times" and "16 times": 300 / 33 and 83 / 5 from the table (Inferred)
 - Design intent (Inferred)
 

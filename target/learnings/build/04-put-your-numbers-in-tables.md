@@ -75,12 +75,12 @@ build menu order, research price, rank caps, per-mission unlocks.
   Pick one format and one loader.
 
 ## Evidence
-- File layouts: [a and d](../04-data-formats/03-a-balance-tables.md), [sn8p](../04-data-formats/01-sn8p-text-file.md), [d0 and ml](../04-data-formats/04-d0-and-ml.md)
-- [`p.java:3240`](../source/decompiled/p.java#L3240) : HP read by type id, the access pattern used everywhere (Observed)
-- [`g.java:4769`](../source/decompiled/g.java#L4769) : menu slot -> type id indirection (Observed)
-- `../source/data/a.json` `seg[52]` : the alternate-form links (Observed)
+- File layouts: [a and d](../internals/data-formats/03-a-balance-tables.md), [sn8p](../internals/data-formats/01-sn8p-text-file.md), [d0 and ml](../internals/data-formats/04-d0-and-ml.md)
+- [`p.java:3240`](../evidence/decompiled/p.java#L3240) : HP read by type id, the access pattern used everywhere (Observed)
+- [`g.java:4769`](../evidence/decompiled/g.java#L4769) : menu slot -> type id indirection (Observed)
+- `../evidence/data/a.json` `seg[52]` : the alternate-form links (Observed)
 - Unlock masks: [gameplay/09-tech-availability](../gameplay/09-tech-availability.md)
 - Hard-coded times and the 30% vs 33% mismatch: [gameplay/03-building-and-training](../gameplay/03-building-and-training.md), [gameplay/02-energy](../gameplay/02-energy.md)
-- The "hundreds of handsets" motive (Inferred from the per-distributor settings, see [packaging](../01-identity/02-packaging-and-dates.md))
+- The "hundreds of handsets" motive (Inferred from the per-distributor settings, see [packaging](../internals/identity/02-packaging-and-dates.md))
 
 **Next:** [An economy recipe](05-economy-recipe.md)

@@ -94,24 +94,24 @@ The multiplier arrays named in the brief are not difficulty knobs: `f411r` (buil
 
 ## How we know
 
-- [`g.java:1472`](../source/decompiled/g.java#L1472) : rank loop on campaign win; [`g.java:6419`](../source/decompiled/g.java#L6419) : rank byte in the profile; [`o.java:206`](../source/decompiled/o.java#L206) : `[RANK]` → `T0_{94+c}` (Observed)
-- [`g.java:8946`](../source/decompiled/g.java#L8946), [`g.java:8593`](../source/decompiled/g.java#L8593) : the two other rank raises; [`g.java:3664`](../source/decompiled/g.java#L3664) : pop-up (Observed)
-- [`p.java:1935`](../source/decompiled/p.java#L1935) : training held at the cap, enemy cap 50; [`g.java:8193`](../source/decompiled/g.java#L8193) : order counter clamp; [`g.java:2045`](../source/decompiled/g.java#L2045) : unit-menu message (Observed)
-- [`g.java:2393`](../source/decompiled/g.java#L2393) : building cap. JADX prints `>= 15`; the bytecode (`javap -c g`, offsets 1103-1252) tests `type < 15`, so walls are exempt (Observed)
-- [`p.java:2130`](../source/decompiled/p.java#L2130) : slots 5, 7 and 9 updated on a unit death; [`p.java:1690`](../source/decompiled/p.java#L1690) : slots 6 and 8 for buildings; [`p.java:548`](../source/decompiled/p.java#L548) : slots 0-9 zeroed per mission (Observed)
-- [`g.java:1443`](../source/decompiled/g.java#L1443) : the whole score formula, lines 1446-1462 (Observed)
-- [`p.java:2822`](../source/decompiled/p.java#L2822) : script opcode 24 sets `e`, `f`; defaults 2, 2 at [`g.java:843`](../source/decompiled/g.java#L843); values per mission from `../source/tools/missions_full.py` (Observed)
-- [`g.java:6747`](../source/decompiled/g.java#L6747), [`g.java:3240`](../source/decompiled/g.java#L3240), [`g.java:1222`](../source/decompiled/g.java#L1222) : retry counter `s` and the 300-tick checkpoint. The branch on campaign/custom at 3226 is printed inverted by JADX; bytecode of `g.b(byte)` offsets 238-306 was used (Observed)
-- [`g.java:5591`](../source/decompiled/g.java#L5591) : clock shown as ticks × 100 ms; [`g.java:5681`](../source/decompiled/g.java#L5681) : total-score line (Observed)
-- [`g.java:3061`](../source/decompiled/g.java#L3061) : `d` = chosen menu index; `../source/data/a.json` `seg[80]`/`seg[81]` screen 10 = strings 18, 19 (Observed)
-- [`p.java:2853`](../source/decompiled/p.java#L2853), [`p.java:3146`](../source/decompiled/p.java#L3146) : wave and batch sizes; [`p.java:2957`](../source/decompiled/p.java#L2957) : opcode 33 sets `f420g` (value 2-9) or `f421h` (value 10-19, plus 1) (Observed)
-- [`p.java:1930`](../source/decompiled/p.java#L1930), [`p.java:3134`](../source/decompiled/p.java#L3134), [`p.java:1270`](../source/decompiled/p.java#L1270), [`p.java:3108`](../source/decompiled/p.java#L3108) : the other four difficulty reads (Observed)
-- [`p.java:2835`](../source/decompiled/p.java#L2835) : starting money from opcode 25, no difficulty term; [`p.java:662`](../source/decompiled/p.java#L662) : only write to `f412s` (Observed)
+- [`g.java:1472`](../evidence/decompiled/g.java#L1472) : rank loop on campaign win; [`g.java:6419`](../evidence/decompiled/g.java#L6419) : rank byte in the profile; [`o.java:206`](../evidence/decompiled/o.java#L206) : `[RANK]` → `T0_{94+c}` (Observed)
+- [`g.java:8946`](../evidence/decompiled/g.java#L8946), [`g.java:8593`](../evidence/decompiled/g.java#L8593) : the two other rank raises; [`g.java:3664`](../evidence/decompiled/g.java#L3664) : pop-up (Observed)
+- [`p.java:1935`](../evidence/decompiled/p.java#L1935) : training held at the cap, enemy cap 50; [`g.java:8193`](../evidence/decompiled/g.java#L8193) : order counter clamp; [`g.java:2045`](../evidence/decompiled/g.java#L2045) : unit-menu message (Observed)
+- [`g.java:2393`](../evidence/decompiled/g.java#L2393) : building cap. JADX prints `>= 15`; the bytecode (`javap -c g`, offsets 1103-1252) tests `type < 15`, so walls are exempt (Observed)
+- [`p.java:2130`](../evidence/decompiled/p.java#L2130) : slots 5, 7 and 9 updated on a unit death; [`p.java:1690`](../evidence/decompiled/p.java#L1690) : slots 6 and 8 for buildings; [`p.java:548`](../evidence/decompiled/p.java#L548) : slots 0-9 zeroed per mission (Observed)
+- [`g.java:1443`](../evidence/decompiled/g.java#L1443) : the whole score formula, lines 1446-1462 (Observed)
+- [`p.java:2822`](../evidence/decompiled/p.java#L2822) : script opcode 24 sets `e`, `f`; defaults 2, 2 at [`g.java:843`](../evidence/decompiled/g.java#L843); values per mission from `../evidence/tools/missions_full.py` (Observed)
+- [`g.java:6747`](../evidence/decompiled/g.java#L6747), [`g.java:3240`](../evidence/decompiled/g.java#L3240), [`g.java:1222`](../evidence/decompiled/g.java#L1222) : retry counter `s` and the 300-tick checkpoint. The branch on campaign/custom at 3226 is printed inverted by JADX; bytecode of `g.b(byte)` offsets 238-306 was used (Observed)
+- [`g.java:5591`](../evidence/decompiled/g.java#L5591) : clock shown as ticks × 100 ms; [`g.java:5681`](../evidence/decompiled/g.java#L5681) : total-score line (Observed)
+- [`g.java:3061`](../evidence/decompiled/g.java#L3061) : `d` = chosen menu index; `../evidence/data/a.json` `seg[80]`/`seg[81]` screen 10 = strings 18, 19 (Observed)
+- [`p.java:2853`](../evidence/decompiled/p.java#L2853), [`p.java:3146`](../evidence/decompiled/p.java#L3146) : wave and batch sizes; [`p.java:2957`](../evidence/decompiled/p.java#L2957) : opcode 33 sets `f420g` (value 2-9) or `f421h` (value 10-19, plus 1) (Observed)
+- [`p.java:1930`](../evidence/decompiled/p.java#L1930), [`p.java:3134`](../evidence/decompiled/p.java#L3134), [`p.java:1270`](../evidence/decompiled/p.java#L1270), [`p.java:3108`](../evidence/decompiled/p.java#L3108) : the other four difficulty reads (Observed)
+- [`p.java:2835`](../evidence/decompiled/p.java#L2835) : starting money from opcode 25, no difficulty term; [`p.java:662`](../evidence/decompiled/p.java#L662) : only write to `f412s` (Observed)
 
 ## Still unknown
 
 - `T1_31` and `T1_52` ("Your rank is not high enough to ...") and `T0_45` "Demo!": no code sets them by number. `T1_31` is the text of data-driven screen 52 (`seg[84]`) and "Demo!" is the only item of menu screen 15 (`seg[80]`); what opens those screens was not found. They look like leftovers of a gated build (Inferred).
-- Missions 1 and 5 set `e`, `f` only in the last script command. The win type `f445k` starts at −1 ([`p.java:722`](../source/decompiled/p.java#L722)) and the win tests need 0, 1, 2 or more than 50, so a win before that command looks impossible (Inferred, not traced end to end).
+- Missions 1 and 5 set `e`, `f` only in the last script command. The win type `f445k` starts at −1 ([`p.java:722`](../evidence/decompiled/p.java#L722)) and the win tests need 0, 1, 2 or more than 50, so a win before that command looks impossible (Inferred, not traced end to end).
 - The exact meaning of the "first full build pass" flag `f433a` (see [file 11](11-enemy-ai.md)).
 
 **Next:** [How does the enemy AI decide what to do?](11-enemy-ai.md)

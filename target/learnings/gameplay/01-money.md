@@ -74,7 +74,7 @@ The bounty line has no cap, but the next income tick clamps money back to 30 000
 | Unit | `tables[5][type] x f412s / 10`; `f412s` is always 10, so the list price | each unit starts training; if you cannot pay, the factory waits |
 | Research | `tables[7][index]` | you start it |
 
-If you cannot afford a building or a research, nothing is placed or started and a money-bar animation is triggered ([`g.java:1965`](../source/decompiled/g.java#L1965), Inferred to be a flash). There is no code path that adds money back: self-destruct, a cancelled queue entry (not yet paid anyway) and a lost Technology center with research in progress all return nothing.
+If you cannot afford a building or a research, nothing is placed or started and a money-bar animation is triggered ([`g.java:1965`](../evidence/decompiled/g.java#L1965), Inferred to be a flash). There is no code path that adds money back: self-destruct, a cancelled queue entry (not yet paid anyway) and a lost Technology center with research in progress all return nothing.
 
 ### The computer opponent
 
@@ -82,19 +82,19 @@ Three checks skip the enemy side: the income line requires "side is not the enem
 
 ## How we know
 
-- [`k.java:792`](../source/decompiled/k.java#L792) and [`k.java:784-790`](../source/decompiled/k.java#L784) : the main loop sleeps for what is left of 100 ms per pass (two 50 ms halves in smooth mode); [`k.java:771`](../source/decompiled/k.java#L771) runs one simulation step per pass; [`p.java:1821`](../source/decompiled/p.java#L1821) : tick counter +1 per step (Observed). 10 ticks/s on a fast enough phone (Inferred).
-- [`k.java:333`](../source/decompiled/k.java#L333) : stats array is `short[2][11]`; slots identified from [`p.java:2093`](../source/decompiled/p.java#L2093), [`p.java:1680`](../source/decompiled/p.java#L1680), [`p.java:3482-3492`](../source/decompiled/p.java#L3482), [`p.java:2128-2137`](../source/decompiled/p.java#L2128), [`p.java:1688-1693`](../source/decompiled/p.java#L1688), [`g.java:1446`](../source/decompiled/g.java#L1446), [`g.java:4574-4596`](../source/decompiled/g.java#L4574) (Observed).
-- [`g.java:863`](../source/decompiled/g.java#L863) : default 1000; [`p.java:2835-2836`](../source/decompiled/p.java#L2835) : script step 25 sets both sides to `byte x 10` (Observed). Per-mission values: `../source/tools/economy_tables.py` run on the `mi0`..`mi6` files (Observed).
-- [`p.java:1660`](../source/decompiled/p.java#L1660) : `pay` starts at `I[side]`; [`p.java:1773-1775`](../source/decompiled/p.java#L1773) : the income test, the clamp to 30 000 and `pay * 7 / 10` (Observed, also checked in the `javap` bytecode of `p.class`).
-- [`p.java:1744`](../source/decompiled/p.java#L1744) with [`p.java:1843-1853`](../source/decompiled/p.java#L1843) : a building under construction is skipped before the income line (Observed).
-- `../source/data/a.json` `seg[94]` = [0,-1,1,2,-1,...,3,...] : only building type 0 (Command center) has value 0, which is what the income test asks for (Observed).
-- [`p.java:661-663`](../source/decompiled/p.java#L661) : defaults `I` = 100, `f412s` = 10, `J` = 20; [`p.java:3680`](../source/decompiled/p.java#L3680), [`p.java:3683`](../source/decompiled/p.java#L3683) : research 21 sets `I` = 120, research 22 sets `J` = 30 (Observed).
-- [`p.java:2139-2140`](../source/decompiled/p.java#L2139) : bounty = `tables[5][type] x J / 100` to the opposite side, inside the unit-death routine; the building-death block [`p.java:1668-1694`](../source/decompiled/p.java#L1668) has no money line (Observed).
-- [`g.java:1927`](../source/decompiled/g.java#L1927), [`g.java:1956`](../source/decompiled/g.java#L1956) : building and wall price check and deduction; [`g.java:2466-2472`](../source/decompiled/g.java#L2466) : research; [`p.java:2029-2035`](../source/decompiled/p.java#L2029) : unit price and deduction (Observed).
-- `f412s` is written only at [`p.java:662`](../source/decompiled/p.java#L662) (grep over all files), so the cost multiplier never leaves 1.0 (Observed).
-- [`g.java:2388`](../source/decompiled/g.java#L2388) and [`p.java:2569-2577`](../source/decompiled/p.java#L2569) : self-destruct is plain damage equal to the building's HP; no money is added (Observed).
-- [`p.java:1773`](../source/decompiled/p.java#L1773), [`p.java:2030`](../source/decompiled/p.java#L2030), [`p.java:2033`](../source/decompiled/p.java#L2033) : the three "not the enemy side" tests; [`p.java:1303`](../source/decompiled/p.java#L1303) : enemy rebuilds without paying (Observed).
-- Help text `T1_2`, `T1_85`, `T1_122`, `T1_123` in `../source/data/sn8p.json` state the 30% drop, the 20% bounty, +20% finance and +50% reward (Observed).
+- [`k.java:792`](../evidence/decompiled/k.java#L792) and [`k.java:784-790`](../evidence/decompiled/k.java#L784) : the main loop sleeps for what is left of 100 ms per pass (two 50 ms halves in smooth mode); [`k.java:771`](../evidence/decompiled/k.java#L771) runs one simulation step per pass; [`p.java:1821`](../evidence/decompiled/p.java#L1821) : tick counter +1 per step (Observed). 10 ticks/s on a fast enough phone (Inferred).
+- [`k.java:333`](../evidence/decompiled/k.java#L333) : stats array is `short[2][11]`; slots identified from [`p.java:2093`](../evidence/decompiled/p.java#L2093), [`p.java:1680`](../evidence/decompiled/p.java#L1680), [`p.java:3482-3492`](../evidence/decompiled/p.java#L3482), [`p.java:2128-2137`](../evidence/decompiled/p.java#L2128), [`p.java:1688-1693`](../evidence/decompiled/p.java#L1688), [`g.java:1446`](../evidence/decompiled/g.java#L1446), [`g.java:4574-4596`](../evidence/decompiled/g.java#L4574) (Observed).
+- [`g.java:863`](../evidence/decompiled/g.java#L863) : default 1000; [`p.java:2835-2836`](../evidence/decompiled/p.java#L2835) : script step 25 sets both sides to `byte x 10` (Observed). Per-mission values: `../evidence/tools/economy_tables.py` run on the `mi0`..`mi6` files (Observed).
+- [`p.java:1660`](../evidence/decompiled/p.java#L1660) : `pay` starts at `I[side]`; [`p.java:1773-1775`](../evidence/decompiled/p.java#L1773) : the income test, the clamp to 30 000 and `pay * 7 / 10` (Observed, also checked in the `javap` bytecode of `p.class`).
+- [`p.java:1744`](../evidence/decompiled/p.java#L1744) with [`p.java:1843-1853`](../evidence/decompiled/p.java#L1843) : a building under construction is skipped before the income line (Observed).
+- `../evidence/data/a.json` `seg[94]` = [0,-1,1,2,-1,...,3,...] : only building type 0 (Command center) has value 0, which is what the income test asks for (Observed).
+- [`p.java:661-663`](../evidence/decompiled/p.java#L661) : defaults `I` = 100, `f412s` = 10, `J` = 20; [`p.java:3680`](../evidence/decompiled/p.java#L3680), [`p.java:3683`](../evidence/decompiled/p.java#L3683) : research 21 sets `I` = 120, research 22 sets `J` = 30 (Observed).
+- [`p.java:2139-2140`](../evidence/decompiled/p.java#L2139) : bounty = `tables[5][type] x J / 100` to the opposite side, inside the unit-death routine; the building-death block [`p.java:1668-1694`](../evidence/decompiled/p.java#L1668) has no money line (Observed).
+- [`g.java:1927`](../evidence/decompiled/g.java#L1927), [`g.java:1956`](../evidence/decompiled/g.java#L1956) : building and wall price check and deduction; [`g.java:2466-2472`](../evidence/decompiled/g.java#L2466) : research; [`p.java:2029-2035`](../evidence/decompiled/p.java#L2029) : unit price and deduction (Observed).
+- `f412s` is written only at [`p.java:662`](../evidence/decompiled/p.java#L662) (grep over all files), so the cost multiplier never leaves 1.0 (Observed).
+- [`g.java:2388`](../evidence/decompiled/g.java#L2388) and [`p.java:2569-2577`](../evidence/decompiled/p.java#L2569) : self-destruct is plain damage equal to the building's HP; no money is added (Observed).
+- [`p.java:1773`](../evidence/decompiled/p.java#L1773), [`p.java:2030`](../evidence/decompiled/p.java#L2030), [`p.java:2033`](../evidence/decompiled/p.java#L2033) : the three "not the enemy side" tests; [`p.java:1303`](../evidence/decompiled/p.java#L1303) : enemy rebuilds without paying (Observed).
+- Help text `T1_2`, `T1_85`, `T1_122`, `T1_123` in `../evidence/data/sn8p.json` state the 30% drop, the 20% bounty, +20% finance and +50% reward (Observed).
 
 ## Still unknown
 

@@ -65,11 +65,11 @@ the first line, you do not need that system.
 
 ## Evidence
 - Display-only attack table: [gameplay/05-damage](../gameplay/05-damage.md); upgrade mismatches: [gameplay/08-research-effects](../gameplay/08-research-effects.md), [gameplay/02-energy](../gameplay/02-energy.md)
-- Flame and crush: [`p.java:2392`](../source/decompiled/p.java#L2392), [`p.java:1569`](../source/decompiled/p.java#L1569) (Observed); spotters: [gameplay/07-vision](../gameplay/07-vision.md)
+- Flame and crush: [`p.java:2392`](../evidence/decompiled/p.java#L2392), [`p.java:1569`](../evidence/decompiled/p.java#L1569) (Observed); spotters: [gameplay/07-vision](../gameplay/07-vision.md)
 - Enemy economy, vision and timers: [gameplay/11-enemy-ai](../gameplay/11-enemy-ai.md), [gameplay/12-mission-scripting](../gameplay/12-mission-scripting.md)
 - Route finding limits: [gameplay/04-movement](../gameplay/04-movement.md)
-- Loop: [`k.java:792`](../source/decompiled/k.java#L792) (Observed); buffers: [`k.java:994`](../source/decompiled/k.java#L994) (Observed)
-- Hardware workarounds: [the i0 container](../04-data-formats/02-i0-sprite-container.md), [integrity checks](../05-online-and-payments/04-integrity-checks.md), [SMS](../05-online-and-payments/01-sms.md)
+- Loop: [`k.java:792`](../evidence/decompiled/k.java#L792) (Observed); buffers: [`k.java:994`](../evidence/decompiled/k.java#L994) (Observed)
+- Hardware workarounds: [the i0 container](../internals/data-formats/02-i0-sprite-container.md), [integrity checks](../internals/online-and-payments/04-integrity-checks.md), [SMS](../internals/online-and-payments/01-sms.md)
 - Every "do instead" is our suggestion (Inferred).
 
 **Next:** [A build plan](11-build-plan.md)

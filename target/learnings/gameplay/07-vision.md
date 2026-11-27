@@ -73,27 +73,27 @@ An MLRS in siege form at cell (20, 20) sees 11 cells and shoots 13. An enemy Tow
 
 ## How we know
 
-- [`p.java:1361`](../source/decompiled/p.java#L1361) : rebuild every 4 ticks while fog mode is below 2 (Observed)
-- [`g.java:3972`](../source/decompiled/g.java#L3972) : fog mode is set to 0 or 1 by the graphics-detail setting (two haze sprites). No code sets 2 or more, so fog cannot be switched off (Observed)
-- [`p.java:4168`](../source/decompiled/p.java#L4168) : the five sources of light, in the order listed. Line 4176 uses row 1 of the unit stats (`seg[28]`), line 4186 uses `seg[65]` (Observed)
-- [`k.java:711`](../source/decompiled/k.java#L711) : one pair of bit maps, `[2][4][128]`. Index 1 = visible now, index 0 = explored ([`p.java:4215`](../source/decompiled/p.java#L4215)) (Observed)
-- [`p.java:4225`](../source/decompiled/p.java#L4225) : disc rows from `seg[6]` and `seg[7]` (Observed)
-- `../source/data/a.json` `seg[28]` = sight per unit type, `seg[65]` = sight per building type (Observed)
-- [`p.java:2987`](../source/decompiled/p.java#L2987) : script reveal. [`p.java:4208`](../source/decompiled/p.java#L4208) : 13 rebuilds (Observed)
-- [`g.java:4127`](../source/decompiled/g.java#L4127) : three drawing states. [`g.java:4142`](../source/decompiled/g.java#L4142) : units drawn only on visible cells. [`g.java:4164`](../source/decompiled/g.java#L4164) : haze sprite 1852 or 1853 (Observed)
-- [`g.java:4314`](../source/decompiled/g.java#L4314) : a building gets flag bit 2 the first time it is drawn on a visible cell and is drawn from then on (line 4354) (Observed)
-- [`g.java:3382`](../source/decompiled/g.java#L3382) : attack order needs visible (unit) or explored (building, wall) (Observed)
-- [`p.java:4074`](../source/decompiled/p.java#L4074) : target search skips cells that are not visible now. Confirmed in the bytecode of `p.class`, because JADX duplicated and damaged this method (Observed). "The computer side has no fog" (Inferred from it)
-- [`p.java:1235`](../source/decompiled/p.java#L1235) : unexplored cells count as free for the player's route planner (Observed)
-- [`p.java:3999`](../source/decompiled/p.java#L3999) : search radius. [`p.java:3893`](../source/decompiled/p.java#L3893) : friends within sight join (Observed)
+- [`p.java:1361`](../evidence/decompiled/p.java#L1361) : rebuild every 4 ticks while fog mode is below 2 (Observed)
+- [`g.java:3972`](../evidence/decompiled/g.java#L3972) : fog mode is set to 0 or 1 by the graphics-detail setting (two haze sprites). No code sets 2 or more, so fog cannot be switched off (Observed)
+- [`p.java:4168`](../evidence/decompiled/p.java#L4168) : the five sources of light, in the order listed. Line 4176 uses row 1 of the unit stats (`seg[28]`), line 4186 uses `seg[65]` (Observed)
+- [`k.java:711`](../evidence/decompiled/k.java#L711) : one pair of bit maps, `[2][4][128]`. Index 1 = visible now, index 0 = explored ([`p.java:4215`](../evidence/decompiled/p.java#L4215)) (Observed)
+- [`p.java:4225`](../evidence/decompiled/p.java#L4225) : disc rows from `seg[6]` and `seg[7]` (Observed)
+- `../evidence/data/a.json` `seg[28]` = sight per unit type, `seg[65]` = sight per building type (Observed)
+- [`p.java:2987`](../evidence/decompiled/p.java#L2987) : script reveal. [`p.java:4208`](../evidence/decompiled/p.java#L4208) : 13 rebuilds (Observed)
+- [`g.java:4127`](../evidence/decompiled/g.java#L4127) : three drawing states. [`g.java:4142`](../evidence/decompiled/g.java#L4142) : units drawn only on visible cells. [`g.java:4164`](../evidence/decompiled/g.java#L4164) : haze sprite 1852 or 1853 (Observed)
+- [`g.java:4314`](../evidence/decompiled/g.java#L4314) : a building gets flag bit 2 the first time it is drawn on a visible cell and is drawn from then on (line 4354) (Observed)
+- [`g.java:3382`](../evidence/decompiled/g.java#L3382) : attack order needs visible (unit) or explored (building, wall) (Observed)
+- [`p.java:4074`](../evidence/decompiled/p.java#L4074) : target search skips cells that are not visible now. Confirmed in the bytecode of `p.class`, because JADX duplicated and damaged this method (Observed). "The computer side has no fog" (Inferred from it)
+- [`p.java:1235`](../evidence/decompiled/p.java#L1235) : unexplored cells count as free for the player's route planner (Observed)
+- [`p.java:3999`](../evidence/decompiled/p.java#L3999) : search radius. [`p.java:3893`](../evidence/decompiled/p.java#L3893) : friends within sight join (Observed)
 - `seg[60][6]` = -1, `seg[94][6]` = -1 : the Locator has no weapon and no production (Observed). `tables[6][6]` = 250, `seg[61][6]` = 1 (Observed)
-- [`p.java:3669`](../source/decompiled/p.java#L3669) : research 18 adds 1 to the Command center's build level. `seg[95]`, `seg[96]` : build lists per level; levels 3 and 5 contain building 6, levels 2 and 4 do not. `seg[129]` : starting level per mission (Observed). Help texts `T1_91`, `T1_119` agree.
+- [`p.java:3669`](../evidence/decompiled/p.java#L3669) : research 18 adds 1 to the Command center's build level. `seg[95]`, `seg[96]` : build lists per level; levels 3 and 5 contain building 6, levels 2 and 4 do not. `seg[129]` : starting level per mission (Observed). Help texts `T1_91`, `T1_119` agree.
 - Help text `T1_92` says the Rocket launcher has "a long-range sight but less missile range". The data says the opposite: sight 9, range 11 (Observed contradiction)
 
 ## Still unknown
 
 - Whether the mini-map uses the same two bit maps. Not checked here.
-- Unit field 5151 counts up when an enemy unit comes into view ([`p.java:1428`](../source/decompiled/p.java#L1428)). It looks like a fade-in for drawing only.
+- Unit field 5151 counts up when an enemy unit comes into view ([`p.java:1428`](../evidence/decompiled/p.java#L1428)). It looks like a fade-in for drawing only.
 - Fog mode 2 exists in the code with broken (null) arrays. It looks like a removed variant.
 
 **Next:** [What does each research do?](08-research-effects.md)

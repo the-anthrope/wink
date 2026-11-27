@@ -86,30 +86,30 @@ Types 7 to 13 (AV-40 with flame gun, Armadillo, T-21 Hammer, Rhino, T-22 with ro
 
 ## How we know
 
-- [`p.java:2277`](../source/decompiled/p.java#L2277), [`p.java:2371`](../source/decompiled/p.java#L2371) : cell = 30 px wide, 20 px tall (Observed)
-- [`g.java:1073`](../source/decompiled/g.java#L1073) : map loader fills the grid with 124, then 125/126/128+ for scenery, then clears passable cells (Observed)
-- [`g.java:960`](../source/decompiled/g.java#L960), [`g.java:6121`](../source/decompiled/g.java#L6121) : wall and building values in the grid (Observed)
-- [`p.java:2157`](../source/decompiled/p.java#L2157) : step counter modulo `seg[23]` (straight) or `seg[24]` (diagonal), indexed by the move period (Observed)
-- `../source/data/a.json` `seg[27]` = move period per type, `seg[23]` = [0,0,2,3,4,5,6,7,8,9], `seg[24]` = [0,0,3,4,6,7,8,10,11,13] (Observed)
-- [`p.java:2160`](../source/decompiled/p.java#L2160) : cell change at the half-way step (Observed)
-- [`p.java:1609`](../source/decompiled/p.java#L1609) : next cell reserved with 127 (Observed)
-- [`p.java:1647`](../source/decompiled/p.java#L1647), [`p.java:1405`](../source/decompiled/p.java#L1405) : thinking runs when a counter modulo the move period is 0 (Observed)
-- [`g.java:4823`](../source/decompiled/g.java#L4823) : menu speed = 10 - period. [`p.java:3579`](../source/decompiled/p.java#L3579) : Reinforced engine subtracts 1 (Observed). Help text `T1_109` agrees.
-- [`p.java:2208`](../source/decompiled/p.java#L2208) : turning. `seg[32]` = turn period (3 per type: hull, turret 1, turret 2), `seg[33]` = which way to turn, `seg[1]` = the 8 direction vectors (Observed)
-- [`p.java:954`](../source/decompiled/p.java#L954) : three candidate lines, built from `seg[0]` (straight and diagonal step for each of 8 octants) (Observed)
-- [`p.java:1071`](../source/decompiled/p.java#L1071) : at most 10 blocked stretches. [`p.java:1101`](../source/decompiled/p.java#L1101) : 50 tracing steps per side. [`p.java:771`](../source/decompiled/p.java#L771) : 50 cells per plan (Observed)
-- [`p.java:846`](../source/decompiled/p.java#L846) : fallback to the closest traced cell. [`p.java:802`](../source/decompiled/p.java#L802) : waypoint pass (Observed, the summary of steps 3 to 5 is Inferred from dense code)
-- [`p.java:1231`](../source/decompiled/p.java#L1231) : what counts as blocked (Observed)
-- [`p.java:1566`](../source/decompiled/p.java#L1566) : blocked next cell, the 5-cell rule at line 1581 (Observed). [`p.java:889`](../source/decompiled/p.java#L889) : give-up counter (Observed)
-- [`p.java:917`](../source/decompiled/p.java#L917) : plan through enemy walls, then shoot the wall when the detour is over 10 cells longer (line 944) (Observed)
-- [`p.java:1569`](../source/decompiled/p.java#L1569), [`p.java:2189`](../source/decompiled/p.java#L2189) : crushing. Mask 16256 = types 7..13, mask 16447 = infantry types 0..5 and 14 (Observed)
-- [`p.java:872`](../source/decompiled/p.java#L872) : siege forms (mask 114688 = types 14, 15, 16) get no route (Observed)
-- [`g.java:3377`](../source/decompiled/g.java#L3377) : a move order writes the same destination cell into every selected unit (Observed)
-- [`k.java:792`](../source/decompiled/k.java#L792) : one simulation step per 100 ms loop (Observed)
+- [`p.java:2277`](../evidence/decompiled/p.java#L2277), [`p.java:2371`](../evidence/decompiled/p.java#L2371) : cell = 30 px wide, 20 px tall (Observed)
+- [`g.java:1073`](../evidence/decompiled/g.java#L1073) : map loader fills the grid with 124, then 125/126/128+ for scenery, then clears passable cells (Observed)
+- [`g.java:960`](../evidence/decompiled/g.java#L960), [`g.java:6121`](../evidence/decompiled/g.java#L6121) : wall and building values in the grid (Observed)
+- [`p.java:2157`](../evidence/decompiled/p.java#L2157) : step counter modulo `seg[23]` (straight) or `seg[24]` (diagonal), indexed by the move period (Observed)
+- `../evidence/data/a.json` `seg[27]` = move period per type, `seg[23]` = [0,0,2,3,4,5,6,7,8,9], `seg[24]` = [0,0,3,4,6,7,8,10,11,13] (Observed)
+- [`p.java:2160`](../evidence/decompiled/p.java#L2160) : cell change at the half-way step (Observed)
+- [`p.java:1609`](../evidence/decompiled/p.java#L1609) : next cell reserved with 127 (Observed)
+- [`p.java:1647`](../evidence/decompiled/p.java#L1647), [`p.java:1405`](../evidence/decompiled/p.java#L1405) : thinking runs when a counter modulo the move period is 0 (Observed)
+- [`g.java:4823`](../evidence/decompiled/g.java#L4823) : menu speed = 10 - period. [`p.java:3579`](../evidence/decompiled/p.java#L3579) : Reinforced engine subtracts 1 (Observed). Help text `T1_109` agrees.
+- [`p.java:2208`](../evidence/decompiled/p.java#L2208) : turning. `seg[32]` = turn period (3 per type: hull, turret 1, turret 2), `seg[33]` = which way to turn, `seg[1]` = the 8 direction vectors (Observed)
+- [`p.java:954`](../evidence/decompiled/p.java#L954) : three candidate lines, built from `seg[0]` (straight and diagonal step for each of 8 octants) (Observed)
+- [`p.java:1071`](../evidence/decompiled/p.java#L1071) : at most 10 blocked stretches. [`p.java:1101`](../evidence/decompiled/p.java#L1101) : 50 tracing steps per side. [`p.java:771`](../evidence/decompiled/p.java#L771) : 50 cells per plan (Observed)
+- [`p.java:846`](../evidence/decompiled/p.java#L846) : fallback to the closest traced cell. [`p.java:802`](../evidence/decompiled/p.java#L802) : waypoint pass (Observed, the summary of steps 3 to 5 is Inferred from dense code)
+- [`p.java:1231`](../evidence/decompiled/p.java#L1231) : what counts as blocked (Observed)
+- [`p.java:1566`](../evidence/decompiled/p.java#L1566) : blocked next cell, the 5-cell rule at line 1581 (Observed). [`p.java:889`](../evidence/decompiled/p.java#L889) : give-up counter (Observed)
+- [`p.java:917`](../evidence/decompiled/p.java#L917) : plan through enemy walls, then shoot the wall when the detour is over 10 cells longer (line 944) (Observed)
+- [`p.java:1569`](../evidence/decompiled/p.java#L1569), [`p.java:2189`](../evidence/decompiled/p.java#L2189) : crushing. Mask 16256 = types 7..13, mask 16447 = infantry types 0..5 and 14 (Observed)
+- [`p.java:872`](../evidence/decompiled/p.java#L872) : siege forms (mask 114688 = types 14, 15, 16) get no route (Observed)
+- [`g.java:3377`](../evidence/decompiled/g.java#L3377) : a move order writes the same destination cell into every selected unit (Observed)
+- [`k.java:792`](../evidence/decompiled/k.java#L792) : one simulation step per 100 ms loop (Observed)
 
 ## Still unknown
 
-- `seg[13]` (96 bytes) and the last 7 bytes of `seg[0]` are not read by the simulation. `seg[12]` is only the screen scroll step ([`g.java:4034`](../source/decompiled/g.java#L4034)).
+- `seg[13]` (96 bytes) and the last 7 bytes of `seg[0]` are not read by the simulation. `seg[12]` is only the screen scroll step ([`g.java:4034`](../evidence/decompiled/g.java#L4034)).
 - Exact behaviour of the tracer in tight corners. The code is dense and was read, not run.
 - Scripted enemy patrol routes (unit fields 3535, 4545, 4646) were not followed up here.
 

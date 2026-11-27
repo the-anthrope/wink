@@ -56,7 +56,7 @@ Milestones 0 to 4 are the [smallest playable version](02-the-smallest-playable-v
 ## Evidence
 - Every rule the plan refers to is documented, with code lines, in
   [gameplay/](../gameplay/README.md) and [animations/](../animations/README.md).
-- Map sizes used by the seven missions: [missions](../06-reference/04-missions.md) (Observed)
+- Map sizes used by the seven missions: [missions](../reference/04-missions.md) (Observed)
 - The milestone order and the tests are our proposal (Inferred).
 
 **Next:** back to the [build index](README.md), or dive into [gameplay](../gameplay/README.md).

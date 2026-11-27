@@ -89,22 +89,22 @@ Type 17 (T-22 Zeus as built) skips every part that belongs to weapon slot 1, so 
 Vehicles: state 2 lasts one tick. At the moment of death the game spawns one explosion (animations 11..14), one flying-debris effect (27..31) and a crater decal ([04](04-buildings-and-effects.md)).
 
 ## How we know
-- [`p.java:442`](../source/decompiled/p.java#L442) : the `base[type][state]` table (Observed)
-- [`g.java:7009`](../source/decompiled/g.java#L7009) : sequence formula, `+8` aim rule (mask 15 = types 0..3), `231 + state - 10` (Observed)
-- [`g.java:7012`](../source/decompiled/g.java#L7012) : pose = step `counter` or 0 if past the end (Observed)
-- [`p.java:2049`](../source/decompiled/p.java#L2049) : counter +1 per tick; [`p.java:2058`](../source/decompiled/p.java#L2058) : type swap through `seg[52]`; [`p.java:2086`](../source/decompiled/p.java#L2086) : dead unit removed (Observed)
-- [`p.java:1407`](../source/decompiled/p.java#L1407), [`p.java:1410`](../source/decompiled/p.java#L1410) : state 0 / 1 set by the movement code (Observed)
-- [`p.java:2212`](../source/decompiled/p.java#L2212) : turn step through `seg[33]` every `seg[32]` ticks; [`p.java:2222`](../source/decompiled/p.java#L2222) : infantry legs follow weapon direction (Observed)
-- [`p.java:1471`](../source/decompiled/p.java#L1471) : state 3 starts only when hull direction equals the wanted one; vehicles then get direction 0 (Observed)
-- [`g.java:7019`](../source/decompiled/g.java#L7019) : layer mask from fire bits via `seg[54]`/`seg[55]`; [`g.java:7024`](../source/decompiled/g.java#L7024) : `seg[53][layer]` picks which direction field applies (Observed)
-- [`g.java:7032`](../source/decompiled/g.java#L7032) : flash drawn while counter is within the animation; [`g.java:7033`](../source/decompiled/g.java#L7033) : it hides the static layer (Observed)
-- [`g.java:7036`](../source/decompiled/g.java#L7036) : type 17 skips turret-slot parts (Observed)
-- [`p.java:1383`](../source/decompiled/p.java#L1383) : fire counter modulo reload; [`p.java:1384`](../source/decompiled/p.java#L1384) : burst restart, mask 1011 (Observed)
-- [`p.java:2552`](../source/decompiled/p.java#L2552) with [`p.java:424`](../source/decompiled/p.java#L424) and [`p.java:417`](../source/decompiled/p.java#L417) : death sequence = `{231,249,249,259,247}[kind] + random % {16,10,10,3,2}[kind]` (Observed)
-- [`p.java:2190`](../source/decompiled/p.java#L2190) : damage kind 4 when a vehicle enters a soldier's cell (Observed)
-- [`p.java:2555`](../source/decompiled/p.java#L2555) : vehicle death effects 11..14, 27..31 and decal kind 6 (Observed)
-- `../source/data/a.json` `seg[1]` : direction 0 = (+1, 0), 2 = (0, +1): east, then clockwise with y pointing down (Observed)
-- `../source/data/d0.json` : sequence lengths (walk 4, deploy 5 and 6, deaths 8..27) (Observed)
+- [`p.java:442`](../evidence/decompiled/p.java#L442) : the `base[type][state]` table (Observed)
+- [`g.java:7009`](../evidence/decompiled/g.java#L7009) : sequence formula, `+8` aim rule (mask 15 = types 0..3), `231 + state - 10` (Observed)
+- [`g.java:7012`](../evidence/decompiled/g.java#L7012) : pose = step `counter` or 0 if past the end (Observed)
+- [`p.java:2049`](../evidence/decompiled/p.java#L2049) : counter +1 per tick; [`p.java:2058`](../evidence/decompiled/p.java#L2058) : type swap through `seg[52]`; [`p.java:2086`](../evidence/decompiled/p.java#L2086) : dead unit removed (Observed)
+- [`p.java:1407`](../evidence/decompiled/p.java#L1407), [`p.java:1410`](../evidence/decompiled/p.java#L1410) : state 0 / 1 set by the movement code (Observed)
+- [`p.java:2212`](../evidence/decompiled/p.java#L2212) : turn step through `seg[33]` every `seg[32]` ticks; [`p.java:2222`](../evidence/decompiled/p.java#L2222) : infantry legs follow weapon direction (Observed)
+- [`p.java:1471`](../evidence/decompiled/p.java#L1471) : state 3 starts only when hull direction equals the wanted one; vehicles then get direction 0 (Observed)
+- [`g.java:7019`](../evidence/decompiled/g.java#L7019) : layer mask from fire bits via `seg[54]`/`seg[55]`; [`g.java:7024`](../evidence/decompiled/g.java#L7024) : `seg[53][layer]` picks which direction field applies (Observed)
+- [`g.java:7032`](../evidence/decompiled/g.java#L7032) : flash drawn while counter is within the animation; [`g.java:7033`](../evidence/decompiled/g.java#L7033) : it hides the static layer (Observed)
+- [`g.java:7036`](../evidence/decompiled/g.java#L7036) : type 17 skips turret-slot parts (Observed)
+- [`p.java:1383`](../evidence/decompiled/p.java#L1383) : fire counter modulo reload; [`p.java:1384`](../evidence/decompiled/p.java#L1384) : burst restart, mask 1011 (Observed)
+- [`p.java:2552`](../evidence/decompiled/p.java#L2552) with [`p.java:424`](../evidence/decompiled/p.java#L424) and [`p.java:417`](../evidence/decompiled/p.java#L417) : death sequence = `{231,249,249,259,247}[kind] + random % {16,10,10,3,2}[kind]` (Observed)
+- [`p.java:2190`](../evidence/decompiled/p.java#L2190) : damage kind 4 when a vehicle enters a soldier's cell (Observed)
+- [`p.java:2555`](../evidence/decompiled/p.java#L2555) : vehicle death effects 11..14, 27..31 and decal kind 6 (Observed)
+- `../evidence/data/a.json` `seg[1]` : direction 0 = (+1, 0), 2 = (0, +1): east, then clockwise with y pointing down (Observed)
+- `../evidence/data/d0.json` : sequence lengths (walk 4, deploy 5 and 6, deaths 8..27) (Observed)
 
 ## Still unknown
 - Sequence 262 (one burning pose) and state 2 for infantry (table value 231) look unused.

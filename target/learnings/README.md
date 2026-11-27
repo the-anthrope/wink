@@ -1,72 +1,80 @@
-# Learnings: `92aace22-artofwea_S8000.jar`
+# Learnings from a pocket strategy game
 
-Notes from taking apart one file: a 2010 Java ME phone game, **Art Of War 2 -
-Global Confederation** (HeroCraft / Gear Games), a real-time strategy game.
+**Goal:** learn how to build something exciting by taking apart something
+that worked. The subject is one file in this repo,
+`target/92aace22-artofwea_S8000.jar`: a 2010 Java ME phone game, *Art Of
+War 2 - Global Confederation*, a complete real-time strategy game in 546 KB.
 
-Everything here comes from **static analysis**: reading the decompiled code
-and decoding the data files. The game was never run.
+These notes are not a forensic report. They are organised around one
+question: **what would I copy, what would I fix, and how do I build my
+own?** The detailed analysis is kept underneath as backing, and every claim
+links to the line of code or the data table that shows it.
 
-## How to read these notes
+## Start here
 
-- Every note is short and answers **one question**, stated in its title.
-- Every note has the same shape: *In one line* -> *The short answer* -> *How
-  it works* -> *How we know* -> *Still unknown* -> *Next*.
-- Follow the **Next** link at the bottom to walk a folder in order.
-- **How we know** links straight to the line of decompiled code or the data
-  table behind each claim. Claims are tagged:
-  - **Observed**: a code line or data value shows it.
-  - **Inferred**: reasoned from observed facts.
-  - **Unknown**: not established.
-
-## Where to start
-
-| If you want to know... | Start here |
+| I want to... | Go to |
 |---|---|
-| What this file is | [01-identity/01-what-is-this-file](01-identity/01-what-is-this-file.md) |
-| How the game plays, in depth | [gameplay/README](gameplay/README.md) |
-| How sprites become animation | [animations/README](animations/README.md) |
-| The numbers: units, buildings, research | [06-reference/01-units](06-reference/01-units.md) |
-| How to find something in the code | [02-code/01-class-map](02-code/01-class-map.md) |
-| The raw material | [source/README](source/README.md) |
+| **Learn to build one** | [`build/`](build/README.md): 11 lessons and recipes, in order |
+| Understand exactly how a rule works | [`gameplay/`](gameplay/README.md): 14 deep-dive notes |
+| Understand how the pictures move | [`animations/`](animations/README.md): 5 notes with proof images |
+| Look up a number | [`reference/`](reference/01-units.md): units, buildings, research, missions, story |
+| See how the original is put together | [`internals/`](internals/README.md): files, formats, code layout, online features |
+| Check a claim or reproduce a result | [`evidence/`](evidence/README.md): decompiled code, decoded data, scripts |
 
-## Folders
+## The map
 
-| Folder | Question it answers | Notes |
-|---|---|---|
-| [`01-identity/`](01-identity/) | What is this file, who made it, when? | what it is, packaging and dates, glossary |
-| [`02-code/`](02-code/) | How is the program organised? | class map, boot sequence, reading obfuscated code |
-| [`03-assets/`](03-assets/) | What is shipped besides code? | file inventory, text and settings, fonts and sound, sprite sheets |
-| [`04-data-formats/`](04-data-formats/) | How is each data file laid out, byte by byte? | `sn8p`, `i0`, `a`/`d`, `d0`/`ml`, terrain, missions |
-| [`05-online-and-payments/`](05-online-and-payments/) | What does it do beyond the game? | SMS, online account, updates and adverts, integrity checks |
-| [`06-reference/`](06-reference/) | Lookup tables | units, buildings, research, missions, story |
-| [`gameplay/`](gameplay/) | **Deep dive:** the rules of play as the code implements them | economy, energy, production, movement, damage, weapons, vision, research, tech tree, ranks, AI, mission scripts |
-| [`animations/`](animations/) | **Deep dive:** how pictures are stored, cut and animated | sheets, frame tables, units, buildings and effects, timing |
-| [`source/`](source/) | The evidence | decompiled Java, decoded data as JSON, the scripts that made them |
+```
+learnings/
+├── build/        LEARN   what to copy, recipes, balance study, build plan
+├── gameplay/     RULES   economy, combat, research, enemy, missions
+├── animations/   LOOKS   sheets, frame tables, units, effects, timing
+├── reference/    NUMBERS units, buildings, research, missions, story
+├── internals/    ANATOMY identity, code, assets, data formats, online
+└── evidence/     PROOF   decompiled/  data/  tools/
+```
 
-## Five things worth knowing first
+Read top to bottom for understanding; read bottom to top to verify.
 
-1. It is a **MIDlet**, not an Android app. 18 obfuscated classes, 52 files.
-2. Two classes are the game: `g` (interface) and `p` (simulation).
-3. Nearly every tuning number sits in one small file, `a`, decoded to
-   [`source/data/a.json`](source/data/a.json).
-4. All text and all build settings sit in one file, `sn8p`, decoded to
-   [`source/data/sn8p.json`](source/data/sn8p.json).
-5. The SMS, account, advert and update features exist in code but are
-   switched off or unconfigured in this copy.
+## How every note is written
+
+- One question per note, stated in the title. Short enough to read in a few
+  minutes.
+- **Build notes:** The idea -> What the original does -> Recipe -> Knobs ->
+  Pitfalls -> Evidence -> Next.
+- **All other notes:** In one line -> The short answer -> How it works ->
+  How we know -> Still unknown -> Next.
+- Follow **Next** at the bottom of a note to walk its folder in order.
+- Claims are tagged **Observed** (a code line or data value shows it),
+  **Inferred** (reasoned from observed facts) or **Unknown**.
+
+## Ten ideas worth taking
+
+1. One loop with a fixed 100 ms step; rules kept apart from drawing.
+2. World state in flat arrays with hard caps; a save is a dump of them.
+3. Every number and every string in a table indexed by a small id.
+4. Income on a timer from a building you can lose, with falling returns.
+5. A second budget, energy, that never accumulates.
+6. One damage formula in which armour makes small guns bounce.
+7. Weapons, modes and upgrades as table rows, not code.
+8. A unit cap as the lever that makes expensive units worth buying.
+9. Enemies and missions made of timers, painted zones and a linear script.
+10. Pictures assembled in layers from shared parts.
+
+Each is explained in [`build/`](build/README.md).
 
 ## How this was made
 
-- Inventory and file identity: REA (`rea-agents` 6.10.1).
-- Decompilation: the JADX library, driven by
-  [`source/tools/Decompile.java`](source/tools/Decompile.java). REA's Android
-  path refused the file because it is not an APK.
-- Data files: small Python parsers in [`source/tools/`](source/tools/), each
-  written by reading the game's own loader.
-- Links are checked by [`source/tools/check_links.py`](source/tools/check_links.py).
+Static analysis only: the game was never run. The JAR was unpacked, its 18
+classes decompiled with the JADX library, and each data file decoded by a
+small script written from the game's own loader. Five readers then worked
+through the simulation code by topic, and their findings were checked
+against the cited lines. Details and a rebuild recipe are in
+[`evidence/README`](evidence/README.md).
 
 ## Limits
 
-- The decompiled code is a reconstruction and is wrong in places.
-- Numbers in the notes are the stored values. Several are scaled at run
-  time; each note says where.
-- The code, art and text belong to HeroCraft and Gear Games.
+- Decompiled code is a reconstruction and is wrong in places; where it
+  mattered, bytecode was read directly.
+- Timings assume the game keeps up with its 100 ms step.
+- The mechanics and patterns are yours to use. The original's names, story,
+  art and text belong to HeroCraft and Gear Games.

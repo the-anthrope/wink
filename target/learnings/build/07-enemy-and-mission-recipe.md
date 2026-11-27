@@ -97,10 +97,10 @@ alert idle friends nearby. Nothing else. No patrols.
 
 ## Evidence
 - Every rule above with line references: [gameplay/11-enemy-ai](../gameplay/11-enemy-ai.md), [gameplay/12-mission-scripting](../gameplay/12-mission-scripting.md), [gameplay/13-missions-one-by-one](../gameplay/13-missions-one-by-one.md)
-- [`p.java:1267`](../source/decompiled/p.java#L1267) to [`p.java:1270`](../source/decompiled/p.java#L1270) : enemy logic once per second, rebuild every 200 ticks (Observed)
-- [`p.java:3134`](../source/decompiled/p.java#L3134) : train period `1500 x (4 - difficulty) / 4` ticks (Observed)
-- [`p.java:3181`](../source/decompiled/p.java#L3181) : squad size; [`p.java:3215`](../source/decompiled/p.java#L3215) : next wave time with jitter (Observed)
-- `../source/tools/missions_full.py` : decodes all seven scripts to the last byte (Observed)
+- [`p.java:1267`](../evidence/decompiled/p.java#L1267) to [`p.java:1270`](../evidence/decompiled/p.java#L1270) : enemy logic once per second, rebuild every 200 ticks (Observed)
+- [`p.java:3134`](../evidence/decompiled/p.java#L3134) : train period `1500 x (4 - difficulty) / 4` ticks (Observed)
+- [`p.java:3181`](../evidence/decompiled/p.java#L3181) : squad size; [`p.java:3215`](../evidence/decompiled/p.java#L3215) : next wave time with jitter (Observed)
+- `../evidence/tools/missions_full.py` : decodes all seven scripts to the last byte (Observed)
 - The script sample above is an illustration in our own notation, not a
   listing of a real mission.
 

@@ -78,25 +78,25 @@ Tapping a site under construction, or a building with no menu, or "x" in a menu,
 
 ## How we know
 
-- [`g.java:1900-1906`](../source/decompiled/g.java#L1900) : radius test against finished buildings with `seg[94] % 3 == 0`; [`g.java:868-870`](../source/decompiled/g.java#L868) : `R` = 20; [`p.java:3686`](../source/decompiled/p.java#L3686) : research 23 sets 25 (Observed).
-- [`g.java:1926-1962`](../source/decompiled/g.java#L1926) : price test, per-cell empty and visibility tests, deduction, wall cell write `1001 + side x 100` (Observed; the inner loop is garbled by JADX, the tests were confirmed in the `javap` bytecode of `g.class`).
-- [`g.java:2393-2417`](../source/decompiled/g.java#L2393) : cap messages 30 and 37 (`T1_30`, `T1_37`). JADX prints the wall test inverted (`>= 15`); bytecode offsets 1106 and 1202 are "skip if type >= 15", so walls are exempt (Observed in bytecode).
-- [`g.java:6082-6133`](../source/decompiled/g.java#L6082) : building record creation, start HP = `seg[59] / 10`, bit 0 of field 6060 set, default rally cell at lines 6097-6098 (Observed).
-- [`p.java:1852-1864`](../source/decompiled/p.java#L1852) : +1 HP when `tick % 3 == slot % 3`, completion at `seg[59]` (Observed). `../source/data/a.json` `seg[59]` (unsigned), `tables[6]` (Observed). Table rows: `../source/tools/economy_tables.py`.
-- [`p.java:2520-2534`](../source/decompiled/p.java#L2520) : wall damage `/ f294a[side]`, removal on passing 100; [`p.java:651`](../source/decompiled/p.java#L651), [`p.java:3662-3663`](../source/decompiled/p.java#L3662) : divisor 2, then 4 (Observed).
-- [`p.java:1928-1939`](../source/decompiled/p.java#L1928) : training target, even-tick counter, hold at `target - 1` under the cap (Observed, checked in bytecode). [`p.java:3674`](../source/decompiled/p.java#L3674), [`p.java:3677`](../source/decompiled/p.java#L3677) : research 19 and 20 set `f411r[1]`, `f411r[2]` to 7. [`p.java:3240`](../source/decompiled/p.java#L3240) : spawn HP is `seg[42][type]`, unscaled (Observed).
-- [`g.java:3061`](../source/decompiled/g.java#L3061) with strings `T0_18`/`T0_19` : difficulty is 0 Easy or 1 Hard (Inferred from the two-entry menu).
-- [`g.java:8193`](../source/decompiled/g.java#L8193) : count clamped to `seg[130][rank]`; [`g.java:2422-2460`](../source/decompiled/g.java#L2422) : order written into slot arrays; [`p.java:1953-1973`](../source/decompiled/p.java#L1953) : search for a run of free slots among 60 (Observed).
-- [`p.java:1975-2045`](../source/decompiled/p.java#L1975) : next-type selection, payment, 50-unit stop (Observed). [`p.java:1921-1923`](../source/decompiled/p.java#L1921) : retry each tick (Observed).
-- [`p.java:1940-1945`](../source/decompiled/p.java#L1940) : spawn cell search and rally destination; [`g.java:2304-2305`](../source/decompiled/g.java#L2304), [`g.java:1912-1914`](../source/decompiled/g.java#L1912) : flag button, then cell pick (Observed). Tutorial `T2_30`.
-- [`p.java:2128-2137`](../source/decompiled/p.java#L2128) : `seg[44]` subtracted from / `seg[43]` added to slot 9; [`g.java:1446`](../source/decompiled/g.java#L1446), [`g.java:5649`](../source/decompiled/g.java#L5649) : slot 9 is the score shown at mission end (Observed).
-- [`g.java:2024-2030`](../source/decompiled/g.java#L2024), [`g.java:2523-2525`](../source/decompiled/g.java#L2523) : dialog 125 and the damage call; [`p.java:1668-1694`](../source/decompiled/p.java#L1668) : removal (Observed).
-- Help text `T1_3`, `T1_4`, `T1_9`, `T1_87`, `T1_120`, `T1_121`, `T1_124` in `../source/data/sn8p.json` agree (Observed).
+- [`g.java:1900-1906`](../evidence/decompiled/g.java#L1900) : radius test against finished buildings with `seg[94] % 3 == 0`; [`g.java:868-870`](../evidence/decompiled/g.java#L868) : `R` = 20; [`p.java:3686`](../evidence/decompiled/p.java#L3686) : research 23 sets 25 (Observed).
+- [`g.java:1926-1962`](../evidence/decompiled/g.java#L1926) : price test, per-cell empty and visibility tests, deduction, wall cell write `1001 + side x 100` (Observed; the inner loop is garbled by JADX, the tests were confirmed in the `javap` bytecode of `g.class`).
+- [`g.java:2393-2417`](../evidence/decompiled/g.java#L2393) : cap messages 30 and 37 (`T1_30`, `T1_37`). JADX prints the wall test inverted (`>= 15`); bytecode offsets 1106 and 1202 are "skip if type >= 15", so walls are exempt (Observed in bytecode).
+- [`g.java:6082-6133`](../evidence/decompiled/g.java#L6082) : building record creation, start HP = `seg[59] / 10`, bit 0 of field 6060 set, default rally cell at lines 6097-6098 (Observed).
+- [`p.java:1852-1864`](../evidence/decompiled/p.java#L1852) : +1 HP when `tick % 3 == slot % 3`, completion at `seg[59]` (Observed). `../evidence/data/a.json` `seg[59]` (unsigned), `tables[6]` (Observed). Table rows: `../evidence/tools/economy_tables.py`.
+- [`p.java:2520-2534`](../evidence/decompiled/p.java#L2520) : wall damage `/ f294a[side]`, removal on passing 100; [`p.java:651`](../evidence/decompiled/p.java#L651), [`p.java:3662-3663`](../evidence/decompiled/p.java#L3662) : divisor 2, then 4 (Observed).
+- [`p.java:1928-1939`](../evidence/decompiled/p.java#L1928) : training target, even-tick counter, hold at `target - 1` under the cap (Observed, checked in bytecode). [`p.java:3674`](../evidence/decompiled/p.java#L3674), [`p.java:3677`](../evidence/decompiled/p.java#L3677) : research 19 and 20 set `f411r[1]`, `f411r[2]` to 7. [`p.java:3240`](../evidence/decompiled/p.java#L3240) : spawn HP is `seg[42][type]`, unscaled (Observed).
+- [`g.java:3061`](../evidence/decompiled/g.java#L3061) with strings `T0_18`/`T0_19` : difficulty is 0 Easy or 1 Hard (Inferred from the two-entry menu).
+- [`g.java:8193`](../evidence/decompiled/g.java#L8193) : count clamped to `seg[130][rank]`; [`g.java:2422-2460`](../evidence/decompiled/g.java#L2422) : order written into slot arrays; [`p.java:1953-1973`](../evidence/decompiled/p.java#L1953) : search for a run of free slots among 60 (Observed).
+- [`p.java:1975-2045`](../evidence/decompiled/p.java#L1975) : next-type selection, payment, 50-unit stop (Observed). [`p.java:1921-1923`](../evidence/decompiled/p.java#L1921) : retry each tick (Observed).
+- [`p.java:1940-1945`](../evidence/decompiled/p.java#L1940) : spawn cell search and rally destination; [`g.java:2304-2305`](../evidence/decompiled/g.java#L2304), [`g.java:1912-1914`](../evidence/decompiled/g.java#L1912) : flag button, then cell pick (Observed). Tutorial `T2_30`.
+- [`p.java:2128-2137`](../evidence/decompiled/p.java#L2128) : `seg[44]` subtracted from / `seg[43]` added to slot 9; [`g.java:1446`](../evidence/decompiled/g.java#L1446), [`g.java:5649`](../evidence/decompiled/g.java#L5649) : slot 9 is the score shown at mission end (Observed).
+- [`g.java:2024-2030`](../evidence/decompiled/g.java#L2024), [`g.java:2523-2525`](../evidence/decompiled/g.java#L2523) : dialog 125 and the damage call; [`p.java:1668-1694`](../evidence/decompiled/p.java#L1668) : removal (Observed).
+- Help text `T1_3`, `T1_4`, `T1_9`, `T1_87`, `T1_120`, `T1_121`, `T1_124` in `../evidence/data/sn8p.json` agree (Observed).
 
 ## Still unknown
 
 - Footprint sizes (`k.f327i[18]`, `[19]`) come from file `d`, not `a.json`; not listed here.
-- A factory destroyed with an order pending does not seem to release its queue slots (no release found in [`p.java:1668-1742`](../source/decompiled/p.java#L1668)); effect on later orders not traced.
-- How rank rises (`seg[132]` = [1, 3, 6]) is only read in passing at [`g.java:1472`](../source/decompiled/g.java#L1472).
+- A factory destroyed with an order pending does not seem to release its queue slots (no release found in [`p.java:1668-1742`](../evidence/decompiled/p.java#L1668)); effect on later orders not traced.
+- How rank rises (`seg[132]` = [1, 3, 6]) is only read in passing at [`g.java:1472`](../evidence/decompiled/g.java#L1472).
 
 **Next:** [Movement](04-movement.md)

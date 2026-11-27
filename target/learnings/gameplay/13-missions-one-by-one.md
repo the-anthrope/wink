@@ -11,7 +11,7 @@
 
 ## How it works
 
-Everything here is the output of `python3 -I source/tools/missions_full.py <jar folder> source/data`, read with the rules of [file 12](12-mission-scripting.md). Sizes are the Easy numbers. Infantry sizes are 3/6/10, vehicle sizes 2/4/6. The enemy can never have more than 50 units alive; spawns beyond that are dropped.
+Everything here is the output of `python3 -I evidence/tools/missions_full.py <jar folder> evidence/data`, read with the rules of [file 12](12-mission-scripting.md). Sizes are the Easy numbers. Infantry sizes are 3/6/10, vehicle sizes 2/4/6. The enemy can never have more than 50 units alive; spawns beyond that are dropped.
 
 ### 1. Pucallpa (`mi0`, 60x40) : hold the base
 - **Start:** Command center, Generator, Infantry center, 2 Bunkers. Money 500. No enemy buildings. Hard x1.9.
@@ -68,14 +68,14 @@ Everything here is the output of `python3 -I source/tools/missions_full.py <jar 
 Texts T2_95..T2_98 ("Destroy the enemy base", "All command centers must survive", "Stand your ground until reinforcement arrives", "Don't let enemy destroy Rogers' base") belong to downloaded maps. They match the rule numbers the script can set: win rule 0, lose rule 1, win rule 2, and a lose rule above 50 (Inferred).
 
 ## How we know
-- `source/tools/missions_full.py` : every number above. It parses all seven files to their exact length (Observed)
-- [`p.java:2820`](../source/decompiled/p.java#L2820), [`p.java:2833`](../source/decompiled/p.java#L2833) : win and lose rule and money come from commands 24 and 25 (Observed)
-- [`p.java:1697`](../source/decompiled/p.java#L1697), [`p.java:1700`](../source/decompiled/p.java#L1700), [`p.java:1720`](../source/decompiled/p.java#L1720), [`p.java:1723`](../source/decompiled/p.java#L1723) : meaning of rules 0 and 1 (Observed)
-- [`p.java:3221`](../source/decompiled/p.java#L3221) : a unit is not created when its side already has 50 (Observed)
-- [`p.java:2853`](../source/decompiled/p.java#L2853) : player spawns stop at `seg[130][rank]`; rank 1 is reached by winning mission 2, see [file 10](10-ranks-score-difficulty.md). Mission 4 total of 35 follows (Inferred)
-- [`p.java:2857`](../source/decompiled/p.java#L2857) : Torrent swapped unless research bit 13 is set; `a.json seg[127]` row 3 has bits 0 and 5 only, row 6 has bit 13 (Observed)
-- [`p.java:2969`](../source/decompiled/p.java#L2969) : the mine command needs a mine field for that group; `mi6` has none for group 1 (Observed)
-- [`p.java:1269`](../source/decompiled/p.java#L1269) : rebuilding needs a live Headquarters in the group (Observed)
+- `../evidence/tools/missions_full.py` : every number above. It parses all seven files to their exact length (Observed)
+- [`p.java:2820`](../evidence/decompiled/p.java#L2820), [`p.java:2833`](../evidence/decompiled/p.java#L2833) : win and lose rule and money come from commands 24 and 25 (Observed)
+- [`p.java:1697`](../evidence/decompiled/p.java#L1697), [`p.java:1700`](../evidence/decompiled/p.java#L1700), [`p.java:1720`](../evidence/decompiled/p.java#L1720), [`p.java:1723`](../evidence/decompiled/p.java#L1723) : meaning of rules 0 and 1 (Observed)
+- [`p.java:3221`](../evidence/decompiled/p.java#L3221) : a unit is not created when its side already has 50 (Observed)
+- [`p.java:2853`](../evidence/decompiled/p.java#L2853) : player spawns stop at `seg[130][rank]`; rank 1 is reached by winning mission 2, see [file 10](10-ranks-score-difficulty.md). Mission 4 total of 35 follows (Inferred)
+- [`p.java:2857`](../evidence/decompiled/p.java#L2857) : Torrent swapped unless research bit 13 is set; `a.json seg[127]` row 3 has bits 0 and 5 only, row 6 has bit 13 (Observed)
+- [`p.java:2969`](../evidence/decompiled/p.java#L2969) : the mine command needs a mine field for that group; `mi6` has none for group 1 (Observed)
+- [`p.java:1269`](../evidence/decompiled/p.java#L1269) : rebuilding needs a live Headquarters in the group (Observed)
 - `sn8p.json` T2_13, T2_17, T2_43, T2_59, T2_66, T2_71, T2_85, T2_88 : objective texts, reached through `d` offsets 13, 17, 43, 59, 66, 71, 85, 88 (Observed)
 - `dmt` : dialogues 32..35 start at T2_95, 96, 97, 98 (Observed)
 

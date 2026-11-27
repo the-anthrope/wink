@@ -89,9 +89,9 @@ not when it is queued. So a long queue never locks up money.
 
 ## Evidence
 - Full rules with every line reference: [gameplay/01-money](../gameplay/01-money.md), [gameplay/02-energy](../gameplay/02-energy.md)
-- [`p.java:1773`](../source/decompiled/p.java#L1773) to [`p.java:1775`](../source/decompiled/p.java#L1775) : interval, cap and the 7/10 step (Observed)
-- [`p.java:2140`](../source/decompiled/p.java#L2140) : bounty (Observed)
-- [`p.java:652`](../source/decompiled/p.java#L652) and [`p.java:3655`](../source/decompiled/p.java#L3655) : supply 6, then 8 (Observed)
+- [`p.java:1773`](../evidence/decompiled/p.java#L1773) to [`p.java:1775`](../evidence/decompiled/p.java#L1775) : interval, cap and the 7/10 step (Observed)
+- [`p.java:2140`](../evidence/decompiled/p.java#L2140) : bounty (Observed)
+- [`p.java:652`](../evidence/decompiled/p.java#L652) and [`p.java:3655`](../evidence/decompiled/p.java#L3655) : supply 6, then 8 (Observed)
 - Payback times (Inferred: 700 / 70 = 10 payouts x 12.8 s, plus the 67.5 s build time)
 - The design intent behind the curve (Inferred)
 

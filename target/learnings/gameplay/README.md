@@ -58,8 +58,8 @@ ticks or seconds at 10 ticks per second.
 
 | Script | Prints |
 |---|---|
-| [`economy_tables.py`](../source/tools/economy_tables.py) | Income ladder, build and training times, starting money |
-| [`weapons_table.py`](../source/tools/weapons_table.py) | Weapons, unit loadouts, armed buildings, damage matrix |
-| [`tech_masks.py`](../source/tools/tech_masks.py) | Per-mission unlock masks |
-| [`missions_full.py`](../source/tools/missions_full.py) | Every mission file decoded to its last byte |
-| [`balance_sheet.py`](../source/tools/balance_sheet.py) | Cost efficiency and duel tables |
+| [`economy_tables.py`](../evidence/tools/economy_tables.py) | Income ladder, build and training times, starting money |
+| [`weapons_table.py`](../evidence/tools/weapons_table.py) | Weapons, unit loadouts, armed buildings, damage matrix |
+| [`tech_masks.py`](../evidence/tools/tech_masks.py) | Per-mission unlock masks |
+| [`missions_full.py`](../evidence/tools/missions_full.py) | Every mission file decoded to its last byte |
+| [`balance_sheet.py`](../evidence/tools/balance_sheet.py) | Cost efficiency and duel tables |

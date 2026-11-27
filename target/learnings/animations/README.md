@@ -26,7 +26,7 @@ Nothing is flipped, rotated or scaled.
 
 ## Proof images
 
-Each was produced by [`frames.py`](../source/tools/frames.py) from the
+Each was produced by [`frames.py`](../evidence/tools/frames.py) from the
 decoded tables. If the decoding were wrong, sprites would be cut through.
 
 | Image | Shows |
@@ -43,9 +43,9 @@ decoded tables. If the decoding were wrong, sprites would be cut through.
 ## Draw it yourself
 
 ```bash
-python3 -I source/tools/frames.py <sheets-dir> source/data/d0.json <out-dir>
+python3 -I evidence/tools/frames.py <sheets-dir> evidence/data/d0.json <out-dir>
 ```
 
 `<sheets-dir>` is the output of `sprites_extract.py` followed by
 `sprites_contact_sheet.py` (which writes the merged colour+alpha PNGs). See
-[source/README](../source/README.md).
+[evidence/README](../evidence/README.md).

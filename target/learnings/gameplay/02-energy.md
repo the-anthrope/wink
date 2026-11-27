@@ -80,20 +80,20 @@ Had you placed the Generator first, nothing would have stalled. A site without p
 
 ## How we know
 
-- [`p.java:3481-3509`](../source/decompiled/p.java#L3481) : the whole energy routine. Lines [`3487-3489`](../source/decompiled/p.java#L3487) add `H[side]` for building types 1 and 9 whose "under construction" bit is clear; [`3492`](../source/decompiled/p.java#L3492) adds `seg[61][type]` for every living building; [`3499-3507`](../source/decompiled/p.java#L3499) is the slot-order hand-out that writes the powered flag (field 7171) (Observed, and checked against the `javap` bytecode of `p.class`).
-- `../source/data/a.json` `seg[61]` = [0,0,2,3,2,1,1,2, 0,0,2,3,2,1,1, 0,...] : need per building type 0..15 (Observed).
-- [`p.java:652`](../source/decompiled/p.java#L652) : `H` = 6 for both sides; [`p.java:3655-3656`](../source/decompiled/p.java#L3655) : research 15 sets `H[0]` = 8 and recomputes; [`p.java:3823-3824`](../source/decompiled/p.java#L3823) : same for side 1 (Observed). 8 / 6 = 1.33 against "30 percent" in help text `T1_116` (Observed).
-- [`p.java:1838-1842`](../source/decompiled/p.java#L1838) : powered flag 0 means clear target, return early; [`p.java:1744-1779`](../source/decompiled/p.java#L1744) : turret fire, training, research and income all sit behind that call (Observed).
-- [`p.java:1852-1864`](../source/decompiled/p.java#L1852) : construction step every 3 ticks and the recompute when it completes; [`p.java:1844-1849`](../source/decompiled/p.java#L1844) : self-repair every 15 ticks. Both come after the power test (Observed).
-- [`g.java:6086-6092`](../source/decompiled/g.java#L6086) : a new building takes the first slot whose HP is 0 (Observed). "Oldest first" follows from that (Inferred).
-- Callers of the routine: [`g.java:6133`](../source/decompiled/g.java#L6133) (placed), [`p.java:1864`](../source/decompiled/p.java#L1864) (finished), [`p.java:1681`](../source/decompiled/p.java#L1681) (removed), [`p.java:3656`](../source/decompiled/p.java#L3656) (research), [`g.java:6721`](../source/decompiled/g.java#L6721) (load). There are no others (Observed, grep).
-- [`g.java:4581-4585`](../source/decompiled/g.java#L4581) : top bar prints slot 2, a separator, slot 3, and draws a marker when slot 2 > slot 3; [`g.java:4392-4393`](../source/decompiled/g.java#L4392) : animation 269 on a building whose powered flag is 0 (Observed).
-- `../source/data/missions.json` mission 1 `bld_conf` : the five starting buildings of the worked example (Observed). Build times: [file 03](03-building-and-training.md).
-- Help text `T1_86` and tutorial `T2_25` in `../source/data/sn8p.json` : "If a facility is short of energy, it is no longer in operation" (Observed).
+- [`p.java:3481-3509`](../evidence/decompiled/p.java#L3481) : the whole energy routine. Lines [`3487-3489`](../evidence/decompiled/p.java#L3487) add `H[side]` for building types 1 and 9 whose "under construction" bit is clear; [`3492`](../evidence/decompiled/p.java#L3492) adds `seg[61][type]` for every living building; [`3499-3507`](../evidence/decompiled/p.java#L3499) is the slot-order hand-out that writes the powered flag (field 7171) (Observed, and checked against the `javap` bytecode of `p.class`).
+- `../evidence/data/a.json` `seg[61]` = [0,0,2,3,2,1,1,2, 0,0,2,3,2,1,1, 0,...] : need per building type 0..15 (Observed).
+- [`p.java:652`](../evidence/decompiled/p.java#L652) : `H` = 6 for both sides; [`p.java:3655-3656`](../evidence/decompiled/p.java#L3655) : research 15 sets `H[0]` = 8 and recomputes; [`p.java:3823-3824`](../evidence/decompiled/p.java#L3823) : same for side 1 (Observed). 8 / 6 = 1.33 against "30 percent" in help text `T1_116` (Observed).
+- [`p.java:1838-1842`](../evidence/decompiled/p.java#L1838) : powered flag 0 means clear target, return early; [`p.java:1744-1779`](../evidence/decompiled/p.java#L1744) : turret fire, training, research and income all sit behind that call (Observed).
+- [`p.java:1852-1864`](../evidence/decompiled/p.java#L1852) : construction step every 3 ticks and the recompute when it completes; [`p.java:1844-1849`](../evidence/decompiled/p.java#L1844) : self-repair every 15 ticks. Both come after the power test (Observed).
+- [`g.java:6086-6092`](../evidence/decompiled/g.java#L6086) : a new building takes the first slot whose HP is 0 (Observed). "Oldest first" follows from that (Inferred).
+- Callers of the routine: [`g.java:6133`](../evidence/decompiled/g.java#L6133) (placed), [`p.java:1864`](../evidence/decompiled/p.java#L1864) (finished), [`p.java:1681`](../evidence/decompiled/p.java#L1681) (removed), [`p.java:3656`](../evidence/decompiled/p.java#L3656) (research), [`g.java:6721`](../evidence/decompiled/g.java#L6721) (load). There are no others (Observed, grep).
+- [`g.java:4581-4585`](../evidence/decompiled/g.java#L4581) : top bar prints slot 2, a separator, slot 3, and draws a marker when slot 2 > slot 3; [`g.java:4392-4393`](../evidence/decompiled/g.java#L4392) : animation 269 on a building whose powered flag is 0 (Observed).
+- `../evidence/data/missions.json` mission 1 `bld_conf` : the five starting buildings of the worked example (Observed). Build times: [file 03](03-building-and-training.md).
+- Help text `T1_86` and tutorial `T2_25` in `../evidence/data/sn8p.json` : "If a facility is short of energy, it is no longer in operation" (Observed).
 
 ## Still unknown
 
 - Whether an unpowered Locator still reveals the map. The powered flag is read in only one place in the simulation (the upkeep routine), so sight is probably unaffected (Inferred), but the fog code was not traced here.
-- Whether you can still open the order menu of a switched-off factory. The code that opens it ([`g.java:2018-2069`](../source/decompiled/g.java#L2018)) does not read the powered flag, so probably yes, with the order simply not progressing (Inferred).
+- Whether you can still open the order menu of a switched-off factory. The code that opens it ([`g.java:2018-2069`](../evidence/decompiled/g.java#L2018)) does not read the powered flag, so probably yes, with the order simply not progressing (Inferred).
 
 **Next:** [How do construction and unit training work?](03-building-and-training.md)

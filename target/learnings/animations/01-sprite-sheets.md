@@ -69,16 +69,16 @@ Piece ids 43..46 in the "sheet" field are not images. They mean line, rectangle 
 Corrections to the first rough listing: sheet 7 is research icons (24 research items), the build-menu icons are sheets 14 (buildings) and 15 (units). `a.json seg[73..78]` are **not** sprite team colours: they are the cell colours of the full-screen map ([05](05-timing-and-draw-order.md)).
 
 ## How we know
-- [`k.java:1001`](../source/decompiled/k.java#L1001) : opens `/i0`; loop runs `2 x 43` slots (Observed)
-- [`k.java:1006`](../source/decompiled/k.java#L1006) : first byte 255 ends the list; [`k.java:1010`](../source/decompiled/k.java#L1010) : 3-byte length (Observed)
-- [`k.java:1017`](../source/decompiled/k.java#L1017) : even slot becomes the sheet image (Observed)
-- [`k.java:1024`](../source/decompiled/k.java#L1024) : mask pixel cast to `byte` = blue channel; [`k.java:1028`](../source/decompiled/k.java#L1028) : `alpha << 24 | rgb` (Observed)
-- [`k.java:343`](../source/decompiled/k.java#L343) : sheet count 43 (Observed)
-- [`g.java:7134`](../source/decompiled/g.java#L7134) : the only place a sheet is drawn; `sheet + 1` when sheet is 8 and flag `f176v` is set (Observed)
-- [`g.java:7017`](../source/decompiled/g.java#L7017) : `f176v = unitIndex >= 51`, i.e. side 1 (Observed)
-- [`g.java:6774`](../source/decompiled/g.java#L6774) : `drawRegion(..., transform 0, ..., anchor 20)`: no mirroring, top-left anchor (Observed)
-- `../source/data/d0.json bytes[0]` : sheet number of each piece; counts per sheet in the table come from it; no piece names sheet 9 (Observed)
-- `../source/tools/frames.py` : slicing every piece stays inside its sheet (0 of 2173 out of bounds) (Observed)
+- [`k.java:1001`](../evidence/decompiled/k.java#L1001) : opens `/i0`; loop runs `2 x 43` slots (Observed)
+- [`k.java:1006`](../evidence/decompiled/k.java#L1006) : first byte 255 ends the list; [`k.java:1010`](../evidence/decompiled/k.java#L1010) : 3-byte length (Observed)
+- [`k.java:1017`](../evidence/decompiled/k.java#L1017) : even slot becomes the sheet image (Observed)
+- [`k.java:1024`](../evidence/decompiled/k.java#L1024) : mask pixel cast to `byte` = blue channel; [`k.java:1028`](../evidence/decompiled/k.java#L1028) : `alpha << 24 | rgb` (Observed)
+- [`k.java:343`](../evidence/decompiled/k.java#L343) : sheet count 43 (Observed)
+- [`g.java:7134`](../evidence/decompiled/g.java#L7134) : the only place a sheet is drawn; `sheet + 1` when sheet is 8 and flag `f176v` is set (Observed)
+- [`g.java:7017`](../evidence/decompiled/g.java#L7017) : `f176v = unitIndex >= 51`, i.e. side 1 (Observed)
+- [`g.java:6774`](../evidence/decompiled/g.java#L6774) : `drawRegion(..., transform 0, ..., anchor 20)`: no mirroring, top-left anchor (Observed)
+- `../evidence/data/d0.json bytes[0]` : sheet number of each piece; counts per sheet in the table come from it; no piece names sheet 9 (Observed)
+- `../evidence/tools/frames.py` : slicing every piece stays inside its sheet (0 of 2173 out of bounds) (Observed)
 - Sheet contents: read from the extracted PNGs and from which frame ranges use each sheet (Observed for 0-27, 31-38; Inferred from small glyph-like art for 28-30, 39-42)
 
 ## Still unknown

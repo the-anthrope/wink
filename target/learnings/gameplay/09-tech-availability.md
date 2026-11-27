@@ -107,18 +107,18 @@ Scripted reinforcements for the player follow your research: a Torrent in the wa
 
 ## How we know
 
-- [`p.java:680`](../source/decompiled/p.java#L680) : `f414a` and `f416c` built from `seg[127]` / `seg[128]`, 6 bytes per row, row = `min(mission, 7)` (Observed)
-- [`g.java:832`](../source/decompiled/g.java#L832) : `f112b[0] = seg[129][min(mission, 7)]`, other levels 0 (Observed)
-- [`g.java:873`](../source/decompiled/g.java#L873) : on a fresh start, `c(i)` runs for every set bit (Observed)
-- [`g.java:2043`](../source/decompiled/g.java#L2043) : menu length from `seg[96+2c]` at level `f112b[c]`; [`p.java:1929`](../source/decompiled/p.java#L1929) : item looked up in `seg[95+2c]` (Observed)
-- [`p.java:3543`](../source/decompiled/p.java#L3543), [`p.java:3640`](../source/decompiled/p.java#L3640), [`p.java:3670`](../source/decompiled/p.java#L3670) : researches 5, 13, 18 add 1 to a list level (Observed)
-- [`p.java:3008`](../source/decompiled/p.java#L3008) : script tech levels 20-23; [`p.java:2963`](../source/decompiled/p.java#L2963) : reached from opcode 33 (Observed)
-- [`p.java:684`](../source/decompiled/p.java#L684), [`p.java:3853`](../source/decompiled/p.java#L3853) : start mask and unlock rule (Observed)
-- [`k.java:384`](../source/decompiled/k.java#L384) : player side fixed at 0; [`g.java:3438`](../source/decompiled/g.java#L3438) : player menu limited to bits 0-23 (Observed)
-- [`p.java:2857`](../source/decompiled/p.java#L2857) : Torrent swap in reinforcement waves; [`p.java:3554`](../source/decompiled/p.java#L3554), [`p.java:3633`](../source/decompiled/p.java#L3633) : wave table rewritten (Observed)
-- `../source/tools/tech_masks.py ../source/data/a.json` prints every table on this page from `seg[92]`, `seg[95..100]`, `seg[127..129]` (Observed)
-- `../source/tools/missions_full.py` output: opcode 33 values used in the campaign are 1, 8, 9, 13, 15, 18, 19, 100, 150, 200, 220; none is 20-28 (Observed)
-- `../source/data/sn8p.json` `T2_56` "Now the machine factory and technology center are available to you" fits mission 2 (Inferred)
+- [`p.java:680`](../evidence/decompiled/p.java#L680) : `f414a` and `f416c` built from `seg[127]` / `seg[128]`, 6 bytes per row, row = `min(mission, 7)` (Observed)
+- [`g.java:832`](../evidence/decompiled/g.java#L832) : `f112b[0] = seg[129][min(mission, 7)]`, other levels 0 (Observed)
+- [`g.java:873`](../evidence/decompiled/g.java#L873) : on a fresh start, `c(i)` runs for every set bit (Observed)
+- [`g.java:2043`](../evidence/decompiled/g.java#L2043) : menu length from `seg[96+2c]` at level `f112b[c]`; [`p.java:1929`](../evidence/decompiled/p.java#L1929) : item looked up in `seg[95+2c]` (Observed)
+- [`p.java:3543`](../evidence/decompiled/p.java#L3543), [`p.java:3640`](../evidence/decompiled/p.java#L3640), [`p.java:3670`](../evidence/decompiled/p.java#L3670) : researches 5, 13, 18 add 1 to a list level (Observed)
+- [`p.java:3008`](../evidence/decompiled/p.java#L3008) : script tech levels 20-23; [`p.java:2963`](../evidence/decompiled/p.java#L2963) : reached from opcode 33 (Observed)
+- [`p.java:684`](../evidence/decompiled/p.java#L684), [`p.java:3853`](../evidence/decompiled/p.java#L3853) : start mask and unlock rule (Observed)
+- [`k.java:384`](../evidence/decompiled/k.java#L384) : player side fixed at 0; [`g.java:3438`](../evidence/decompiled/g.java#L3438) : player menu limited to bits 0-23 (Observed)
+- [`p.java:2857`](../evidence/decompiled/p.java#L2857) : Torrent swap in reinforcement waves; [`p.java:3554`](../evidence/decompiled/p.java#L3554), [`p.java:3633`](../evidence/decompiled/p.java#L3633) : wave table rewritten (Observed)
+- `../evidence/tools/tech_masks.py ../evidence/data/a.json` prints every table on this page from `seg[92]`, `seg[95..100]`, `seg[127..129]` (Observed)
+- `../evidence/tools/missions_full.py` output: opcode 33 values used in the campaign are 1, 8, 9, 13, 15, 18, 19, 100, 150, 200, 220; none is 20-28 (Observed)
+- `../evidence/data/sn8p.json` `T2_56` "Now the machine factory and technology center are available to you" fits mission 2 (Inferred)
 
 ## Still unknown
 

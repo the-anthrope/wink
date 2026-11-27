@@ -80,25 +80,25 @@ How the enemy researches: once every 420 ticks, each idle enemy Laboratory rolls
 
 ## How we know
 
-- [`p.java:3511`](../source/decompiled/p.java#L3511) : the effect switch, cases 0-47 (Observed)
-- [`p.java:3853`](../source/decompiled/p.java#L3853) : `g(n)` sets the `f415b` bit unless `f416c` forbids it (Observed)
-- [`p.java:684`](../source/decompiled/p.java#L684) : start value of `f415b`; clear bits are 1, 6, 9-12, 14, 30, 33-35, 38, exactly the "Requires:" texts (Observed)
-- [`g.java:2464`](../source/decompiled/g.java#L2464) : purchase check and cost. JADX prints the first test inverted; the bytecode (`javap -c g`, offsets 1740-1782) refuses when the `f414a` bit **is** set (Observed)
-- [`g.java:2468`](../source/decompiled/g.java#L2468) : research total fixed at 100; [`p.java:1753`](../source/decompiled/p.java#L1753) : +1 every 4 ticks; [`p.java:1760`](../source/decompiled/p.java#L1760) : effect applied on completion (Observed)
-- [`p.java:1744`](../source/decompiled/p.java#L1744), [`p.java:1838`](../source/decompiled/p.java#L1838) : no progress while the building is unpowered (Observed)
-- [`p.java:1672`](../source/decompiled/p.java#L1672) : bit cleared when the lab dies mid-research (Observed)
-- [`g.java:3438`](../source/decompiled/g.java#L3438) : menu cursor stays in 0-23 and skips `f416c` bits; [`g.java:4955`](../source/decompiled/g.java#L4955), [`g.java:2287`](../source/decompiled/g.java#L2287) : name `T1_{61+i}`, description `T1_{101+i}` (Observed)
-- `../source/data/a.json` `tables[7]` costs; `seg[35]`/`seg[36]`/`seg[37]` = weapon damage / range / reload (copied to `f521s` at [`p.java:644`](../source/decompiled/p.java#L644)); `seg[34]` = weapons per unit type; `seg[16]` = heal periods [30, 20] (Observed)
-- [`p.java:1383`](../source/decompiled/p.java#L1383) : reload counter wraps at `f521s[2][weapon]`; [`p.java:1371`](../source/decompiled/p.java#L1371) : +1 HP every `j[side][infantry?]` ticks (Observed)
-- [`p.java:2396`](../source/decompiled/p.java#L2396) : buildings use `G[side]` as armour; [`p.java:2397`](../source/decompiled/p.java#L2397) : damage formula (Observed)
-- [`p.java:2525`](../source/decompiled/p.java#L2525) : wall damage divided by `f294a[side]`; [`p.java:3489`](../source/decompiled/p.java#L3489) : `H[side]` energy per generator; [`g.java:1904`](../source/decompiled/g.java#L1904) : build radius test (Observed)
-- [`p.java:3098`](../source/decompiled/p.java#L3098) : enemy research routine, called once per 10 ticks from [`p.java:1322`](../source/decompiled/p.java#L1322) (Observed). 70% / 90% follows from signed remainder (Inferred)
-- [`p.java:3094`](../source/decompiled/p.java#L3094) : `y` = number of kinds for map cells 121-123, which explode with `seg[68]` = 15/30/80 damage (Observed); calling them mines is Inferred
+- [`p.java:3511`](../evidence/decompiled/p.java#L3511) : the effect switch, cases 0-47 (Observed)
+- [`p.java:3853`](../evidence/decompiled/p.java#L3853) : `g(n)` sets the `f415b` bit unless `f416c` forbids it (Observed)
+- [`p.java:684`](../evidence/decompiled/p.java#L684) : start value of `f415b`; clear bits are 1, 6, 9-12, 14, 30, 33-35, 38, exactly the "Requires:" texts (Observed)
+- [`g.java:2464`](../evidence/decompiled/g.java#L2464) : purchase check and cost. JADX prints the first test inverted; the bytecode (`javap -c g`, offsets 1740-1782) refuses when the `f414a` bit **is** set (Observed)
+- [`g.java:2468`](../evidence/decompiled/g.java#L2468) : research total fixed at 100; [`p.java:1753`](../evidence/decompiled/p.java#L1753) : +1 every 4 ticks; [`p.java:1760`](../evidence/decompiled/p.java#L1760) : effect applied on completion (Observed)
+- [`p.java:1744`](../evidence/decompiled/p.java#L1744), [`p.java:1838`](../evidence/decompiled/p.java#L1838) : no progress while the building is unpowered (Observed)
+- [`p.java:1672`](../evidence/decompiled/p.java#L1672) : bit cleared when the lab dies mid-research (Observed)
+- [`g.java:3438`](../evidence/decompiled/g.java#L3438) : menu cursor stays in 0-23 and skips `f416c` bits; [`g.java:4955`](../evidence/decompiled/g.java#L4955), [`g.java:2287`](../evidence/decompiled/g.java#L2287) : name `T1_{61+i}`, description `T1_{101+i}` (Observed)
+- `../evidence/data/a.json` `tables[7]` costs; `seg[35]`/`seg[36]`/`seg[37]` = weapon damage / range / reload (copied to `f521s` at [`p.java:644`](../evidence/decompiled/p.java#L644)); `seg[34]` = weapons per unit type; `seg[16]` = heal periods [30, 20] (Observed)
+- [`p.java:1383`](../evidence/decompiled/p.java#L1383) : reload counter wraps at `f521s[2][weapon]`; [`p.java:1371`](../evidence/decompiled/p.java#L1371) : +1 HP every `j[side][infantry?]` ticks (Observed)
+- [`p.java:2396`](../evidence/decompiled/p.java#L2396) : buildings use `G[side]` as armour; [`p.java:2397`](../evidence/decompiled/p.java#L2397) : damage formula (Observed)
+- [`p.java:2525`](../evidence/decompiled/p.java#L2525) : wall damage divided by `f294a[side]`; [`p.java:3489`](../evidence/decompiled/p.java#L3489) : `H[side]` energy per generator; [`g.java:1904`](../evidence/decompiled/g.java#L1904) : build radius test (Observed)
+- [`p.java:3098`](../evidence/decompiled/p.java#L3098) : enemy research routine, called once per 10 ticks from [`p.java:1322`](../evidence/decompiled/p.java#L1322) (Observed). 70% / 90% follows from signed remainder (Inferred)
+- [`p.java:3094`](../evidence/decompiled/p.java#L3094) : `y` = number of kinds for map cells 121-123, which explode with `seg[68]` = 15/30/80 damage (Observed); calling them mines is Inferred
 - Bit shifts on the masks are 64-bit (`lshl` in the bytecode), although JADX prints `1 << i` (Observed)
 
 ## Still unknown
 
-- Whether the "flame gun does not hurt Confederation units" claim of research 5 holds; the flame branch at [`p.java:2392`](../source/decompiled/p.java#L2392) was not traced.
+- Whether the "flame gun does not hurt Confederation units" claim of research 5 holds; the flame branch at [`p.java:2392`](../evidence/decompiled/p.java#L2392) was not traced.
 - Type 7 has attack-range row value 2 where type 18 has 6 (`seg[30]`). The effect on targeting was not traced.
 - Enemy researches 29 and 37 do nothing themselves. Whether they were meant to unlock a unit is unknown.
 

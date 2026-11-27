@@ -47,20 +47,20 @@ So the hull piece lands at `unitX - 29 + 33 + 15, unitY - 20 + 20 + 10`.
 
 ![hull, turret and flash layers](img/tank-hull-turret.png)
 
-**Tool.** `../source/tools/frames.py SHEETS D0_JSON OUT` rebuilds all levels and writes the proof images in `img/`. `frames.py ... strip NAME KIND IDS` renders any piece, frame, anim, pose, seq or object.
+**Tool.** `../evidence/tools/frames.py SHEETS D0_JSON OUT` rebuilds all levels and writes the proof images in `img/`. `frames.py ... strip NAME KIND IDS` renders any piece, frame, anim, pose, seq or object.
 
 ## How we know
-- [`k.java:1073`](../source/decompiled/k.java#L1073) : 26 byte arrays and 18 short arrays read from `/d0` (Observed)
-- [`g.java:7104`](../source/decompiled/g.java#L7104) : piece sheet = `B0 & 255`; [`g.java:7110`](../source/decompiled/g.java#L7110) : `+15`, `+10`; [`g.java:7134`](../source/decompiled/g.java#L7134) : x, y, w, h from `B1..B4`, width override for pieces 1397..1402 (Observed)
-- [`g.java:7117`](../source/decompiled/g.java#L7117) : cases 43..46 = drawLine, drawRect, fillRect, drawRect x4; [`n.java:5`](../source/decompiled/n.java#L5) : the 5 colours (Observed)
-- [`g.java:7087`](../source/decompiled/g.java#L7087) : frame loop `S0..S1`, child `S2`, offsets `S3`/`S4`, `B6` picks piece or frame (Observed)
-- [`g.java:7070`](../source/decompiled/g.java#L7070) : animation step = `S5 + tick % (S6 - S5 + 1)`; [`g.java:7076`](../source/decompiled/g.java#L7076) : offsets `B7`/`B8` (Observed)
-- [`g.java:7012`](../source/decompiled/g.java#L7012) : sequence step from `S11`, pose `S13`, offsets `B15`/`B16`; [`g.java:7021`](../source/decompiled/g.java#L7021) : pose parts `S8..S9`, `S10`, `B10..B13` (Observed)
-- [`g.java:6810`](../source/decompiled/g.java#L6810) : object parts `S14..S15`, `S16`, `S17`, `B20`, `B23..B25` (Observed)
-- [`g.java:1116`](../source/decompiled/g.java#L1116) : `B18`/`B19` as footprint in cells (Observed)
-- [`g.java:7007`](../source/decompiled/g.java#L7007) : example of the `- 90, - 60` origin convention (Observed)
-- `../source/data/d0.json` : all counts; `bytes[9]` is 1 everywhere; layers present in `bytes[13]` are 0, 1, 3, 4 only (Observed)
-- `../source/tools/frames.py` : composing with these rules gives clean sprites, none cut through (Observed, see images)
+- [`k.java:1073`](../evidence/decompiled/k.java#L1073) : 26 byte arrays and 18 short arrays read from `/d0` (Observed)
+- [`g.java:7104`](../evidence/decompiled/g.java#L7104) : piece sheet = `B0 & 255`; [`g.java:7110`](../evidence/decompiled/g.java#L7110) : `+15`, `+10`; [`g.java:7134`](../evidence/decompiled/g.java#L7134) : x, y, w, h from `B1..B4`, width override for pieces 1397..1402 (Observed)
+- [`g.java:7117`](../evidence/decompiled/g.java#L7117) : cases 43..46 = drawLine, drawRect, fillRect, drawRect x4; [`n.java:5`](../evidence/decompiled/n.java#L5) : the 5 colours (Observed)
+- [`g.java:7087`](../evidence/decompiled/g.java#L7087) : frame loop `S0..S1`, child `S2`, offsets `S3`/`S4`, `B6` picks piece or frame (Observed)
+- [`g.java:7070`](../evidence/decompiled/g.java#L7070) : animation step = `S5 + tick % (S6 - S5 + 1)`; [`g.java:7076`](../evidence/decompiled/g.java#L7076) : offsets `B7`/`B8` (Observed)
+- [`g.java:7012`](../evidence/decompiled/g.java#L7012) : sequence step from `S11`, pose `S13`, offsets `B15`/`B16`; [`g.java:7021`](../evidence/decompiled/g.java#L7021) : pose parts `S8..S9`, `S10`, `B10..B13` (Observed)
+- [`g.java:6810`](../evidence/decompiled/g.java#L6810) : object parts `S14..S15`, `S16`, `S17`, `B20`, `B23..B25` (Observed)
+- [`g.java:1116`](../evidence/decompiled/g.java#L1116) : `B18`/`B19` as footprint in cells (Observed)
+- [`g.java:7007`](../evidence/decompiled/g.java#L7007) : example of the `- 90, - 60` origin convention (Observed)
+- `../evidence/data/d0.json` : all counts; `bytes[9]` is 1 everywhere; layers present in `bytes[13]` are 0, 1, 3, 4 only (Observed)
+- `../evidence/tools/frames.py` : composing with these rules gives clean sprites, none cut through (Observed, see images)
 
 ## Still unknown
 - `B14` (263 values, all 4), `B17` (797 values, all 3), `B21` and `B22` (997 zeros each) are never read by the code. Probably editor leftovers.

@@ -103,20 +103,20 @@ A building without power neither shoots nor repairs itself. Walls only block the
 
 ## How we know
 
-- [`p.java:644`](../source/decompiled/p.java#L644) : rows 0..2 of the weapon array = `seg[35..37]`. Research edits them, e.g. [`p.java:3527`](../source/decompiled/p.java#L3527), [`p.java:3618`](../source/decompiled/p.java#L3618) (Observed)
-- [`p.java:1382`](../source/decompiled/p.java#L1382) : reload counter, coin flip for weapons in mask 1011. [`p.java:1633`](../source/decompiled/p.java#L1633) : when a shot leaves (Observed)
-- [`p.java:2273`](../source/decompiled/p.java#L2273) : flight time. [`p.java:3477`](../source/decompiled/p.java#L3477) : arc. [`p.java:2212`](../source/decompiled/p.java#L2212) : turret turning (Observed)
-- [`p.java:3357`](../source/decompiled/p.java#L3357) : range and minimum range. JADX lost the branch bodies here; the conditions were confirmed in the bytecode of `p.class` (Observed)
-- [`p.java:1402`](../source/decompiled/p.java#L1402), [`p.java:1406`](../source/decompiled/p.java#L1406) : stop distance = `seg[30]` (Observed)
-- [`p.java:3999`](../source/decompiled/p.java#L3999) : search radius. [`p.java:4097`](../source/decompiled/p.java#L4097) : priority by `seg[42]` (full health), then distance (Observed)
-- [`p.java:704`](../source/decompiled/p.java#L704), [`p.java:3548`](../source/decompiled/p.java#L3548), [`p.java:3625`](../source/decompiled/p.java#L3625) : ids 7, 11, 17, 18 (Observed)
-- [`g.java:3412`](../source/decompiled/g.java#L3412) : siege toggle. [`p.java:2226`](../source/decompiled/p.java#L2226), [`p.java:1466`](../source/decompiled/p.java#L1466), [`p.java:2058`](../source/decompiled/p.java#L2058) : drop orders, turn, swap id (Observed)
-- [`p.java:685`](../source/decompiled/p.java#L685), [`p.java:3809`](../source/decompiled/p.java#L3809) : Rhino pair off, then on. [`p.java:1536`](../source/decompiled/p.java#L1536) : AI deploys by itself, thresholds in `tables[4]` (Observed)
-- [`g.java:3421`](../source/decompiled/g.java#L3421) : fire at ground needs `seg[58]` = 2, true only for type 16. Help text `T2_82` agrees (Observed)
-- [`p.java:2200`](../source/decompiled/p.java#L2200) : mine trigger, side 0 only. [`p.java:2457`](../source/decompiled/p.java#L2457) : set off by splash. [`p.java:2773`](../source/decompiled/p.java#L2773) : blast, `seg[68..72]`. [`p.java:3070`](../source/decompiled/p.java#L3070) : laying, called from the every-10-ticks block at [`p.java:1319`](../source/decompiled/p.java#L1319). [`p.java:3829`](../source/decompiled/p.java#L3829) : kinds unlocked (Observed)
-- [`p.java:1745`](../source/decompiled/p.java#L1745) : building weapon from `seg[60]`. [`p.java:1912`](../source/decompiled/p.java#L1912) : its shot timing. [`p.java:1838`](../source/decompiled/p.java#L1838) : no power, no action (Observed)
-- [`p.java:1371`](../source/decompiled/p.java#L1371) : unit healing, periods from `seg[16]` = 30 (machinery), 20 (infantry). [`p.java:3523`](../source/decompiled/p.java#L3523), [`p.java:3615`](../source/decompiled/p.java#L3615) : *Bio suit* and *Damage diagnostics* divide the period by 3 (Observed). [`p.java:1844`](../source/decompiled/p.java#L1844) : building repair every 15 ticks (Observed)
-- [`../source/tools/weapons_table.py`](../source/tools/weapons_table.py) : prints all the tables above from `a.json`
+- [`p.java:644`](../evidence/decompiled/p.java#L644) : rows 0..2 of the weapon array = `seg[35..37]`. Research edits them, e.g. [`p.java:3527`](../evidence/decompiled/p.java#L3527), [`p.java:3618`](../evidence/decompiled/p.java#L3618) (Observed)
+- [`p.java:1382`](../evidence/decompiled/p.java#L1382) : reload counter, coin flip for weapons in mask 1011. [`p.java:1633`](../evidence/decompiled/p.java#L1633) : when a shot leaves (Observed)
+- [`p.java:2273`](../evidence/decompiled/p.java#L2273) : flight time. [`p.java:3477`](../evidence/decompiled/p.java#L3477) : arc. [`p.java:2212`](../evidence/decompiled/p.java#L2212) : turret turning (Observed)
+- [`p.java:3357`](../evidence/decompiled/p.java#L3357) : range and minimum range. JADX lost the branch bodies here; the conditions were confirmed in the bytecode of `p.class` (Observed)
+- [`p.java:1402`](../evidence/decompiled/p.java#L1402), [`p.java:1406`](../evidence/decompiled/p.java#L1406) : stop distance = `seg[30]` (Observed)
+- [`p.java:3999`](../evidence/decompiled/p.java#L3999) : search radius. [`p.java:4097`](../evidence/decompiled/p.java#L4097) : priority by `seg[42]` (full health), then distance (Observed)
+- [`p.java:704`](../evidence/decompiled/p.java#L704), [`p.java:3548`](../evidence/decompiled/p.java#L3548), [`p.java:3625`](../evidence/decompiled/p.java#L3625) : ids 7, 11, 17, 18 (Observed)
+- [`g.java:3412`](../evidence/decompiled/g.java#L3412) : siege toggle. [`p.java:2226`](../evidence/decompiled/p.java#L2226), [`p.java:1466`](../evidence/decompiled/p.java#L1466), [`p.java:2058`](../evidence/decompiled/p.java#L2058) : drop orders, turn, swap id (Observed)
+- [`p.java:685`](../evidence/decompiled/p.java#L685), [`p.java:3809`](../evidence/decompiled/p.java#L3809) : Rhino pair off, then on. [`p.java:1536`](../evidence/decompiled/p.java#L1536) : AI deploys by itself, thresholds in `tables[4]` (Observed)
+- [`g.java:3421`](../evidence/decompiled/g.java#L3421) : fire at ground needs `seg[58]` = 2, true only for type 16. Help text `T2_82` agrees (Observed)
+- [`p.java:2200`](../evidence/decompiled/p.java#L2200) : mine trigger, side 0 only. [`p.java:2457`](../evidence/decompiled/p.java#L2457) : set off by splash. [`p.java:2773`](../evidence/decompiled/p.java#L2773) : blast, `seg[68..72]`. [`p.java:3070`](../evidence/decompiled/p.java#L3070) : laying, called from the every-10-ticks block at [`p.java:1319`](../evidence/decompiled/p.java#L1319). [`p.java:3829`](../evidence/decompiled/p.java#L3829) : kinds unlocked (Observed)
+- [`p.java:1745`](../evidence/decompiled/p.java#L1745) : building weapon from `seg[60]`. [`p.java:1912`](../evidence/decompiled/p.java#L1912) : its shot timing. [`p.java:1838`](../evidence/decompiled/p.java#L1838) : no power, no action (Observed)
+- [`p.java:1371`](../evidence/decompiled/p.java#L1371) : unit healing, periods from `seg[16]` = 30 (machinery), 20 (infantry). [`p.java:3523`](../evidence/decompiled/p.java#L3523), [`p.java:3615`](../evidence/decompiled/p.java#L3615) : *Bio suit* and *Damage diagnostics* divide the period by 3 (Observed). [`p.java:1844`](../evidence/decompiled/p.java#L1844) : building repair every 15 ticks (Observed)
+- [`../evidence/tools/weapons_table.py`](../evidence/tools/weapons_table.py) : prints all the tables above from `a.json`
 
 ## Still unknown
 

@@ -93,7 +93,7 @@ for layer in pose:                              # hull first, turret on top
 - Sheets and the alpha-mask trick: [animations/01-sprite-sheets](../animations/01-sprite-sheets.md)
 - Buildings, shots and explosions: [animations/04-buildings-and-effects](../animations/04-buildings-and-effects.md)
 - Speed and draw order: [animations/05-timing-and-draw-order](../animations/05-timing-and-draw-order.md)
-- `../source/tools/frames.py` : rebuilds every level from `d0` and rendered
+- `../evidence/tools/frames.py` : rebuilds every level from `d0` and rendered
   the image above; hulls, turrets and flashes line up, which confirms the
   decoding (Observed)
 

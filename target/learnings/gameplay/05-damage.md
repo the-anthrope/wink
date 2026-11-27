@@ -73,21 +73,21 @@ A unit that is hit by an enemy, is alive, has no target and is not under a playe
 
 ## How we know
 
-- [`p.java:2478`](../source/decompiled/p.java#L2478) : the formula, for a direct hit (Observed). Same expression at [`p.java:2451`](../source/decompiled/p.java#L2451) (splash), [`p.java:2397`](../source/decompiled/p.java#L2397) (flame), [`p.java:2781`](../source/decompiled/p.java#L2781) (mines)
-- [`p.java:644`](../source/decompiled/p.java#L644) : weapon rows loaded from `seg[35]` (damage), `seg[36]` (range), `seg[37]` (reload) (Observed)
-- [`p.java:2396`](../source/decompiled/p.java#L2396) : armour is `seg[29]` for a unit, `G[side]` for a building, 0 for a wall. [`p.java:653`](../source/decompiled/p.java#L653) : `G` starts at 8. [`p.java:3659`](../source/decompiled/p.java#L3659) : Titanium cover sets 9 (Observed)
-- [`p.java:3531`](../source/decompiled/p.java#L3531) : research adds to the weapon row and, separately, to the display row `seg[31]`. No other code in `p.java` reads the display row. [`g.java:4817`](../source/decompiled/g.java#L4817) prints it (Observed)
-- [`p.java:2463`](../source/decompiled/p.java#L2463) : a bullet damages its target whenever the target's generation number still matches (Observed). The hit-box test at [`p.java:2429`](../source/decompiled/p.java#L2429) only picks the impact animation (Observed)
-- [`p.java:2436`](../source/decompiled/p.java#L2436) : weapons with `seg[47]` not 0 damage the 3 x 3 block, with no check of sides (Observed)
-- [`p.java:2309`](../source/decompiled/p.java#L2309) : random wobble from `seg[39]` (Observed). Effect on the landing cell (Inferred)
-- [`p.java:2392`](../source/decompiled/p.java#L2392) : flame checks, skipping units of side `f315j`. [`k.java:384`](../source/decompiled/k.java#L384) : that side is always 0, the player. Checked against the bytecode of `p.class`. Help text `T1_106` agrees (Observed)
-- [`p.java:2394`](../source/decompiled/p.java#L2394) : flame damage to infantry = its current health (Observed)
-- [`p.java:2302`](../source/decompiled/p.java#L2302) : flame speed capped at 15 px, 10 px per tick, so half a cell (Observed). "First three cells" (Inferred)
-- [`p.java:2569`](../source/decompiled/p.java#L2569) : building health. [`p.java:2520`](../source/decompiled/p.java#L2520) : wall counter and divisor `f294a`. [`k.java:327`](../source/decompiled/k.java#L327), [`p.java:651`](../source/decompiled/p.java#L651) : divisor 2. [`p.java:3662`](../source/decompiled/p.java#L3662) : research adds 2 (Observed)
-- [`p.java:2511`](../source/decompiled/p.java#L2511) : hit-back rule. [`p.java:3893`](../source/decompiled/p.java#L3893) and [`p.java:4111`](../source/decompiled/p.java#L4111) : friends within sight range join (Observed; JADX prints the distance test at 4112 the wrong way round, the bytecode says "distance <= range")
-- [`p.java:1831`](../source/decompiled/p.java#L1831) : attacked building calls friends within 7 cells (Observed)
-- [`p.java:1371`](../source/decompiled/p.java#L1371) : regeneration used in the example, `seg[16]` = 30 ticks for machinery (Observed)
-- [`../source/tools/weapons_table.py`](../source/tools/weapons_table.py) : prints the damage matrix above from `a.json`
+- [`p.java:2478`](../evidence/decompiled/p.java#L2478) : the formula, for a direct hit (Observed). Same expression at [`p.java:2451`](../evidence/decompiled/p.java#L2451) (splash), [`p.java:2397`](../evidence/decompiled/p.java#L2397) (flame), [`p.java:2781`](../evidence/decompiled/p.java#L2781) (mines)
+- [`p.java:644`](../evidence/decompiled/p.java#L644) : weapon rows loaded from `seg[35]` (damage), `seg[36]` (range), `seg[37]` (reload) (Observed)
+- [`p.java:2396`](../evidence/decompiled/p.java#L2396) : armour is `seg[29]` for a unit, `G[side]` for a building, 0 for a wall. [`p.java:653`](../evidence/decompiled/p.java#L653) : `G` starts at 8. [`p.java:3659`](../evidence/decompiled/p.java#L3659) : Titanium cover sets 9 (Observed)
+- [`p.java:3531`](../evidence/decompiled/p.java#L3531) : research adds to the weapon row and, separately, to the display row `seg[31]`. No other code in `p.java` reads the display row. [`g.java:4817`](../evidence/decompiled/g.java#L4817) prints it (Observed)
+- [`p.java:2463`](../evidence/decompiled/p.java#L2463) : a bullet damages its target whenever the target's generation number still matches (Observed). The hit-box test at [`p.java:2429`](../evidence/decompiled/p.java#L2429) only picks the impact animation (Observed)
+- [`p.java:2436`](../evidence/decompiled/p.java#L2436) : weapons with `seg[47]` not 0 damage the 3 x 3 block, with no check of sides (Observed)
+- [`p.java:2309`](../evidence/decompiled/p.java#L2309) : random wobble from `seg[39]` (Observed). Effect on the landing cell (Inferred)
+- [`p.java:2392`](../evidence/decompiled/p.java#L2392) : flame checks, skipping units of side `f315j`. [`k.java:384`](../evidence/decompiled/k.java#L384) : that side is always 0, the player. Checked against the bytecode of `p.class`. Help text `T1_106` agrees (Observed)
+- [`p.java:2394`](../evidence/decompiled/p.java#L2394) : flame damage to infantry = its current health (Observed)
+- [`p.java:2302`](../evidence/decompiled/p.java#L2302) : flame speed capped at 15 px, 10 px per tick, so half a cell (Observed). "First three cells" (Inferred)
+- [`p.java:2569`](../evidence/decompiled/p.java#L2569) : building health. [`p.java:2520`](../evidence/decompiled/p.java#L2520) : wall counter and divisor `f294a`. [`k.java:327`](../evidence/decompiled/k.java#L327), [`p.java:651`](../evidence/decompiled/p.java#L651) : divisor 2. [`p.java:3662`](../evidence/decompiled/p.java#L3662) : research adds 2 (Observed)
+- [`p.java:2511`](../evidence/decompiled/p.java#L2511) : hit-back rule. [`p.java:3893`](../evidence/decompiled/p.java#L3893) and [`p.java:4111`](../evidence/decompiled/p.java#L4111) : friends within sight range join (Observed; JADX prints the distance test at 4112 the wrong way round, the bytecode says "distance <= range")
+- [`p.java:1831`](../evidence/decompiled/p.java#L1831) : attacked building calls friends within 7 cells (Observed)
+- [`p.java:1371`](../evidence/decompiled/p.java#L1371) : regeneration used in the example, `seg[16]` = 30 ticks for machinery (Observed)
+- [`../evidence/tools/weapons_table.py`](../evidence/tools/weapons_table.py) : prints the damage matrix above from `a.json`
 
 ## Still unknown
 
